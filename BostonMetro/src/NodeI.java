@@ -1,12 +1,12 @@
 
 public interface NodeI {
-public void setId(String value);
+private void setId(String value);
 
-public String getId();
+private String getId();
 
-public void setName(String value);
+private void setName(String value);
 
-public String getName();
+private String getName();
 
 public String getID(String name, String label);
 

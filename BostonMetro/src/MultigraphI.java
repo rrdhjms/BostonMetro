@@ -1,13 +1,13 @@
 import Array;
 
 public interface MultigraphI {
-public void setNodeList(Array value);
+private void setNodeList(Array value);
 
-public Array getNodeList();
+private Array getNodeList();
 
-public void setEdgeList(Array value);
+private void setEdgeList(Array value);
 
-public Array getEdgeList();
+private Array getEdgeList();
 
 public String getNode(String name);
 

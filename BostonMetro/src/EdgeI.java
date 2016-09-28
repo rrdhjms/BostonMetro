@@ -1,13 +1,13 @@
 import Array;
 
 public interface EdgeI {
-public void setLabel(String value);
+private void setLabel(String value);
 
-public String getLabel();
+private String getLabel();
 
-public void setNodeList(Array value);
+private void setNodeList(Array value);
 
-public Array getNodeList();
+private Array getNodeList();
 
 public String getLabel(String nodeA, String nodeB);
 
