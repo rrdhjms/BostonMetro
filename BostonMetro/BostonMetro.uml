@@ -5,6 +5,7 @@
       <contents xmi:type="ecore:EAnnotation" xmi:id="_05Lu8IFpEeanSuzTsnE9Hw" source="codegen">
         <details xmi:id="_05MWAIFpEeanSuzTsnE9Hw" key="codegenDirectory" value="/BostonMetro/src"/>
         <details xmi:id="_05a_gIFpEeanSuzTsnE9Hw" key="observedFolders" value="/BostonMetro/src"/>
+        <details xmi:id="_XZrBMIWAEeaq2qcmZZcpdA" key="AssociatedSourceCode" value="/BostonMetro/src/Menu.java;658683371/1;/BostonMetro/src/MapParser.java;2633440726/1;/BostonMetro/src/MultigraphADT.java;1033341388/1;/BostonMetro/src/Search.java;2250401386/1;/BostonMetro/src/Node.java;3909853356/1;/BostonMetro/src/Edge.java;3063908140/1;/BostonMetro/src/EdgeI.java;4200701802/1;/BostonMetro/src/NodeI.java;1946286991/1;/BostonMetro/src/MultigraphI.java;3688714680/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_1n9uYITIEeaY_LwDXQG-9Q">
@@ -118,10 +119,10 @@
     <packagedElement xmi:type="uml:Association" xmi:id="_uJNd0ITIEeaY_LwDXQG-9Q" name="" memberEnd="_uJOE4ITIEeaY_LwDXQG-9Q _uJOE44TIEeaY_LwDXQG-9Q"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_xKBjcITIEeaY_LwDXQG-9Q" name="" memberEnd="_xKBjcYTIEeaY_LwDXQG-9Q _xKBjdITIEeaY_LwDXQG-9Q"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_SVceIITXEeaY_LwDXQG-9Q" name="EdgeI">
-      <ownedAttribute xmi:id="_3Zn-YIV6Eea-MYkGM4v7Pg" name="label">
+      <ownedAttribute xmi:id="_3Zn-YIV6Eea-MYkGM4v7Pg" name="label" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_7qU-kIV6Eea-MYkGM4v7Pg" name="nodeList">
+      <ownedAttribute xmi:id="_7qU-kIV6Eea-MYkGM4v7Pg" name="nodeList" visibility="private">
         <type xmi:type="uml:Stereotype" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Array"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_NoRHoIV3Eea-MYkGM4v7Pg" name="getLabel">
@@ -161,10 +162,10 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_Wnm24ITXEeaY_LwDXQG-9Q" name="NodeI">
-      <ownedAttribute xmi:id="_jeK8kIV6Eea-MYkGM4v7Pg" name="id">
+      <ownedAttribute xmi:id="_jeK8kIV6Eea-MYkGM4v7Pg" name="id" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_kaOVIIV6Eea-MYkGM4v7Pg" name="name">
+      <ownedAttribute xmi:id="_kaOVIIV6Eea-MYkGM4v7Pg" name="name" visibility="private">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_7xaTcIV5Eea-MYkGM4v7Pg" name="getID">
@@ -206,10 +207,10 @@
     <packagedElement xmi:type="uml:Usage" xmi:id="_fVDvMITXEeaY_LwDXQG-9Q" client="_tYjH0ITGEeaY_LwDXQG-9Q" supplier="_SVceIITXEeaY_LwDXQG-9Q"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_f03QoITXEeaY_LwDXQG-9Q" client="_tF1nMITGEeaY_LwDXQG-9Q" supplier="_Wnm24ITXEeaY_LwDXQG-9Q"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_nOuaIITXEeaY_LwDXQG-9Q" name="MultigraphI">
-      <ownedAttribute xmi:id="_8VRcMIV-Eea-MYkGM4v7Pg" name="nodeList">
+      <ownedAttribute xmi:id="_8VRcMIV-Eea-MYkGM4v7Pg" name="nodeList" visibility="private">
         <type xmi:type="uml:Stereotype" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Array"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_9aYqIIV-Eea-MYkGM4v7Pg" name="edgeList">
+      <ownedAttribute xmi:id="_9aYqIIV-Eea-MYkGM4v7Pg" name="edgeList" visibility="private">
         <type xmi:type="uml:Stereotype" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Array"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_WKMh4IV2Eea-MYkGM4v7Pg" name="getNode">
