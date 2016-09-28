@@ -45,8 +45,8 @@
         <ownedParameter xmi:id="_H5ApkYTZEeaY_LwDXQG-9Q" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_NcpRQITZEeaY_LwDXQG-9Q" name="generateGraphFromFile"/>
-      <ownedOperation xmi:id="_Sne-cITZEeaY_LwDXQG-9Q" name="metroMapParser" visibility="private">
-        <ownedParameter xmi:id="_Sne-cYTZEeaY_LwDXQG-9Q" type="_3sFvAITYEeaY_LwDXQG-9Q" direction="return"/>
+      <ownedOperation xmi:id="_Sne-cITZEeaY_LwDXQG-9Q" name="metroMapParser" visibility="public">
+        <ownedParameter xmi:id="_Sne-cYTZEeaY_LwDXQG-9Q" direction="return"/>
         <ownedParameter xmi:id="_SnflgITZEeaY_LwDXQG-9Q" name="filename">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
