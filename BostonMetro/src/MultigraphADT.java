@@ -9,13 +9,13 @@ public class MultigraphADT {
     *           &gt;       nodeI
     * </pre>
     */
-   private Set<NodeIn> nodeI;
+   private Set<NodeIn> nodeIn;
    
-   public Set<NodeIn> getNodeI() {
-      if (this.nodeI == null) {
-         this.nodeI = new HashSet<NodeIn>();
+   public Set<NodeIn> getNodeIn() {
+      if (this.nodeIn == null) {
+         this.nodeIn = new HashSet<NodeIn>();
       }
-      return this.nodeI;
+      return this.nodeIn;
    }
    
    
