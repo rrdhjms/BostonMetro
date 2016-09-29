@@ -1,4 +1,4 @@
-import Array;
+import java.util.*;
 
 public class Menu {
 public String getInput() {
@@ -6,7 +6,7 @@ public String getInput() {
    throw new UnsupportedOperationException("not implemented");
 }
 
-public void displayOutput(Array list) {
+public void displayOutput(ArrayList<Node> list) {
    // TODO implement this operation
    throw new UnsupportedOperationException("not implemented");
 }
