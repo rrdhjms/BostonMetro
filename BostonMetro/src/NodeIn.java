@@ -1,11 +1,11 @@
 
-public interface NodeI {
+public interface NodeIn {
 	
 public String getID(String name, String label);
 
-public String getName(String iD);
+public String getName(String id);
 
-public boolean setID(String id);
+public boolean setId(String id);
 
 public boolean setName(String name);
 

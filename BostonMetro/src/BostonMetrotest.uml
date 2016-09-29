@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_fosj8IY3EeapBt09BF1v-Q" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_fosj8YY3EeapBt09BF1v-Q" source="codegen">
         <details xmi:id="_fosj8oY3EeapBt09BF1v-Q" key="codegenDirectory" value="/BostonMetro/src"/>
-        <details xmi:id="_fyYrcIY3EeapBt09BF1v-Q" key="AssociatedSourceCode" value="/BostonMetro/src/Edge.java;895701146/1;/BostonMetro/src/EdgeI.java;1617454244/1;/BostonMetro/src/MapParser.java;3724109359/1;/BostonMetro/src/Menu.java;2611202509/1;/BostonMetro/src/MultigraphADT.java;2725516738/1;/BostonMetro/src/MultigraphI.java;1171562675/1;/BostonMetro/src/Node.java;2893917250/1;/BostonMetro/src/NodeI.java;3820898970/1;/BostonMetro/src/Search.java;3851384836/1;"/>
+        <details xmi:id="_fyYrcIY3EeapBt09BF1v-Q" key="AssociatedSourceCode" value="/BostonMetro/src/Edge.java;2461886094/1;/BostonMetro/src/EdgeI.java;1990487765/1;/BostonMetro/src/MapParser.java;541115147/1;/BostonMetro/src/Menu.java;2611202509/1;/BostonMetro/src/MultigraphADT.java;2235667222/1;/BostonMetro/src/MultigraphI.java;1171562675/1;/BostonMetro/src/Node.java;2634292002/1;/BostonMetro/src/NodeI.java;3820898970/1;/BostonMetro/src/Search.java;2579470806/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_fu888YY3EeapBt09BF1v-Q">
@@ -39,13 +39,29 @@
         <packagedElement xmi:type="uml:Interface" xmi:id="_fvZo5IY3EeapBt09BF1v-Q" name="Set"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_fvZo5oY3EeapBt09BF1v-Q" name="HashSet"/>
         <packagedElement xmi:type="uml:Class" xmi:id="_fvjZ4IY3EeapBt09BF1v-Q" name="ArrayList"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_1su0IoY9EeapBt09BF1v-Q" name="StringTokenizer"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_1su0JIY9EeapBt09BF1v-Q" name="BadFileException"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_1slqMIY9EeapBt09BF1v-Q" name="io">
+        <packagedElement xmi:type="uml:Class" xmi:id="_1slqPIY9EeapBt09BF1v-Q" name="BufferedReader"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_1slqPoY9EeapBt09BF1v-Q" name="FileReader"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_1su0IIY9EeapBt09BF1v-Q" name="IOException"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_fu888IY3EeapBt09BF1v-Q" name="Edge"/>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_fu88-oY3EeapBt09BF1v-Q" name="EdgeI">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_fu88-oY3EeapBt09BF1v-Q" name="EdgeIn">
       <ownedAttribute xmi:id="_7ZrXkYY3EeapBt09BF1v-Q" name="multigraphADT" type="_fvGt9oY3EeapBt09BF1v-Q" association="_7ZrXkIY3EeapBt09BF1v-Q">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7Z1IkIY3EeapBt09BF1v-Q" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7Z1IkYY3EeapBt09BF1v-Q" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Y7B1QIY7EeapBt09BF1v-Q" name="label" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_s9vgMIY8EeapBt09BF1v-Q" name="idNodeA" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_zDWMgIY8EeapBt09BF1v-Q" name="idNodeB" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_fu88-4Y3EeapBt09BF1v-Q" name="getLabel">
         <ownedParameter xmi:id="_fu88_IY3EeapBt09BF1v-Q" name="nodeA">
@@ -66,22 +82,29 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_fu89AoY3EeapBt09BF1v-Q" name="getNodes">
-        <ownedParameter xmi:id="_fu89A4Y3EeapBt09BF1v-Q" name="label">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_fvjZ4oY3EeapBt09BF1v-Q" type="_fvjZ4IY3EeapBt09BF1v-Q" direction="return"/>
-      </ownedOperation>
       <ownedOperation xmi:id="_fvZo4IY3EeapBt09BF1v-Q" name="setNodesOnEdge">
-        <ownedParameter xmi:id="_fvZo4YY3EeapBt09BF1v-Q" name="list" type="_fvGuC4Y3EeapBt09BF1v-Q">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fvZo44Y3EeapBt09BF1v-Q" value="*"/>
-        </ownedParameter>
         <ownedParameter xmi:id="_fvZo4oY3EeapBt09BF1v-Q" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_fvZo4YY3EeapBt09BF1v-Q" name="node2ID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5YbfQIY8EeapBt09BF1v-Q" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fvZo44Y3EeapBt09BF1v-Q" value="1"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_zH4jsIY7EeapBt09BF1v-Q" name="getNodeA">
+        <ownedParameter xmi:id="_zH4jsYY7EeapBt09BF1v-Q" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0W4GYIY7EeapBt09BF1v-Q" name="getNodeB">
+        <ownedParameter xmi:id="_0W4GYYY7EeapBt09BF1v-Q" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_fu89BYY3EeapBt09BF1v-Q" name="MapParser">
+      <ownedAttribute xmi:id="_814BEIY9EeapBt09BF1v-Q" name="fileInput" visibility="private" type="_1slqPIY9EeapBt09BF1v-Q"/>
       <ownedOperation xmi:id="_fu89BoY3EeapBt09BF1v-Q" name="main"/>
       <ownedOperation xmi:id="_fu89B4Y3EeapBt09BF1v-Q" name="usage"/>
       <ownedOperation xmi:id="_fu89CIY3EeapBt09BF1v-Q" name="generateGraphFromFile"/>
@@ -112,7 +135,9 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8rT-loY3EeapBt09BF1v-Q" value="*"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_fvGt94Y3EeapBt09BF1v-Q" name="MultigraphI">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_fvGt94Y3EeapBt09BF1v-Q" name="MultigraphIn">
+      <ownedAttribute xmi:id="_JrQNgIY9EeapBt09BF1v-Q" name="nodeList" visibility="private" type="_fvjZ4IY3EeapBt09BF1v-Q"/>
+      <ownedAttribute xmi:id="_NEidgIY9EeapBt09BF1v-Q" name="edgeList" visibility="private" type="_fvjZ4IY3EeapBt09BF1v-Q"/>
       <ownedOperation xmi:id="_fvGt-IY3EeapBt09BF1v-Q" name="getNode">
         <ownedParameter xmi:id="_fvGt-YY3EeapBt09BF1v-Q" name="name">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -167,7 +192,13 @@
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_fvGuC4Y3EeapBt09BF1v-Q" name="Node"/>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_fvGuDIY3EeapBt09BF1v-Q" name="NodeI">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_fvGuDIY3EeapBt09BF1v-Q" name="NodeIn">
+      <ownedAttribute xmi:id="_CcDb4IY9EeapBt09BF1v-Q" name="id" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_C-xucIY9EeapBt09BF1v-Q" name="name" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
       <ownedOperation xmi:id="_fvGuDYY3EeapBt09BF1v-Q" name="getID">
         <ownedParameter xmi:id="_fvGuDoY3EeapBt09BF1v-Q" name="name">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -180,19 +211,19 @@
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_fvGuEYY3EeapBt09BF1v-Q" name="getName">
-        <ownedParameter xmi:id="_fvGuEoY3EeapBt09BF1v-Q" name="iD">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
         <ownedParameter xmi:id="_fvGuE4Y3EeapBt09BF1v-Q" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_fvGuFIY3EeapBt09BF1v-Q" name="setID">
-        <ownedParameter xmi:id="_fvGuFYY3EeapBt09BF1v-Q" name="id">
+        <ownedParameter xmi:id="_fvGuEoY3EeapBt09BF1v-Q" name="id">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_fvGuFIY3EeapBt09BF1v-Q" name="setId">
         <ownedParameter xmi:id="_fvGuFoY3EeapBt09BF1v-Q" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_fvGuFYY3EeapBt09BF1v-Q" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_fvGuF4Y3EeapBt09BF1v-Q" name="setName">
@@ -228,6 +259,210 @@
     <packagedElement xmi:type="uml:Dependency" xmi:id="_bw7LsIY4EeapBt09BF1v-Q" client="_fvGt8oY3EeapBt09BF1v-Q" supplier="_fu89BYY3EeapBt09BF1v-Q"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_0kSXoIY4EeapBt09BF1v-Q" client="_fvGuGoY3EeapBt09BF1v-Q" supplier="_fvGt94Y3EeapBt09BF1v-Q"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_1EVJoIY4EeapBt09BF1v-Q" client="_fu89BYY3EeapBt09BF1v-Q" supplier="_fvGt94Y3EeapBt09BF1v-Q"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_aES4gYY9EeapBt09BF1v-Q" name="BufferedReader"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1slqMYY9EeapBt09BF1v-Q" name="MetroMapParser">
+      <ownedComment xmi:id="_1su0MIY9EeapBt09BF1v-Q">
+        <body>This class reads a text description of a metro subway system&#xD;
+     * and generates a graph representation of the metro.&#xD;
+     *&#xD;
+     * Students should feel free to modify this code as needed&#xD;
+     *  to complete this exercise.&#xD;
+     *&#xD;
+     *&lt;p>&#xD;
+     *&#xD;
+     * The grammar for the file is described below in BNF. A typical line&#xD;
+     * in the file looks like this :&#xD;
+     *&#xD;
+     * &lt;code> 20 NorthStation   Green 19 22  Orange 15 22  &lt;/code>&#xD;
+     *&#xD;
+     * where :&#xD;
+     *         20 is the StationID&#xD;
+     *         NorthStation is the StationName&#xD;
+     *         Green 19 22&#xD;
+     *                  Green is the LineName&#xD;
+     *                  19 is the StationID of the outbound station&#xD;
+     *                  22 is the StationID of the inbound station&#xD;
+     *         Orange 15 22 is a LineID in which :&#xD;
+     *                  Orange is the LineName&#xD;
+     *                  15 is the StationID of the outbound station&#xD;
+     *                  22 is the StationID of the inbound station&#xD;
+     *&#xD;
+     *         Therefore, NorthStation has two outgoing lines.&#xD;
+     *&#xD;
+     *  note : 0 denotes the end of a line : i.e. in this case,&#xD;
+     *  OakGrove would be at the end of the line, as there is no other outbound &#xD;
+     *  station.&#xD;
+     *&#xD;
+     *&lt;p>&#xD;
+     * metro-map ::= station-spec* &lt;BR>&#xD;
+     * station-spec ::= station-id station-name station-line+ &lt;BR>&#xD;
+     * station-id ::= (positive integer) &lt;BR>&#xD;
+     * station-name ::= string &lt;BR>&#xD;
+     * station-line ::= line-name station-id station-id &lt;BR>&#xD;
+     *</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_1su0JoY9EeapBt09BF1v-Q" name="fileInput" visibility="private" type="_1slqPIY9EeapBt09BF1v-Q" association="_1su0M4Y9EeapBt09BF1v-Q"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1su0KIY9EeapBt09BF1v-Q" name="main" specification="_1slqMoY9EeapBt09BF1v-Q">
+        <ownedParameter xmi:id="_1su0KYY9EeapBt09BF1v-Q" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1su0KoY9EeapBt09BF1v-Q" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>if(args.length != 1)&#xD;
+	{&#xD;
+	    usage();&#xD;
+	    System.exit(0);&#xD;
+	}&#xD;
+&#xD;
+	String filename = args[0];&#xD;
+	&#xD;
+	&#xD;
+	try&#xD;
+	{&#xD;
+	    MetroMapParser mmp = new MetroMapParser(filename);&#xD;
+	    mmp.generateGraphFromFile();&#xD;
+	}&#xD;
+	catch(Exception e)&#xD;
+	{&#xD;
+	    e.printStackTrace();&#xD;
+	}&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1su0K4Y9EeapBt09BF1v-Q" name="usage" specification="_1slqNYY9EeapBt09BF1v-Q">
+        <language>java</language>
+        <body>//prints a usage message to System.out&#xD;
+	System.out.println(&quot;java ex3.MetroMapParser &lt;filename>&quot;);&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1su0LIY9EeapBt09BF1v-Q" name="MetroMapParser" specification="_1slqNoY9EeapBt09BF1v-Q">
+        <ownedParameter xmi:id="_1su0LYY9EeapBt09BF1v-Q" name="filename">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_1su0LoY9EeapBt09BF1v-Q" type="_1slqMYY9EeapBt09BF1v-Q" direction="return"/>
+        <language>java</language>
+        <body>//a buffered reader reads line by line, returning null when file is done&#xD;
+	fileInput = new BufferedReader(new FileReader(filename));&#xD;
+ </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_1su0L4Y9EeapBt09BF1v-Q" name="generateGraphFromFile" specification="_1slqO4Y9EeapBt09BF1v-Q">
+        <language>java</language>
+        <body>String line = fileInput.readLine();&#xD;
+	StringTokenizer st;&#xD;
+	String stationID;&#xD;
+	String stationName;&#xD;
+	String lineName;&#xD;
+	String outboundID, inboundID;&#xD;
+	&#xD;
+	while(line != null)&#xD;
+	{&#xD;
+&#xD;
+	    //STUDENT :&#xD;
+	    //&#xD;
+	    //in this loop, you must collect the information necessary to &#xD;
+	    //construct your graph, and you must construct your graph as well.&#xD;
+	    //how and where you do this will depend on the design of your graph.&#xD;
+	    //&#xD;
+&#xD;
+	    &#xD;
+	    //StringTokenizer is a java.util Class that can break a string into tokens&#xD;
+	    // based on a specified delimiter.  The default delimiter is &quot; \t\n\r\f&quot; which&#xD;
+	    // corresponds to the space character, the tab character, the newline character,&#xD;
+	    // the carriage-return character and the form-feed character.&#xD;
+	    st = new StringTokenizer(line);&#xD;
+&#xD;
+	    //We want to handle empty lines effectively, we just ignore them!&#xD;
+	    if(!st.hasMoreTokens())&#xD;
+	    {&#xD;
+		line = fileInput.readLine();&#xD;
+		continue;&#xD;
+	    }&#xD;
+	    &#xD;
+	    //from the grammar, we know that the Station ID is the first token on the line&#xD;
+	    stationID = st.nextToken();&#xD;
+	    &#xD;
+	    if(!st.hasMoreTokens())&#xD;
+	    {&#xD;
+		throw new BadFileException(&quot;no station name&quot;);&#xD;
+	    }&#xD;
+&#xD;
+	    //from the grammar, we know that the Station Name is the second token on the line.&#xD;
+	    stationName = st.nextToken();&#xD;
+	    &#xD;
+	    if(!st.hasMoreTokens())&#xD;
+	    {&#xD;
+		throw new BadFileException(&quot;station is on no lines&quot;);&#xD;
+	    }&#xD;
+	    &#xD;
+&#xD;
+	    while(st.hasMoreTokens())&#xD;
+	    {&#xD;
+		lineName = st.nextToken();&#xD;
+			&#xD;
+		if(!st.hasMoreTokens())&#xD;
+		{&#xD;
+		    throw new BadFileException(&quot;poorly formatted line info&quot;);&#xD;
+		}&#xD;
+&#xD;
+		outboundID = st.nextToken();&#xD;
+		&#xD;
+		if(!st.hasMoreTokens())&#xD;
+		{&#xD;
+		    throw new BadFileException(&quot;poorly formatted adjacent stations&quot;);&#xD;
+		}&#xD;
+&#xD;
+		inboundID = st.nextToken();&#xD;
+	    }&#xD;
+	    	&#xD;
+		&#xD;
+	    line = fileInput.readLine();&#xD;
+	}&#xD;
+	&#xD;
+    &#xD;
+ </body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_1slqMoY9EeapBt09BF1v-Q" name="main" isStatic="true" method="_1su0KIY9EeapBt09BF1v-Q">
+        <ownedParameter xmi:id="_1slqM4Y9EeapBt09BF1v-Q" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1slqNIY9EeapBt09BF1v-Q" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1slqNYY9EeapBt09BF1v-Q" name="usage" visibility="private" isStatic="true" method="_1su0K4Y9EeapBt09BF1v-Q"/>
+      <ownedOperation xmi:id="_1slqNoY9EeapBt09BF1v-Q" name="MetroMapParser" method="_1su0LIY9EeapBt09BF1v-Q" raisedException="_1su0IIY9EeapBt09BF1v-Q">
+        <eAnnotations xmi:id="_1slqOIY9EeapBt09BF1v-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_1slqOYY9EeapBt09BF1v-Q" key="create"/>
+        </eAnnotations>
+        <ownedComment xmi:id="_1su0MYY9EeapBt09BF1v-Q">
+          <body>@effects: creates a new parser that will read from the file &#xD;
+     * filename unless the file does not exist. The filename should specify&#xD;
+     * the exact location of the file. This means it should be something like&#xD;
+     * /mit/$USER/6.170/ex3/bostonmetro.txt&#xD;
+     *&#xD;
+     * &#xD;
+     * @throws java.io.IOException if there &lt;tt>filename&lt;/tt> cannot be read&#xD;
+     *&#xD;
+     * @returns a new MetroMapParser that will parse the file filename</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_1slqN4Y9EeapBt09BF1v-Q" name="filename">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_1slqOoY9EeapBt09BF1v-Q" type="_1slqMYY9EeapBt09BF1v-Q" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1slqO4Y9EeapBt09BF1v-Q" name="generateGraphFromFile" method="_1su0L4Y9EeapBt09BF1v-Q" raisedException="_1su0IIY9EeapBt09BF1v-Q _1su0JIY9EeapBt09BF1v-Q">
+        <ownedComment xmi:id="_1su0MoY9EeapBt09BF1v-Q">
+          <body>@effects: parses the file, and generates a graph from it, unless there&#xD;
+     * is a problem reading the file, or there is a problem with the format of the&#xD;
+     * file.&#xD;
+     *&#xD;
+     * @throws java.io.IOException if there is a problem reading the file &#xD;
+     * @throws ex3.BadFileException if there is a problem with the format of the file&#xD;
+     *&#xD;
+     * @returns the Graph generated by the file</body>
+        </ownedComment>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_1su0M4Y9EeapBt09BF1v-Q" name="" memberEnd="_1su0NIY9EeapBt09BF1v-Q _1su0JoY9EeapBt09BF1v-Q">
+      <ownedEnd xmi:id="_1su0NIY9EeapBt09BF1v-Q" name="" type="_1slqMYY9EeapBt09BF1v-Q" association="_1su0M4Y9EeapBt09BF1v-Q"/>
+    </packagedElement>
     <profileApplication xmi:id="_fo2U8IY3EeapBt09BF1v-Q">
       <eAnnotations xmi:id="_fo2U8YY3EeapBt09BF1v-Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
@@ -238,10 +473,17 @@
   <UMLLabProfile:TargetLanguage xmi:id="_fo2U8oY3EeapBt09BF1v-Q" base_Package="_ffdIYIY3EeapBt09BF1v-Q">
     <languageName>java</languageName>
   </UMLLabProfile:TargetLanguage>
-  <UMLLabProfile:Generics xmi:id="_fu89BIY3EeapBt09BF1v-Q" genericsValue="Node" base_Element="_fu89AoY3EeapBt09BF1v-Q"/>
   <UMLLabProfile:Reference xmi:id="_fvZo5YY3EeapBt09BF1v-Q" base_Element="_fvZo5IY3EeapBt09BF1v-Q"/>
   <UMLLabProfile:Reference xmi:id="_fvZo54Y3EeapBt09BF1v-Q" base_Element="_fvZo5oY3EeapBt09BF1v-Q"/>
   <UMLLabProfile:Generics xmi:id="_fvZo64Y3EeapBt09BF1v-Q" genericsValue="Node" base_Element="_fvZo6IY3EeapBt09BF1v-Q"/>
   <UMLLabProfile:Reference xmi:id="_fvjZ4YY3EeapBt09BF1v-Q" base_Element="_fvjZ4IY3EeapBt09BF1v-Q"/>
   <UMLLabProfile:Generics xmi:id="_fvjZ5YY3EeapBt09BF1v-Q" genericsValue="Node" base_Element="_fvjZ5IY3EeapBt09BF1v-Q"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_aES4goY9EeapBt09BF1v-Q" base_Element="_aES4gYY9EeapBt09BF1v-Q"/>
+  <UMLLabProfile:Reference xmi:id="_1slqPYY9EeapBt09BF1v-Q" base_Element="_1slqPIY9EeapBt09BF1v-Q"/>
+  <UMLLabProfile:Reference xmi:id="_1slqP4Y9EeapBt09BF1v-Q" base_Element="_1slqPoY9EeapBt09BF1v-Q"/>
+  <UMLLabProfile:Reference xmi:id="_1su0IYY9EeapBt09BF1v-Q" base_Element="_1su0IIY9EeapBt09BF1v-Q"/>
+  <UMLLabProfile:Reference xmi:id="_1su0I4Y9EeapBt09BF1v-Q" base_Element="_1su0IoY9EeapBt09BF1v-Q"/>
+  <UMLLabProfile:Reference xmi:id="_1su0JYY9EeapBt09BF1v-Q" base_Element="_1su0JIY9EeapBt09BF1v-Q"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_1su0J4Y9EeapBt09BF1v-Q" base_Element="_1su0JoY9EeapBt09BF1v-Q"/>
+  <UMLLabProfile:Reference xmi:id="_1su0NYY9EeapBt09BF1v-Q" base_Element="_1su0M4Y9EeapBt09BF1v-Q"/>
 </xmi:XMI>

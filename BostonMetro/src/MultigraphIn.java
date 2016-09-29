@@ -1,6 +1,6 @@
 import java.util.*;
 
-public interface MultigraphI {
+public interface MultigraphIn {
 
 public String getNode(String name);
 

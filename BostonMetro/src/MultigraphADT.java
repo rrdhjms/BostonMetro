@@ -5,31 +5,15 @@ public class MultigraphADT {
 /**
     * <pre>
     *           1..1     0..*
-    * MultigraphADT ------------------------- EdgeI
-    *           multigraphADT        &gt;       edgeI
-    * </pre>
-    */
-   private Set<EdgeI> edgeI;
-   
-   public Set<EdgeI> getEdgeI() {
-      if (this.edgeI == null) {
-         this.edgeI = new HashSet<EdgeI>();
-      }
-      return this.edgeI;
-   }
-   
-   /**
-    * <pre>
-    *           1..1     0..*
-    * MultigraphADT ------------------------> NodeI
+    * MultigraphADT ------------------------> NodeIn
     *           &gt;       nodeI
     * </pre>
     */
-   private Set<NodeI> nodeI;
+   private Set<NodeIn> nodeI;
    
-   public Set<NodeI> getNodeI() {
+   public Set<NodeIn> getNodeI() {
       if (this.nodeI == null) {
-         this.nodeI = new HashSet<NodeI>();
+         this.nodeI = new HashSet<NodeIn>();
       }
       return this.nodeI;
    }
