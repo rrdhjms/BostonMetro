@@ -1,14 +1,15 @@
 
-public class Edge {
+public class Edge implements EdgeIn {
 
 	private String nodeA;
 	private String nodeB;
 	private String label;
 	
-	public Edge(String aID, String bID, String lab){
+	public Edge(String lab,String aID, String bID){
+		label = lab;
 		nodeA = aID;
 		nodeB = bID;
-		label = lab;
+		
 	}
 
 	public String getLabel() {

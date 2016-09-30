@@ -16,13 +16,13 @@ public class MultigraphADT implements MultigraphIn {
 		return ((Node) nodeMap.get(id)).getName();
 	}
 
-	public boolean addNode(String id, String nodeID, String nodeName) {
-		nodeMap.put(id, new Node(nodeID,nodeName));
+	public boolean addNode(String nodeID, String nodeName) {
+		nodeMap.put(nodeID, new Node(nodeID,nodeName));
 		return true;
 	}
 
-	public boolean addEdge(String successor, String predecessor, String label) {
-		edgeList.add(new Edge(successor, predecessor, label));
+	public boolean addEdge(String label,String successor, String predecessor) {
+		edgeList.add(new Edge(label,successor, predecessor));
 		return true;
 	}
 

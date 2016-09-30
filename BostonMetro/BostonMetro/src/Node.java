@@ -1,5 +1,5 @@
 
-public class Node{
+public class Node implements NodeIn{
 	
 	private String id;
 	private String name;
