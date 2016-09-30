@@ -65,115 +65,13 @@
     <targetRole xmi:id="_YBUTFocMEeaEe9-0vm7AYA" aggregationKind="NONE" name="scan" navigable="true">
       <modelElement href="BostonMetro.uml#_YBAxEIcMEeaEe9-0vm7AYA"/>
       <stereotypes xmi:id="_YBnOAIcMEeaEe9-0vm7AYA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_qNQDwIcnEeaMeuwIPFSwSQ" name="LegacyStyledElement">
+        <modelElement href="BostonMetro.uml#_YBAxEYcMEeaEe9-0vm7AYA"/>
+      </stereotypes>
       <visibility xmi:id="_YBUTF4cMEeaEe9-0vm7AYA" label="-"/>
       <cardinality xmi:id="_YBUTGIcMEeaEe9-0vm7AYA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_fy-hV4Y3EeapBt09BF1v-Q" supplying="_L_nRQIZHEeaCyteZ7vkvLQ" name="MultigraphIn" subclassedBy="_L6EnsIb8EeaMMs2eJ4YbAw">
-    <modelElement href="BostonMetro.uml#_fvGt94Y3EeapBt09BF1v-Q"/>
-    <visualProperties xmi:id="_fy-hWIY3EeapBt09BF1v-Q" position="-103.0,-1.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_fy-hWYY3EeapBt09BF1v-Q" label="+"/>
-    <operations xmi:id="_fy-haoY3EeapBt09BF1v-Q" name="addNode">
-      <modelElement href="BostonMetro.uml#_fvGt_oY3EeapBt09BF1v-Q"/>
-      <visibility xmi:id="_fy-ha4Y3EeapBt09BF1v-Q" label="+"/>
-      <cardinality xmi:id="_fy-hbIY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_fy-hbYY3EeapBt09BF1v-Q">
-        <modelElement href="BostonMetro.uml#_fvGuAYY3EeapBt09BF1v-Q"/>
-        <type xmi:id="_fy-hboY3EeapBt09BF1v-Q" name="boolean">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_fy-hcoY3EeapBt09BF1v-Q" name="nodeID">
-        <modelElement href="BostonMetro.uml#_fvGuAIY3EeapBt09BF1v-Q"/>
-        <cardinality xmi:id="_fy-hc4Y3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
-        <type xmi:id="_dxSKwIcFEeaMMs2eJ4YbAw" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-      <parameters xmi:id="_dxaGkIcFEeaMMs2eJ4YbAw" name="nodeName">
-        <modelElement href="BostonMetro.uml#_dxQ8oIcFEeaMMs2eJ4YbAw"/>
-        <cardinality xmi:id="_dxaGkYcFEeaMMs2eJ4YbAw" label="1" max="1" min="1"/>
-        <type xmi:id="_dxaGkocFEeaMMs2eJ4YbAw" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_fy-hdYY3EeapBt09BF1v-Q" name="addEdge">
-      <modelElement href="BostonMetro.uml#_fvGuAoY3EeapBt09BF1v-Q"/>
-      <visibility xmi:id="_fy-hdoY3EeapBt09BF1v-Q" label="+"/>
-      <cardinality xmi:id="_fy-hd4Y3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_fy-heIY3EeapBt09BF1v-Q">
-        <modelElement href="BostonMetro.uml#_fvGuBoY3EeapBt09BF1v-Q"/>
-        <type xmi:id="_fy-heYY3EeapBt09BF1v-Q" name="boolean">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_fy-heoY3EeapBt09BF1v-Q" name="successor">
-        <modelElement href="BostonMetro.uml#_fvGuA4Y3EeapBt09BF1v-Q"/>
-        <cardinality xmi:id="_fy-he4Y3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
-        <type xmi:id="_fy-hfIY3EeapBt09BF1v-Q" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-      <parameters xmi:id="_fy-hfYY3EeapBt09BF1v-Q" name="predecessor">
-        <modelElement href="BostonMetro.uml#_fvGuBIY3EeapBt09BF1v-Q"/>
-        <cardinality xmi:id="_fy-hfoY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
-        <type xmi:id="_fy-hf4Y3EeapBt09BF1v-Q" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-      <parameters xmi:id="_fy-hgIY3EeapBt09BF1v-Q" name="label">
-        <modelElement href="BostonMetro.uml#_fvGuBYY3EeapBt09BF1v-Q"/>
-        <cardinality xmi:id="_fy-hgYY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
-        <type xmi:id="_fy-hgoY3EeapBt09BF1v-Q" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_fy-hg4Y3EeapBt09BF1v-Q" name="isEdge">
-      <modelElement href="BostonMetro.uml#_fvGuB4Y3EeapBt09BF1v-Q"/>
-      <visibility xmi:id="_fy-hhIY3EeapBt09BF1v-Q" label="+"/>
-      <cardinality xmi:id="_fy-hhYY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_fy-hhoY3EeapBt09BF1v-Q">
-        <modelElement href="BostonMetro.uml#_fvGuCoY3EeapBt09BF1v-Q"/>
-        <type xmi:id="_fy-hh4Y3EeapBt09BF1v-Q" name="boolean">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_fy-hiIY3EeapBt09BF1v-Q" name="nodeA">
-        <modelElement href="BostonMetro.uml#_fvGuCIY3EeapBt09BF1v-Q"/>
-        <cardinality xmi:id="_fy-hiYY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
-        <type xmi:id="_fy-hioY3EeapBt09BF1v-Q" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-      <parameters xmi:id="_fy-hi4Y3EeapBt09BF1v-Q" name="nodeB">
-        <modelElement href="BostonMetro.uml#_fvGuCYY3EeapBt09BF1v-Q"/>
-        <cardinality xmi:id="_fy-hjIY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
-        <type xmi:id="_fy-hjYY3EeapBt09BF1v-Q" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_PejMUIcCEeaMMs2eJ4YbAw" name="getNodeName">
-      <modelElement href="BostonMetro.uml#_PeJjsIcCEeaMMs2eJ4YbAw"/>
-      <visibility xmi:id="_PejMUYcCEeaMMs2eJ4YbAw" label="+"/>
-      <cardinality xmi:id="_PejMUocCEeaMMs2eJ4YbAw" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_PejMU4cCEeaMMs2eJ4YbAw">
-        <modelElement href="BostonMetro.uml#_PeKKwIcCEeaMMs2eJ4YbAw"/>
-        <type xmi:id="_85UPMIcEEeaMMs2eJ4YbAw" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_PejMVYcCEeaMMs2eJ4YbAw" name="id">
-        <modelElement href="BostonMetro.uml#_PeJjsYcCEeaMMs2eJ4YbAw"/>
-        <cardinality xmi:id="_PejMVocCEeaMMs2eJ4YbAw" label="1" max="1" min="1"/>
-        <type xmi:id="_PejMV4cCEeaMMs2eJ4YbAw" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-    </operations>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_fyh1aIY3EeapBt09BF1v-Q" name="Node">
     <modelElement href="BostonMetro.uml#_fvGuC4Y3EeapBt09BF1v-Q"/>
     <visualProperties xmi:id="_fyh1aYY3EeapBt09BF1v-Q" position="-241.0,486.0" size="-1.0,-1.0"/>
@@ -440,9 +338,9 @@
     <visibility xmi:id="_fy1Xp4Y3EeapBt09BF1v-Q" label="+"/>
     <attributes xmi:id="_YBAxGocMEeaEe9-0vm7AYA" name="scan" staticAttribute="true">
       <modelElement href="BostonMetro.uml#_YBAxEIcMEeaEe9-0vm7AYA"/>
-      <stereotypes xmi:id="_YBAxG4cMEeaEe9-0vm7AYA" name="LegacyStyledElement">
-        <modelElement href="BostonMetro.uml#_YBAxEYcMEeaEe9-0vm7AYA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_qNi-tIcnEeaMeuwIPFSwSQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_qNi-tYcnEeaMeuwIPFSwSQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_qNi-tocnEeaMeuwIPFSwSQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_YBAxHIcMEeaEe9-0vm7AYA" label="-"/>
       <cardinality xmi:id="_YBAxHYcMEeaEe9-0vm7AYA" label="1" max="1" min="1"/>
       <type xmi:id="_YBAxHocMEeaEe9-0vm7AYA" name="Scanner">
@@ -514,6 +412,12 @@
       <stereotypes xmi:id="_JZPhU4cKEeaEe9-0vm7AYA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_JZYrQIcKEeaEe9-0vm7AYA" name="Generics"/>
       <stereotypes xmi:id="_JZYrQYcKEeaEe9-0vm7AYA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_qNi-sIcnEeaMeuwIPFSwSQ" name="Generics"/>
+      <stereotypes xmi:id="_qNi-sYcnEeaMeuwIPFSwSQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_qNi-socnEeaMeuwIPFSwSQ" name="Generics"/>
+      <stereotypes xmi:id="_qNi-s4cnEeaMeuwIPFSwSQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_qNi-t4cnEeaMeuwIPFSwSQ" name="Generics"/>
+      <stereotypes xmi:id="_qNi-uIcnEeaMeuwIPFSwSQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_70Heg4cAEeaMMs2eJ4YbAw" label="-"/>
       <cardinality xmi:id="_70HehIcAEeaMMs2eJ4YbAw" label="1" max="1" min="1"/>
       <type xmi:id="_70HehYcAEeaMMs2eJ4YbAw" name="ArrayList">
@@ -639,6 +543,111 @@
           <modelElement href="BostonMetro.uml#_fvGt9oY3EeapBt09BF1v-Q"/>
         </type>
       </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_fy-hV4Y3EeapBt09BF1v-Q" supplying="_L_nRQIZHEeaCyteZ7vkvLQ" name="MultigraphIn" subclassedBy="_L6EnsIb8EeaMMs2eJ4YbAw">
+    <modelElement href="BostonMetro.uml#_fvGt94Y3EeapBt09BF1v-Q"/>
+    <visualProperties xmi:id="_fy-hWIY3EeapBt09BF1v-Q" position="-103.0,-1.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_fy-hWYY3EeapBt09BF1v-Q" label="+"/>
+    <operations xmi:id="_fy-haoY3EeapBt09BF1v-Q" name="addNode">
+      <modelElement href="BostonMetro.uml#_fvGt_oY3EeapBt09BF1v-Q"/>
+      <visibility xmi:id="_fy-ha4Y3EeapBt09BF1v-Q" label="+"/>
+      <cardinality xmi:id="_fy-hbIY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_fy-hbYY3EeapBt09BF1v-Q">
+        <modelElement href="BostonMetro.uml#_fvGuAYY3EeapBt09BF1v-Q"/>
+        <type xmi:id="_fy-hboY3EeapBt09BF1v-Q" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_fy-hcoY3EeapBt09BF1v-Q" name="nodeID">
+        <modelElement href="BostonMetro.uml#_fvGuAIY3EeapBt09BF1v-Q"/>
+        <cardinality xmi:id="_fy-hc4Y3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
+        <type xmi:id="_dxSKwIcFEeaMMs2eJ4YbAw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_dxaGkIcFEeaMMs2eJ4YbAw" name="nodeName">
+        <modelElement href="BostonMetro.uml#_dxQ8oIcFEeaMMs2eJ4YbAw"/>
+        <cardinality xmi:id="_dxaGkYcFEeaMMs2eJ4YbAw" label="1" max="1" min="1"/>
+        <type xmi:id="_dxaGkocFEeaMMs2eJ4YbAw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_fy-hdYY3EeapBt09BF1v-Q" name="addEdge">
+      <modelElement href="BostonMetro.uml#_fvGuAoY3EeapBt09BF1v-Q"/>
+      <visibility xmi:id="_fy-hdoY3EeapBt09BF1v-Q" label="+"/>
+      <cardinality xmi:id="_fy-hd4Y3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_fy-heIY3EeapBt09BF1v-Q">
+        <modelElement href="BostonMetro.uml#_fvGuBoY3EeapBt09BF1v-Q"/>
+        <type xmi:id="_fy-heYY3EeapBt09BF1v-Q" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_fy-heoY3EeapBt09BF1v-Q" name="label">
+        <modelElement href="BostonMetro.uml#_fvGuA4Y3EeapBt09BF1v-Q"/>
+        <cardinality xmi:id="_fy-he4Y3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
+        <type xmi:id="_fy-hfIY3EeapBt09BF1v-Q" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_fy-hfYY3EeapBt09BF1v-Q" name="successor">
+        <modelElement href="BostonMetro.uml#_fvGuBIY3EeapBt09BF1v-Q"/>
+        <cardinality xmi:id="_fy-hfoY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
+        <type xmi:id="_fy-hf4Y3EeapBt09BF1v-Q" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_fy-hgIY3EeapBt09BF1v-Q" name="predecessor">
+        <modelElement href="BostonMetro.uml#_fvGuBYY3EeapBt09BF1v-Q"/>
+        <cardinality xmi:id="_fy-hgYY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
+        <type xmi:id="_fy-hgoY3EeapBt09BF1v-Q" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_fy-hg4Y3EeapBt09BF1v-Q" name="isEdge">
+      <modelElement href="BostonMetro.uml#_fvGuB4Y3EeapBt09BF1v-Q"/>
+      <visibility xmi:id="_fy-hhIY3EeapBt09BF1v-Q" label="+"/>
+      <cardinality xmi:id="_fy-hhYY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_fy-hhoY3EeapBt09BF1v-Q">
+        <modelElement href="BostonMetro.uml#_fvGuCoY3EeapBt09BF1v-Q"/>
+        <type xmi:id="_fy-hh4Y3EeapBt09BF1v-Q" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_fy-hiIY3EeapBt09BF1v-Q" name="nodeA">
+        <modelElement href="BostonMetro.uml#_fvGuCIY3EeapBt09BF1v-Q"/>
+        <cardinality xmi:id="_fy-hiYY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
+        <type xmi:id="_fy-hioY3EeapBt09BF1v-Q" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_fy-hi4Y3EeapBt09BF1v-Q" name="nodeB">
+        <modelElement href="BostonMetro.uml#_fvGuCYY3EeapBt09BF1v-Q"/>
+        <cardinality xmi:id="_fy-hjIY3EeapBt09BF1v-Q" label="1" max="1" min="1"/>
+        <type xmi:id="_fy-hjYY3EeapBt09BF1v-Q" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_PejMUIcCEeaMMs2eJ4YbAw" name="getNodeName">
+      <modelElement href="BostonMetro.uml#_PeJjsIcCEeaMMs2eJ4YbAw"/>
+      <visibility xmi:id="_PejMUYcCEeaMMs2eJ4YbAw" label="+"/>
+      <cardinality xmi:id="_PejMUocCEeaMMs2eJ4YbAw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_PejMU4cCEeaMMs2eJ4YbAw">
+        <modelElement href="BostonMetro.uml#_PeKKwIcCEeaMMs2eJ4YbAw"/>
+        <type xmi:id="_85UPMIcEEeaMMs2eJ4YbAw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_PejMVYcCEeaMMs2eJ4YbAw" name="id">
+        <modelElement href="BostonMetro.uml#_PeJjsYcCEeaMMs2eJ4YbAw"/>
+        <cardinality xmi:id="_PejMVocCEeaMMs2eJ4YbAw" label="1" max="1" min="1"/>
+        <type xmi:id="_PejMV4cCEeaMMs2eJ4YbAw" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
     </operations>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

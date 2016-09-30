@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_fosj8IY3EeapBt09BF1v-Q" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_fosj8YY3EeapBt09BF1v-Q" source="codegen">
         <details xmi:id="_fosj8oY3EeapBt09BF1v-Q" key="codegenDirectory" value="/BostonMetro/src"/>
-        <details xmi:id="_fyYrcIY3EeapBt09BF1v-Q" key="AssociatedSourceCode" value="/BostonMetro/src/Edge.java;3130608593/1;/BostonMetro/src/Menu.java;1945688959/1;/BostonMetro/src/MultigraphADT.java;2561215540/1;/BostonMetro/src/Node.java;785275553/1;/BostonMetro/src/MetroMapParser.java;2286420848/1;/BostonMetro/src/MultigraphIn.java;232600782/1;"/>
+        <details xmi:id="_fyYrcIY3EeapBt09BF1v-Q" key="AssociatedSourceCode" value="/BostonMetro/src/Edge.java;3130608593/1;/BostonMetro/src/Menu.java;1950689878/1;/BostonMetro/src/MultigraphADT.java;2561215540/1;/BostonMetro/src/Node.java;785275553/1;/BostonMetro/src/MetroMapParser.java;2286420848/1;/BostonMetro/src/MultigraphIn.java;2272170665/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_fu888YY3EeapBt09BF1v-Q">
@@ -154,16 +154,9 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <language>java</language>
-        <body>System.out.println(&quot;Please Enter An Input&quot;);&#xD;
+        <body>System.out.println(&quot;Please Enter An Input Below:&quot;);&#xD;
 	   scan = new Scanner(System.in);&#xD;
-	   String input = scan.nextLine();&#xD;
-	   &#xD;
-	   switch(input){&#xD;
-	   //case null:&#xD;
-		   &#xD;
-		   &#xD;
-	   }&#xD;
-	   &#xD;
+	   String input = scan.nextLine().toLowerCase();&#xD;
 	   return input;&#xD;
 </body>
       </ownedBehavior>
@@ -174,13 +167,32 @@
         </ownedParameter>
         <language>java</language>
         <body>System.out.println(&quot;Welcome To The CS308 Group W07 Graph System\n&quot;);&#xD;
+		System.out.print(&quot;Enter Numerical Values For Menu Interaction\n&quot;);&#xD;
      boolean exit = false;&#xD;
 		while(!exit){&#xD;
-			String response = getInput();&#xD;
+			System.out.println(&quot;Options Are:\n 1. Shortest Route\n 2. Search For Stations \n 3. Exit&quot;);&#xD;
+			String userChoice = getInput();&#xD;
+			switch(userChoice){&#xD;
+			case &quot;1&quot;:&#xD;
+				System.out.println(&quot;You have chosen: Shortest Route&quot;);&#xD;
+				System.out.println(&quot;Please enter the name of the origin station&quot;);&#xD;
+				String origin = getInput();&#xD;
+				System.out.println(&quot;Please enter the name of the destination station&quot;);&#xD;
+				String destination = getInput();&#xD;
+				/****rekt ass search happens here****/&#xD;
+				&#xD;
+			case &quot;2&quot;:&#xD;
+				System.out.println(&quot;You have chosen: Search For The Station:&quot;);&#xD;
+				System.out.println(&quot;Please enter the name of the station you would like searched&quot;);&#xD;
+				String searchStation = getInput();&#xD;
+			case &quot;3&quot;: &#xD;
+				System.out.println(&quot;night xxx&quot;);&#xD;
+				System.exit(0);&#xD;
+				&#xD;
+			default:&#xD;
+					System.out.print(&quot;Your input was invalid\n Please try again bby!&quot;);&#xD;
+			}&#xD;
 		}&#xD;
-		&#xD;
-		&#xD;
-   throw new UnsupportedOperationException(&quot;not implemented&quot;);&#xD;
 </body>
       </ownedBehavior>
       <ownedOperation xmi:id="_fvGt84Y3EeapBt09BF1v-Q" name="getInput" isStatic="true" method="_YBAxEocMEeaEe9-0vm7AYA">
@@ -346,13 +358,13 @@
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_fvGuAoY3EeapBt09BF1v-Q" name="addEdge">
-        <ownedParameter xmi:id="_fvGuA4Y3EeapBt09BF1v-Q" name="successor">
+        <ownedParameter xmi:id="_fvGuA4Y3EeapBt09BF1v-Q" name="label">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_fvGuBIY3EeapBt09BF1v-Q" name="predecessor">
+        <ownedParameter xmi:id="_fvGuBIY3EeapBt09BF1v-Q" name="successor">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_fvGuBYY3EeapBt09BF1v-Q" name="label">
+        <ownedParameter xmi:id="_fvGuBYY3EeapBt09BF1v-Q" name="predecessor">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_fvGuBoY3EeapBt09BF1v-Q" direction="return">
