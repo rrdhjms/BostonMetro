@@ -1,6 +1,6 @@
 
 public interface NodeIn {
-	
+
 public String getID(String name, String label);
 
 public String getName(String id);

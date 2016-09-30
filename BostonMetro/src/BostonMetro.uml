@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_fosj8IY3EeapBt09BF1v-Q" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_fosj8YY3EeapBt09BF1v-Q" source="codegen">
         <details xmi:id="_fosj8oY3EeapBt09BF1v-Q" key="codegenDirectory" value="/BostonMetro/src"/>
-        <details xmi:id="_fyYrcIY3EeapBt09BF1v-Q" key="AssociatedSourceCode" value="/BostonMetro/src/Edge.java;3897581500/1;/BostonMetro/src/Menu.java;2087121400/1;/BostonMetro/src/MultigraphADT.java;3952928433/1;/BostonMetro/src/Node.java;169615306/1;/BostonMetro/src/Search.java;3483692822/1;/BostonMetro/src/MetroMapParser.java;2684045859/1;"/>
+        <details xmi:id="_fyYrcIY3EeapBt09BF1v-Q" key="AssociatedSourceCode" value="/BostonMetro/src/Edge.java;3897581500/1;/BostonMetro/src/Menu.java;2087121400/1;/BostonMetro/src/MultigraphADT.java;3952928433/1;/BostonMetro/src/Node.java;169615306/1;/BostonMetro/src/Search.java;3483692822/1;/BostonMetro/src/MetroMapParser.java;2684045859/1;/BostonMetro/src/EdgeIn.java;1439755088/1;/BostonMetro/src/MultigraphIn.java;3631778753/1;/BostonMetro/src/NodeIn.java;3277788724/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_fu888YY3EeapBt09BF1v-Q">
@@ -54,13 +54,10 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7Z1IkIY3EeapBt09BF1v-Q" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7Z1IkYY3EeapBt09BF1v-Q" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_Y7B1QIY7EeapBt09BF1v-Q" name="label" visibility="private">
+      <ownedAttribute xmi:id="_s9vgMIY8EeapBt09BF1v-Q" name="nodeA" visibility="public" isReadOnly="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_s9vgMIY8EeapBt09BF1v-Q" name="idNodeA" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_zDWMgIY8EeapBt09BF1v-Q" name="idNodeB" visibility="private">
+      <ownedAttribute xmi:id="_zDWMgIY8EeapBt09BF1v-Q" name="nodeB" visibility="public" isReadOnly="true">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_fu88-4Y3EeapBt09BF1v-Q" name="getLabel">
@@ -92,16 +89,6 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fvZo44Y3EeapBt09BF1v-Q" value="1"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_zH4jsIY7EeapBt09BF1v-Q" name="getNodeA">
-        <ownedParameter xmi:id="_zH4jsYY7EeapBt09BF1v-Q" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_0W4GYIY7EeapBt09BF1v-Q" name="getNodeB">
-        <ownedParameter xmi:id="_0W4GYYY7EeapBt09BF1v-Q" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_fvGt8oY3EeapBt09BF1v-Q" name="Menu">
       <ownedOperation xmi:id="_fvGt84Y3EeapBt09BF1v-Q" name="getInput">
@@ -121,8 +108,6 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_fvGt94Y3EeapBt09BF1v-Q" name="MultigraphIn">
-      <ownedAttribute xmi:id="_JrQNgIY9EeapBt09BF1v-Q" name="nodeList" visibility="private" type="_fvjZ4IY3EeapBt09BF1v-Q"/>
-      <ownedAttribute xmi:id="_NEidgIY9EeapBt09BF1v-Q" name="edgeList" visibility="private" type="_fvjZ4IY3EeapBt09BF1v-Q"/>
       <ownedOperation xmi:id="_fvGt-IY3EeapBt09BF1v-Q" name="getNode">
         <ownedParameter xmi:id="_fvGt-YY3EeapBt09BF1v-Q" name="name">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -178,12 +163,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_fvGuC4Y3EeapBt09BF1v-Q" name="Node"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_fvGuDIY3EeapBt09BF1v-Q" name="NodeIn">
-      <ownedAttribute xmi:id="_CcDb4IY9EeapBt09BF1v-Q" name="id" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:id="_C-xucIY9EeapBt09BF1v-Q" name="name" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
       <ownedOperation xmi:id="_fvGuDYY3EeapBt09BF1v-Q" name="getID">
         <ownedParameter xmi:id="_fvGuDoY3EeapBt09BF1v-Q" name="name">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -233,8 +212,9 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_7ZrXkIY3EeapBt09BF1v-Q" name="" memberEnd="_7ZrXkYY3EeapBt09BF1v-Q _7Z1IkoY3EeapBt09BF1v-Q">
-      <ownedEnd xmi:id="_7Z1IkoY3EeapBt09BF1v-Q" name="" type="_fu88-oY3EeapBt09BF1v-Q" aggregation="composite" association="_7ZrXkIY3EeapBt09BF1v-Q">
+    <packagedElement xmi:type="uml:Association" xmi:id="_7ZrXkIY3EeapBt09BF1v-Q" name="" memberEnd="_7ZrXkYY3EeapBt09BF1v-Q _7Z1IkoY3EeapBt09BF1v-Q" navigableOwnedEnd="_7Z1IkoY3EeapBt09BF1v-Q">
+      <ownedEnd xmi:id="_7Z1IkoY3EeapBt09BF1v-Q" name="EdgeIn" type="_fu88-oY3EeapBt09BF1v-Q" aggregation="composite" association="_7ZrXkIY3EeapBt09BF1v-Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Z2XgQIb4EeaMMs2eJ4YbAw"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7Z1IlIY3EeapBt09BF1v-Q" value="*"/>
       </ownedEnd>
     </packagedElement>

@@ -1,15 +1,15 @@
-import java.util.*;
+import java.util.ArrayList;
 
 public interface MultigraphIn {
 
-public String getNode(String name);
-
-public String getEdge(String name);
-
-public boolean addNode(String id, String name);
-
-public boolean addEdge(String successor, String predecessor, String label);
-
-public boolean isEdge(String nodeA, String nodeB);
-
-}
+   public String getNode(String name);
+   
+   public String getEdge(String name);
+   
+   public boolean addNode(String id, String name);
+   
+   public boolean addEdge(String successor, String predecessor, String label);
+   
+   public boolean isEdge(String nodeA, String nodeB);
+   
+   }
