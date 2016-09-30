@@ -2,11 +2,9 @@ import java.util.ArrayList;
 
 public interface MultigraphIn {
 
-   public String getNode(String name);
+   public String getNodeName(String id);
    
-   public String getEdge(String name);
-   
-   public boolean addNode(String id, String name);
+   public boolean addNode(String id, String nodeID, String nodeName);
    
    public boolean addEdge(String successor, String predecessor, String label);
    
