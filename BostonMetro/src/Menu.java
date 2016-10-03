@@ -13,18 +13,11 @@ public class Menu {
 	   return input;
    }
    
-   public static void main(String args[]) {/*need to change this, just used for testing*/
+   public static void main(String args[]) throws BadFileException, IOException {/*need to change this, just used for testing*/
 		System.out.println("Welcome To The CS308 Group W07 Graph System\n");
 		System.out.print("Enter Numerical Values For Menu Interaction\n");
-		try
-		{
 		    MetroMapParser mmp = new MetroMapParser("");
 		    mmp.generateGraphFromFile();
-		}
-		catch(Exception e)
-		{
-		    e.printStackTrace();
-		}
         boolean exit = false;
 		while(!exit){
 			System.out.println("Options Are:\n 1. Shortest Route\n 2. Search For Stations \n 3. Exit");

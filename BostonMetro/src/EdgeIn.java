@@ -1,6 +1,7 @@
 
 public interface EdgeIn {
 	
+	
 	public String getLabel();
 	
 	public String getNodeA();

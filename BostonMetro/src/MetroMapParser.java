@@ -25,7 +25,7 @@ public class MetroMapParser {
 		    {
 
 	   
-	   		MultigraphIn mGraph= new MultigraphADT();
+	   		MultigraphADT mGraph= new Multigraph();
 	   
 			String line = fileInput.readLine();
 			StringTokenizer st;
