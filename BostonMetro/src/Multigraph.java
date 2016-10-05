@@ -20,7 +20,7 @@ public class Multigraph implements MultigraphADT {
 
 	public String getNodeName(String id) {
 		for (int i = 0; i < nodeList.size(); i++) {
-			if (nodeList.get(i).getID() == id) {
+			if (nodeList.get(i).getID().equals(id)) {
 				return nodeList.get(i).getName();
 			}
 		}
@@ -29,11 +29,13 @@ public class Multigraph implements MultigraphADT {
 
 	public ArrayList<String> getIDFromName(String nodeName) {
 		ArrayList<String> idList = new ArrayList<String>();
+		
 		for (int i = 0; i < nodeList.size(); i++) {
-			if (nodeList.get(i).getName() == nodeName) {
+			if (nodeName.equalsIgnoreCase(nodeList.get(i).getName())) {
 				idList.add(nodeList.get(i).getID());
 			}
 		}
+		
 		return idList;
 	}
 	

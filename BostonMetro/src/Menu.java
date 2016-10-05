@@ -40,7 +40,7 @@ public class Menu {
 
 		System.out.println("Multiple stations have that name. Which of the following stations do you mean?");
 		for (int i = 0; i < idList.size(); i++) {
-			System.out.println("Station ID: " + idList.get(i) + "On line: " + mGraph.getEdgeLabelFromID(stationName));
+			System.out.println("Station ID: " + idList.get(i) + " On line: " + mGraph.getEdgeLabelFromID(idList.get(i)));
 		}
 		while (!idList.contains(stationID)) {
 			System.out.print("Enter the ID of the station you wish to select: ");
@@ -63,9 +63,9 @@ public class Menu {
 		
 		while (!exit) {
 			System.out.println("Options Are:\n 1. Shortest Route\n 2. Search For Stations \n 3. Exit");
+			
 			String userChoice = getInput();
-			switch (userChoice) {
-			case "1":
+			if(userChoice.equals("1")){
 				System.out.println("You have chosen: Shortest Route\n");
 				System.out.println("Please enter the name of the origin station\n");
 				String originID = getValidStation();
@@ -75,18 +75,19 @@ public class Menu {
 				// testing
 				// System.out.println(Multigraph.searchShortestPath("26",
 				// "31"));
-
-			case "2":
+			}
+			else if(userChoice.equals("2")){
 				System.out.println("You have chosen: Search For The Station:\n");
 				System.out.println("Please enter the name of the station you would like searched\n");
 				String stationID = getValidStation();
-				System.out.println("Station " + mGraph.getNodeName(stationID) + " has id: " + stationID + 
-						           "and is on line " + mGraph.getEdgeLabelFromID(stationID));
-			case "3":
+				System.out.println("Name: " + mGraph.getNodeName(stationID) + "\nID  : " + stationID + 
+						           "\nLine: " + mGraph.getEdgeLabelFromID(stationID));
+			}
+			else if(userChoice.equals("3")){
 				System.out.println("night xxx");
-				System.exit(0);
-
-			default:
+				exit = true;
+			}
+			else{
 				System.out.print("Your input was invalid\n Please try again bby!\n");
 			}
 		}

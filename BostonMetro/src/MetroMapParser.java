@@ -74,7 +74,6 @@ public class MetroMapParser {
 				inboundID = st.nextToken();
 				EdgeIn metroLine = new Edge(lineName, outboundID, inboundID);
 				mGraph.addEdge(lineName, outboundID, inboundID);
-				mGraph.addEdge(lineName, inboundID, outboundID);
 			}
 
 			line = fileInput.readLine();
