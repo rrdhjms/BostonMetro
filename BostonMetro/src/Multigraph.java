@@ -3,21 +3,25 @@ import java.util.HashMap;
 
 public class Multigraph implements MultigraphADT {
 
-	private HashMap<String, Node> nodeMap;
+	private ArrayList<Node> nodeList;
 	private ArrayList<Edge> edgeList;
 	
 	public Multigraph(){
-		nodeMap = new HashMap<String, Node>();
+		nodeList = new ArrayList<Node>();
 		edgeList = new ArrayList<Edge>();
 	}
 	
 	public String getNodeName(String id) {
-		
-		return ((Node) nodeMap.get(id)).getName();
+		for(int i = 0; i < nodeList.size(); i++){
+			if(nodeList.get(i).getID() == id){
+				return nodeList.get(i).getName();
+			}
+		}
+		return null;
 	}
 
 	public boolean addNode(String nodeID, String nodeName) {
-		nodeMap.put(nodeID, new Node(nodeID,nodeName));
+		nodeList.add(new Node(nodeID,nodeName));
 		return true;
 	}
 
@@ -40,8 +44,20 @@ public class Multigraph implements MultigraphADT {
 		return false;
 	}
 	
+	public boolean validateInput(String origin, String destination) {
+		for(int i = 0; i < nodeList.size(); i++){
+			if (nodeList.get(i).getName().equalsIgnoreCase(origin)){
+				
+			}
+		}
+		return false;
+	}
 	
-		public ArrayList<String> searchShortestPath(String originID, String destinationID){
+	
+	
+//-------------------------------Searching Happens below -----------------------------------------------------
+	
+		private ArrayList<String> searchShortestPath(String originID, String destinationID){
 
 		  ArrayList<ArrayList<String>> routes = new ArrayList<ArrayList<String>>();
 		  ArrayList<String> visited = new ArrayList<String>();
@@ -103,7 +119,7 @@ public class Multigraph implements MultigraphADT {
 		return routes.get(foundIndex);
 	}
 		 
-	public String howManyEdges(String nodeID){
+	private String howManyEdges(String nodeID){
 		  int outDegree = 0;
 		  for (int i = 0; i<edgeList.size();i++){
 		   if (edgeList.get(i).getNodeA().equals(nodeID)){
@@ -116,7 +132,7 @@ public class Multigraph implements MultigraphADT {
 		  return Integer.toString(outDegree);
 	 }
 	
-	public ArrayList<String> getNextNodeIDs(String originID){
+	private ArrayList<String> getNextNodeIDs(String originID){
 		ArrayList<String> nextNodeIDs = new ArrayList<String>();
 		for (int i = 0; i<edgeList.size();i++){
 			   if (edgeList.get(i).getNodeA().equals(originID)){

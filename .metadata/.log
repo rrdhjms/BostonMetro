@@ -678,3 +678,419 @@ org.eclipse.core.runtime.CoreException: Plug-in at 'C:\Program Files\eclipse\plu
 !MESSAGE No element found for Declaration in Edge.java @293.
 !SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:26:47.971
 !MESSAGE No element found for Declaration in Edge.java @345.
+!SESSION 2016-10-05 13:38:43.902 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_92
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-10-05 13:38:56.934
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.launchbar.core 2 0 2016-10-05 13:38:57.872
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.arduino.core.descriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2016-10-05 13:38:57.872
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.qt.core.launchDescriptorType
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-10-05 13:39:07.372
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\byb14175'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.pde.core 4 0 2016-10-05 13:39:11.263
+!MESSAGE Plug-in at 'C:\Program Files\eclipse\plugins\com.stateofflow.eclipse.metrics_3.14.1.201104282140' does not have an OSGi bundle manifest. To use a 2.0 style plug-in you must install the plug-in converter service. Go to Help > Install New Software and install 'Eclipse 2.0 Style Plugin Support' from 'The Eclipse Project Updates' software site.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in at 'C:\Program Files\eclipse\plugins\com.stateofflow.eclipse.metrics_3.14.1.201104282140' does not have an OSGi bundle manifest. To use a 2.0 style plug-in you must install the plug-in converter service. Go to Help > Install New Software and install 'Eclipse 2.0 Style Plugin Support' from 'The Eclipse Project Updates' software site.
+	at org.eclipse.pde.internal.core.util.ManifestUtils.loadPluginXML(ManifestUtils.java:305)
+	at org.eclipse.pde.internal.core.util.ManifestUtils.loadManifest(ManifestUtils.java:136)
+	at org.eclipse.pde.core.target.TargetBundle.initialize(TargetBundle.java:154)
+	at org.eclipse.pde.core.target.TargetBundle.<init>(TargetBundle.java:71)
+	at org.eclipse.pde.internal.core.target.ProfileBundleContainer.resolvePlatformXML(ProfileBundleContainer.java:187)
+	at org.eclipse.pde.internal.core.target.ProfileBundleContainer.resolveBundles(ProfileBundleContainer.java:108)
+	at org.eclipse.pde.internal.core.target.AbstractBundleContainer.resolve(AbstractBundleContainer.java:81)
+	at org.eclipse.pde.internal.core.target.TargetDefinition.resolve(TargetDefinition.java:282)
+	at org.eclipse.pde.internal.core.TargetPlatformHelper.getWorkspaceTargetResolved(TargetPlatformHelper.java:487)
+	at org.eclipse.pde.internal.core.PluginModelManager.getExternalBundles(PluginModelManager.java:624)
+	at org.eclipse.pde.internal.core.PluginModelManager.initializeTable(PluginModelManager.java:544)
+	at org.eclipse.pde.internal.core.PluginModelManager.getWorkspaceModels(PluginModelManager.java:1138)
+	at org.eclipse.pde.core.plugin.PluginRegistry.getWorkspaceModels(PluginRegistry.java:209)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getModels(PDEExtensionRegistry.java:63)
+	at org.eclipse.pde.internal.core.PDERegistryStrategy.getContributionsTimestamp(PDERegistryStrategy.java:302)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.<init>(ExtensionRegistry.java:682)
+	at org.eclipse.core.runtime.RegistryFactory.createRegistry(RegistryFactory.java:58)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.createRegistry(PDEExtensionRegistry.java:89)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getRegistry(PDEExtensionRegistry.java:81)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.getExtensionPoint(PDEExtensionRegistry.java:138)
+	at org.eclipse.pde.internal.core.PDEExtensionRegistry.findExtensionPoint(PDEExtensionRegistry.java:155)
+	at com.yattasolutions.obf.pa.ar.awo(SourceFile:53)
+	at com.yattasolutions.obf.pa.ar.getExtensions(SourceFile:61)
+	at com.yattasolutions.obf.mj.d.readRegistry(SourceFile:139)
+	at com.yattasolutions.obf.mj.d.initialize(SourceFile:75)
+	at com.yattasolutions.obf.mj.d.ami(SourceFile:55)
+	at com.yattasolutions.obf.pa.aa$1.<init>(SourceFile:180)
+	at com.yattasolutions.obf.pa.aa.getInternalURIMap(SourceFile:177)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.getURIMap(ExtensibleURIConverterImpl.java:457)
+	at org.eclipse.uml2.uml.util.UMLUtil.init(UMLUtil.java:13174)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.yattasolutions.obf.pa.m$i.a(SourceFile:243)
+	at com.yattasolutions.obf.pa.m$i.s(SourceFile:215)
+	at com.yattasolutions.obf.pa.m.p(SourceFile:1119)
+	at com.yattasolutions.obf.nx.m.createEditingDomain(SourceFile:105)
+	at com.yattasolutions.obf.nx.m.createEditingDomain(SourceFile:91)
+	at org.eclipse.emf.workspace.WorkspaceEditingDomainFactory.createEditingDomain(WorkspaceEditingDomainFactory.java:78)
+	at org.eclipse.emf.transaction.impl.EditingDomainManager.createEditingDomain(EditingDomainManager.java:105)
+	at org.eclipse.emf.transaction.impl.TransactionalEditingDomainImpl$RegistryImpl.getEditingDomain(TransactionalEditingDomainImpl.java:1238)
+	at com.yattasolutions.obf.nx.k$a.<clinit>(SourceFile:388)
+	at com.yattasolutions.obf.nx.k.atf(SourceFile:405)
+	at com.yattasolutions.obf.na.c.getResourceSet(SourceFile:1035)
+	at com.yattasolutions.obf.na.c.getPackageRegistry(SourceFile:1117)
+	at com.yattasolutions.obf.ms.a$a.create(SourceFile:40)
+	at com.yattasolutions.obf.jr.f.a(SourceFile:290)
+	at com.yattasolutions.obf.js.a.a(SourceFile:167)
+	at com.yattasolutions.obf.js.b.a(SourceFile:54)
+	at com.yattasolutions.obf.js.e.abO(SourceFile:50)
+	at com.yattasolutions.obf.js.e.parse(SourceFile:1)
+	at com.yattasolutions.obf.js.a.abH(SourceFile:43)
+	at com.yattasolutions.obf.js.g.by(SourceFile:96)
+	at com.yattasolutions.obf.js.g.bz(SourceFile:283)
+	at com.yattasolutions.obf.jr.g.f(SourceFile:150)
+	at com.yattasolutions.obf.ms.b.getFeatureAccessModule(SourceFile:68)
+	at com.yattasolutions.obf.mj.b.getFeatureAccessModule(SourceFile:291)
+	at com.yattasolutions.obf.ci.d.a(SourceFile:59)
+	at com.yattasolutions.obf.ci.d.<init>(SourceFile:31)
+	at com.yattasolutions.obf.ci.b.<init>(SourceFile:21)
+	at com.yattasolutions.obf.cj.e.<init>(SourceFile:163)
+	at com.yattasolutions.obf.ag.c.cL(SourceFile:109)
+	at com.yattasolutions.obf.ag.a.cz(SourceFile:568)
+	at com.yattasolutions.obf.ag.a.cy(SourceFile:551)
+	at com.yattasolutions.obf.ag.f.<init>(SourceFile:57)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:184)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at com.yattasolutions.obf.ag.a.cq(SourceFile:282)
+	at com.yattasolutions.obf.ag.a.cp(SourceFile:260)
+	at com.yattasolutions.obf.ag.a.cA(SourceFile:630)
+	at com.yattasolutions.obf.da.h$1.run(SourceFile:62)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.pde.core 4 201 2016-10-05 13:39:11.265
+!MESSAGE Plug-in at 'C:\Program Files\eclipse\plugins\com.stateofflow.eclipse.metrics_3.14.1.201104282140' does not have an OSGi bundle manifest. To use a 2.0 style plug-in you must install the plug-in converter service. Go to Help > Install New Software and install 'Eclipse 2.0 Style Plugin Support' from 'The Eclipse Project Updates' software site.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:39:28.971
+!MESSAGE Found code details, but the model was modified since the code details have been stored.
+!SUBENTRY 1 com.yattasolutions.umllab 2 0 2016-10-05 13:39:28.971
+!MESSAGE Found code details, but the model was modified since the code details have been stored.
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2016-10-05 13:46:02.299
+!MESSAGE Project facet jst.ejb has not been defined. It is used in plugin org.eclipse.jst.j2ee.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:46:05.277
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 13:46:05.277
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 13:46:05.278
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:05.278
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:05.278
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:05.279
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:05.284
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:05.284
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:05.284
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:46:40.813
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 13:46:40.813
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 13:46:40.813
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:40.813
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:40.813
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:40.813
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:40.813
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:40.813
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:46:40.813
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:47:03.934
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 13:47:03.934
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 13:47:03.934
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:47:03.934
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:47:03.934
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:47:03.934
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:47:03.934
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:47:03.934
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:47:03.934
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:48:40.720
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 13:48:40.720
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 13:48:40.720
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:40.720
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:40.720
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:40.720
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:40.720
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:40.720
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:40.720
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY org.eclipse.jface.text 2 0 2016-10-05 13:48:47.145
+!MESSAGE Duplicate template id: 'org.apache.directory.studio.aciitemeditor.templates.item'
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:48:51.116
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 13:48:51.116
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 13:48:51.116
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:51.116
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:51.116
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:51.116
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:51.116
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:51.116
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:48:51.116
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:57:30.902
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 13:57:30.902
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 13:57:30.902
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:30.902
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:30.902
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:30.902
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:30.902
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:30.902
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:30.902
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:57:43.769
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 13:57:43.769
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 13:57:43.769
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:43.769
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:43.769
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:43.769
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:43.769
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:43.769
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:57:43.769
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:59:35.379
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 13:59:35.379
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 13:59:35.379
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:35.379
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:35.379
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:35.379
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:35.379
+!MESSAGE No element found for Declaration in Node.java @195.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:35.379
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:35.379
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:35.379
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 13:59:49.572
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 13:59:49.572
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 13:59:49.572
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:49.572
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:49.572
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:49.572
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:49.572
+!MESSAGE No element found for Declaration in Node.java @195.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:49.572
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:49.572
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 13:59:49.572
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 14:01:47.580
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 14:01:47.580
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 14:01:47.580
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:01:47.580
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:01:47.580
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:01:47.580
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:01:47.580
+!MESSAGE No element found for Declaration in Node.java @195.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:01:47.580
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:01:47.580
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:01:47.580
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 14:02:02.880
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 14:02:02.880
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 14:02:02.880
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:02.880
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:02.880
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:02.880
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:02.880
+!MESSAGE No element found for Declaration in Node.java @195.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:02.880
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:02.880
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:02.880
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 14:02:29.266
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 14:02:29.266
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 14:02:29.266
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:29.266
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:29.266
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:29.266
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:29.266
+!MESSAGE No element found for Declaration in Node.java @195.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:29.266
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:29.266
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:29.266
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 14:02:34.814
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 14:02:34.814
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 14:02:34.814
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:34.814
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:34.814
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:34.814
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:34.814
+!MESSAGE No element found for Declaration in Node.java @195.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:34.814
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:34.814
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:02:34.814
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 14:03:07.074
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 14:03:07.074
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 14:03:07.074
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:03:07.074
+!MESSAGE No element found for Declaration in MultigraphADT.java @48.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:03:07.074
+!MESSAGE No element found for Declaration in Node.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:03:07.074
+!MESSAGE No element found for Declaration in Edge.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:03:07.074
+!MESSAGE No element found for Declaration in Node.java @195.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:03:07.074
+!MESSAGE No element found for Declaration in Node.java @241.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:03:07.074
+!MESSAGE No element found for Declaration in Edge.java @293.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:03:07.074
+!MESSAGE No element found for Declaration in Edge.java @345.
+
+!ENTRY com.yattasolutions.codegen.reverse 2 0 2016-10-05 14:13:24.966
+!MESSAGE Finished Round Trip Operation
+!SUBENTRY 1 com.yattasolutions.codegen 2 0 2016-10-05 14:13:24.966
+!MESSAGE Compared generated code with originally reverse engineered code successfully.
+!SUBENTRY 2 unknown 2 0 2016-10-05 14:13:24.966
+!MESSAGE OK
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:13:24.966
+!MESSAGE No element found for Declaration in BadFileException.java @15.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:13:24.966
+!MESSAGE No element found for Declaration in MetroMapParser.java @139.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:13:24.966
+!MESSAGE No element found for Declaration in MetroMapParser.java @636.
+!SUBENTRY 3 com.yattasolutions.codegen.reverse 2 85 2016-10-05 14:13:24.966
+!MESSAGE No element found for Declaration in Node.java @15.
