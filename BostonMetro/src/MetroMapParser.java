@@ -20,14 +20,14 @@ public class MetroMapParser {
 		System.out.println("java ex3.MetroMapParser <bostonmetro.txt>");
    }
    
-   public  void  generateGraphFromFile()
+   public  MultigraphADT generateGraphFromFile()
 			throws IOException, BadFileException
 		    {
 
 	   
 	   		MultigraphADT mGraph= new Multigraph();
 	   
-			String line = fileInput.readLine();
+			String line = fileInput.readLine().toLowerCase();
 			StringTokenizer st;
 			String stationID;
 			String stationName;
@@ -88,7 +88,7 @@ public class MetroMapParser {
 			    		
 			    line = fileInput.readLine();
 			}
-			
+				return mGraph;
 		       
 		    }
 

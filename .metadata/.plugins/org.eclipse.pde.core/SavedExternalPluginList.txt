@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # List of external plug-in models previously loaded. Timestamp: 1475671152400
+=======
+# List of external plug-in models previously loaded. Timestamp: 1475671024871
+>>>>>>> 253fc6cb8ff27646aae18a29d60f2c0988b9b09b
 file:/C:/Program Files/eclipse/plugins/org.eclipse.emf.common_2.12.0.v20160420-0247.jar
 file:/C:/Program Files/eclipse/plugins/org.eclipse.cdt.launch_9.0.0.201606062011.jar
 file:/C:/Program Files/eclipse/plugins/org.eclipse.remote.jsch.core_1.0.0.201605242106.jar

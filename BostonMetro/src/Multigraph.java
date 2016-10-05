@@ -122,12 +122,12 @@ public class Multigraph implements MultigraphADT {
 	private String howManyEdges(String nodeID){
 		  int outDegree = 0;
 		  for (int i = 0; i<edgeList.size();i++){
-		   if (edgeList.get(i).getNodeA().equals(nodeID)){
-		    outDegree++;
-		   }
-		   if (edgeList.get(i).getNodeB().equals(nodeID)){
-		    outDegree++;
-		   }
+			   if (edgeList.get(i).getNodeA().equals(nodeID)){
+				   outDegree++;
+			   }
+			   if (edgeList.get(i).getNodeB().equals(nodeID)){
+				   outDegree++;
+			   }
 		  }
 		  return Integer.toString(outDegree);
 	 }
