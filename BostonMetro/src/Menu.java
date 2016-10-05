@@ -18,6 +18,7 @@ public class Menu {
 		System.out.print("Enter Numerical Values For Menu Interaction\n");
 		    MetroMapParser mmp = new MetroMapParser("");
 		    mmp.generateGraphFromFile();
+		    mmp.usage();
         boolean exit = false;
 		while(!exit){
 			System.out.println("Options Are:\n 1. Shortest Route\n 2. Search For Stations \n 3. Exit");

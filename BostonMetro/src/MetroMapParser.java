@@ -4,105 +4,83 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class MetroMapParser {
-   
+
 	private BufferedReader fileInput;
-   
-   public MetroMapParser(String filename) throws IOException 
-   {   
-		//a buffered reader reads line by line, returning null when file is done
-	   	filename= "bostonmetro.txt";
-		fileInput = new BufferedReader(new FileReader(filename));		
-   }
-   
-   public static void usage() 
-   {
-	 //prints a usage message to System.out
+
+	public MetroMapParser(String filename) throws IOException {
+		// a buffered reader reads line by line, returning null when file is
+		// done
+		filename = "bostonmetro.txt";
+		fileInput = new BufferedReader(new FileReader(filename));
+	}
+
+	public static void usage() {
+		// prints a usage message to System.out
 		System.out.println("java ex3.MetroMapParser <bostonmetro.txt>");
-   }
-   
-   public  MultigraphADT generateGraphFromFile()
-			throws IOException, BadFileException
-		    {
+	}
 
-	   
-	   		MultigraphADT mGraph= new Multigraph();
-	   
-			String line = fileInput.readLine().toLowerCase();
-			StringTokenizer st;
-			String stationID;
-			String stationName;
-			String lineName;
-			String outboundID, inboundID;
-			
-			while(line != null)
-			{
+	public MultigraphADT generateGraphFromFile() throws IOException, BadFileException {
 
-			    st = new StringTokenizer(line);
+		MultigraphADT mGraph = new Multigraph();
 
-			    //We want to handle empty lines effectively, we just ignore them!
-			    if(!st.hasMoreTokens())
-			    {
+		String line = fileInput.readLine().toLowerCase();
+		StringTokenizer st;
+		String stationID;
+		String stationName;
+		String lineName;
+		String outboundID, inboundID;
+
+		while (line != null) {
+
+			st = new StringTokenizer(line);
+
+			// We want to handle empty lines effectively, we just ignore them!
+			if (!st.hasMoreTokens()) {
 				line = fileInput.readLine();
 				continue;
-			    }
-			    
-			    //from the grammar, we know that the Station ID is the first token on the line
-			    stationID = st.nextToken();
-			    
-			    if(!st.hasMoreTokens())
-			    {
+			}
+
+			// from the grammar, we know that the Station ID is the first token
+			// on the line
+			stationID = st.nextToken();
+
+			if (!st.hasMoreTokens()) {
 				throw new BadFileException("no station name");
-			    }
+			}
 
-			    //from the grammar, we know that the Station Name is the second token on the line.
-			    stationName = st.nextToken();
-			    
-			    if(!st.hasMoreTokens())
-			    {
+			// from the grammar, we know that the Station Name is the second
+			// token on the line.
+			stationName = st.nextToken();
+
+			if (!st.hasMoreTokens()) {
 				throw new BadFileException("station is on no lines");
-			    }
-			    NodeIn metroStation = new Node(stationID,stationName);
-			    mGraph.addNode(stationID,stationName);
+			}
+			NodeIn metroStation = new Node(stationID, stationName);
+			mGraph.addNode(stationID, stationName);
 
-			    while(st.hasMoreTokens())
-			    {
+			while (st.hasMoreTokens()) {
 				lineName = st.nextToken();
-				
-				if(!st.hasMoreTokens())
-				{
-				    throw new BadFileException("poorly formatted line info");
+
+				if (!st.hasMoreTokens()) {
+					throw new BadFileException("poorly formatted line info");
 				}
 
 				outboundID = st.nextToken();
-				
-				if(!st.hasMoreTokens())
-				{
-				    throw new BadFileException("poorly formatted adjacent stations");
+
+				if (!st.hasMoreTokens()) {
+					throw new BadFileException("poorly formatted adjacent stations");
 				}
 
-				inboundID = st.nextToken();			
-				EdgeIn metroLine= new Edge(lineName,outboundID,inboundID);
-				mGraph.addEdge(lineName,outboundID, inboundID);
-				mGraph.addEdge(lineName,inboundID, outboundID);
-			    }
-			    		
-			    line = fileInput.readLine();
+				inboundID = st.nextToken();
+				EdgeIn metroLine = new Edge(lineName, outboundID, inboundID);
+				mGraph.addEdge(lineName, outboundID, inboundID);
+				mGraph.addEdge(lineName, inboundID, outboundID);
 			}
-				return mGraph;
-		       
-		    }
 
-   
-
-   
-   public static void main(String[] args) {
-	   //wtf is args??
-	   if(args.length != 1)
-		{
-		    usage();
-		    System.exit(0);
+			line = fileInput.readLine();
 		}
-	   
-   }
-   
-   }
+		return mGraph;
+
+	}
+
+}
