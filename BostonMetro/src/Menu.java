@@ -3,53 +3,94 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-	
-   private static Scanner scan; 
-	
-   public static String getInput() {
-	   System.out.println("Please Enter An Input Below:");
-	   scan = new Scanner(System.in);
-	   String input = scan.nextLine().toLowerCase().replaceAll("\\s+", "");
-	   return input;
-   }
-   
-   public static void main(String args[]) throws BadFileException, IOException {/*need to change this, just used for testing*/
+
+	private static Scanner scan;
+	private static MultigraphADT mGraph;
+
+	public static String getInput() {
+		System.out.println("Please Enter An Input Below:");
+		scan = new Scanner(System.in);
+		String input = scan.nextLine().toLowerCase().replaceAll("\\s+", "");
+		return input;
+	}
+
+	private static String getValidStation() {
+		String station = getInput();
+		String stationID = "";
+		int count;
+		do {
+			count = mGraph.countNodeOccurences(station);
+			if (count == 0) {
+				System.out.println("Station entered does not Exist, enter new station:");
+				station = getInput();
+			} else if (count > 1) {
+				stationID = clarifyMultipleInput(station, count);
+				count = 1;
+			} else {
+				stationID = "";
+			}
+		} while (count != 1);
+
+		return stationID;
+	}
+
+	private static String clarifyMultipleInput(String station, int stationCount) {
+		ArrayList<Edge> edgeList;
+
+		return null;
+	}
+
+	public static void main(String args[]) throws BadFileException,
+			IOException {/* need to change this, just used for testing */
 		System.out.println("Welcome To The CS308 Group W07 Graph System\n");
 		System.out.print("Enter Numerical Values For Menu Interaction\n");
-		    MetroMapParser mmp = new MetroMapParser("");
-		    mmp.generateGraphFromFile();
-		    mmp.usage();
-        boolean exit = false;
-		while(!exit){
+		MetroMapParser mmp = new MetroMapParser("");
+		mGraph = mmp.generateGraphFromFile();
+		mmp.usage();
+		boolean exit = false;
+		while (!exit) {
 			System.out.println("Options Are:\n 1. Shortest Route\n 2. Search For Stations \n 3. Exit");
 			String userChoice = getInput();
-			switch(userChoice){
+			switch (userChoice) {
 			case "1":
 				System.out.println("You have chosen: Shortest Route\n");
 				System.out.println("Please enter the name of the origin station\n");
-				String origin = getInput();
+				String originID = getValidStation();
 				System.out.println("Please enter the name of the destination station\n");
-				String destination = getInput();
-				/****rekt ass search happens here****/
-				// testing System.out.println(Multigraph.searchShortestPath("26", "31"));
-				
+				String destinationID = getValidStation();
+				/**** rekt ass search happens here ****/
+				// testing
+				// System.out.println(Multigraph.searchShortestPath("26",
+				// "31"));
+
 			case "2":
 				System.out.println("You have chosen: Search For The Station:\n");
 				System.out.println("Please enter the name of the station you would like searched\n");
 				String searchStation = getInput();
-			case "3": 
+			case "3":
 				System.out.println("night xxx");
 				System.exit(0);
-				
+
 			default:
-					System.out.print("Your input was invalid\n Please try again bby!\n");
+				System.out.print("Your input was invalid\n Please try again bby!\n");
 			}
 		}
-   }
-   
-   public void displayOutput(ArrayList <Node> list) {
-      // TODO implement this operation
-      throw new UnsupportedOperationException("not implemented");
-   }
-   
-   }
+	}
+
+	public void displayOutput(ArrayList<String> list) {
+		for (int i = 0; i < list.size(); i++) {
+			String currentLine = mGraph.isEdge(list.get(i), list.get(i + 1));
+			String nextLine = mGraph.isEdge(list.get(i + 1), list.get(i + 2));
+			if (!currentLine.equals(nextLine)) {
+				System.out.println("Change at " + mGraph.getNodeName(list.get(i + 1)) + "to " + nextLine + "towards "
+						+ mGraph.getNodeName(list.get(i + 2)));
+
+			} else {
+				System.out.println(mGraph.getNodeName(list.get(i)) + currentLine + " Line towards"
+						+ mGraph.getNodeName(list.get(i + 1)));
+			}
+
+		}
+	}
+
+}

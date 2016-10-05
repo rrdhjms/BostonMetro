@@ -8,6 +8,8 @@ public interface MultigraphADT {
    
    public boolean addEdge( String label, String successor, String predecessor);
    
-   public boolean isEdge(String nodeA, String nodeB);
+   public String isEdge(String nodeA, String nodeB);
+   
+   public int countNodeOccurences(String nodeName);
    
    }

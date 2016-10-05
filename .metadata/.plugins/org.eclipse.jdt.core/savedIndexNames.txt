@@ -1,34 +1,20 @@
-INDEX VERSION 1.129+H:\cs308\BostonMetro\.metadata\.plugins\org.eclipse.jdt.core
-1559060713.index
-3305426765.index
+INDEX VERSION 1.129+H:\workspace\BostonMetro\.metadata\.plugins\org.eclipse.jdt.core
 483659826.index
-<<<<<<< HEAD
-1571434179.index
+2101289109.index
 3305426765.index
 3897901669.index
 1559060713.index
-=======
-3566541198.index
-4203653800.index
-3234117647.index
-3509523518.index
->>>>>>> 253fc6cb8ff27646aae18a29d60f2c0988b9b09b
 2531666063.index
+630857861.index
+3752326370.index
+3234117647.index
 1656417267.index
-2899712255.index
+3566541198.index
 1753522414.index
+2899712255.index
+2324149168.index
 2448071419.index
-<<<<<<< HEAD
 4203653800.index
 1225809654.index
 3509523518.index
-2101289109.index
-=======
-3897901669.index
-630857861.index
-2101289109.index
-1225809654.index
-3752326370.index
 1571434179.index
-2324149168.index
->>>>>>> 253fc6cb8ff27646aae18a29d60f2c0988b9b09b
