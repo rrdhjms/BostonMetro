@@ -49,60 +49,53 @@ public class Multigraph implements MultigraphADT {
 		  int foundIndex = 0;
 		  
 		  for (int i = 0; i<edgeList.size();i++){
-		   if (edgeList.get(i).getNodeA().equals(originID)){
-		    routes.add(new ArrayList<String>());
-		    routes.get(i).add(originID);
-		    routes.get(i).add(edgeList.get(i).getNodeB());
-		   }
-		   if (edgeList.get(i).getNodeB().equals(originID)){
-		    routes.add(new ArrayList<String>());
-		    routes.get(routes.size()-1).add(originID);
-		    routes.get(routes.size()-1).add(edgeList.get(i).getNodeA());
-		   }
-		  } /*creates a new route for each neighbour node of our source*/
+			   if (edgeList.get(i).getNodeA().equals(originID)){
+			    routes.add(new ArrayList<String>());
+			    routes.get(i).add(originID);
+			    routes.get(i).add(edgeList.get(i).getNodeB());
+			   }
+			   if (edgeList.get(i).getNodeB().equals(originID)){
+			    routes.add(new ArrayList<String>());
+			    routes.get(routes.size()-1).add(originID);
+			    routes.get(routes.size()-1).add(edgeList.get(i).getNodeA());
+			   }
+		  } /*creates a new path for each neighbour node of our source*/
 		  
 		  for (int index = 0; index<routes.size();index++){
-		   if (routes.get(index).get(routes.get(index).size()-1).equals(originID))
-			   found = true;
-		       foundIndex = index;
+			   if (routes.get(index).get(routes.get(index).size()-1).equals(destinationID))
+				   found = true;
+			       foundIndex = index;
 		  }
 		  
 		  while (!found){
 			  /*add the next set of stations another step from origin to our routes*/
 			  for (int k = 0; k<routes.size();k++){
 				  	String currentNodeID = (routes.get(k).get((routes.get(k).size())-1));
-				    if (!visited.contains(currentNodeID)){
-					      if (howManyEdges(currentNodeID)=="4"){
-					      routes.add(new ArrayList<String>());
-					      routes.get(routes.size()-1).addAll(routes.get(k));
-					      routes.get(routes.size()-1).add((currentNodeID));
-					      visited.add(currentNodeID);
-					     }
-					     if (howManyEdges(currentNodeID)=="3"){
-					      routes.add(new ArrayList<String>());
-					      routes.get(routes.size()-1).addAll(routes.get(k));
-					      routes.get(routes.size()-1).add((currentNodeID));
-					      visited.add(currentNodeID);
-					     }
-					     if (howManyEdges(currentNodeID)=="2"){
-					      routes.add(new ArrayList<String>());
-					      routes.get(routes.size()-1).addAll(routes.get(k));
-					      routes.get(routes.size()-1).add((currentNodeID));
-					      visited.add(currentNodeID);
-					     }
-					     if (howManyEdges(currentNodeID)=="1"){
-					    	 routes.get(k).add(currentNodeID);
-					    	 visited.add(currentNodeID);
-					     }
-				    }  /*need to refactor and generalise this for any number of edges*/
-				    else {
-				     routes.remove(k);
-				     /*our current node is in another route at an earlier stage.
-				      * this might be a viable route, but it's not the shortest one */
+				    int numEdges = Integer.parseInt(howManyEdges(currentNodeID));
+				    ArrayList<String> nextNodes = getNextNodeIDs(currentNodeID);
+				    if (!visited.contains(nextNodes.get(0))){
+				    	routes.get(k).add(nextNodes.get(0));
+				    	visited.add(nextNodes.get(0));
 				    }
-			  }   
+					for (int i = 1; i<numEdges;i++){
+						/*If the current node we're searching has more than 1 edge, make
+				     	a new path to search each one*/
+						String nextNodeID = nextNodes.get(i);
+						if (!visited.contains(nextNodeID)){
+							routes.add(new ArrayList<String>());
+							routes.get(routes.size()-1).addAll(routes.get(k));
+							routes.get(routes.size()-1).add((nextNodeID));
+							visited.add(nextNodeID);
+						}
+						else {
+						     routes.remove(k);
+						     /*else the next node is in another path at an earlier stage, or we've 
+						      * reached the end of the line and the only option is to go backwards.*/
+						}
+					} /*end of for*/
+			}   
 			for (int index = 0; index<routes.size();index++){
-				if (routes.get(index).get(routes.get(index).size()-1).equals(originID))
+				if (routes.get(index).get(routes.get(index).size()-1).equals(destinationID))
 				found = true;
 				foundIndex = index;
 			}
@@ -123,6 +116,17 @@ public class Multigraph implements MultigraphADT {
 		  return Integer.toString(outDegree);
 	 }
 	
-
+	public ArrayList<String> getNextNodeIDs(String originID){
+		ArrayList<String> nextNodeIDs = new ArrayList<String>();
+		for (int i = 0; i<edgeList.size();i++){
+			   if (edgeList.get(i).getNodeA().equals(originID)){
+			    nextNodeIDs.add(edgeList.get(i).getNodeB());
+			   }
+			   if (edgeList.get(i).getNodeB().equals(originID)){
+				   nextNodeIDs.add(edgeList.get(i).getNodeB());
+			   }
+		  }
+		return nextNodeIDs;
+	}
 
 }

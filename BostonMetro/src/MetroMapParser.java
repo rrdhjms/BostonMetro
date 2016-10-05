@@ -61,7 +61,7 @@ public class MetroMapParser {
 			    {
 				throw new BadFileException("station is on no lines");
 			    }
-			    NodeIn metroStation= new Node(stationID,stationName);
+			    NodeIn metroStation = new Node(stationID,stationName);
 			    mGraph.addNode(stationID,stationName);
 
 			    while(st.hasMoreTokens())

@@ -30,6 +30,7 @@ public class Menu {
 				System.out.println("Please enter the name of the destination station");
 				String destination = getInput();
 				/****rekt ass search happens here****/
+				// testing System.out.println(Multigraph.searchShortestPath("26", "31"));
 				
 			case "2":
 				System.out.println("You have chosen: Search For The Station:");
