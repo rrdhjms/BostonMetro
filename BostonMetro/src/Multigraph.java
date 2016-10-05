@@ -36,6 +36,16 @@ public class Multigraph implements MultigraphADT {
 		}
 		return idList;
 	}
+	
+	//Assumes that all edges connecting to the node with id nodeID will have the same label.
+	public String getEdgeLabelFromID(String nodeID){
+		for(int i = 0; i < edgeList.size(); i++){
+			if(edgeList.get(i).getNodeA().equals(nodeID) || edgeList.get(i).getNodeB().equals(nodeID)){
+				return edgeList.get(i).getLabel();
+			}
+		}
+		return null;
+	}
 
 	public boolean addNode(String nodeID, String nodeName) {
 		nodeList.add(new Node(nodeID, nodeName));

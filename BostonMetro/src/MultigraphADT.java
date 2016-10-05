@@ -11,5 +11,9 @@ public interface MultigraphADT {
    public String isEdge(String nodeA, String nodeB);
    
    public int countNodeOccurences(String nodeName);
+
+   public ArrayList<String> getIDFromName(String stationName);
+   
+   public String getEdgeLabelFromID(String nodeID);
    
    }

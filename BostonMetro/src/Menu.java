@@ -15,29 +15,41 @@ public class Menu {
 	}
 
 	private static String getValidStation() {
-		String station = getInput();
-		String stationID = "";
+		String stationName = getInput();
+		String stationID = null;
 		int count;
+
 		do {
-			count = mGraph.countNodeOccurences(station);
+			count = mGraph.countNodeOccurences(stationName);
 			if (count == 0) {
-				System.out.println("Station entered does not Exist, enter new station:");
-				station = getInput();
+				System.out.print("Station entered does not Exist, enter new station: ");
+				stationName = getInput();
 			} else if (count > 1) {
-				stationID = clarifyMultipleInput(station, count);
-				count = 1;
+				stationID = clarifyMultipleInput(stationName);
 			} else {
-				stationID = "";
+				stationID = mGraph.getIDFromName(stationName).get(0);
 			}
-		} while (count != 1);
+		} while (count == 0);
 
 		return stationID;
 	}
 
-	private static String clarifyMultipleInput(String station, int stationCount) {
-		ArrayList<Edge> edgeList;
+	private static String clarifyMultipleInput(String stationName) {
+		ArrayList<String> idList = mGraph.getIDFromName(stationName);
+		String stationID = "";
 
-		return null;
+		System.out.println("Multiple stations have that name. Which of the following stations do you mean?");
+		for (int i = 0; i < idList.size(); i++) {
+			System.out.println("Station ID: " + idList.get(i) + "On line: " + mGraph.getEdgeLabelFromID(stationName));
+		}
+		while (!idList.contains(stationID)) {
+			System.out.print("Enter the ID of the station you wish to select: ");
+			stationID = getInput();
+			if (!idList.contains(stationID))
+				System.out.println("Not a valid ID from the list above.");
+		}
+
+		return stationID;
 	}
 
 	public static void main(String args[]) throws BadFileException,
@@ -46,8 +58,9 @@ public class Menu {
 		System.out.print("Enter Numerical Values For Menu Interaction\n");
 		MetroMapParser mmp = new MetroMapParser("");
 		mGraph = mmp.generateGraphFromFile();
-		mmp.usage();
+		MetroMapParser.usage();
 		boolean exit = false;
+		
 		while (!exit) {
 			System.out.println("Options Are:\n 1. Shortest Route\n 2. Search For Stations \n 3. Exit");
 			String userChoice = getInput();
@@ -66,7 +79,9 @@ public class Menu {
 			case "2":
 				System.out.println("You have chosen: Search For The Station:\n");
 				System.out.println("Please enter the name of the station you would like searched\n");
-				String searchStation = getInput();
+				String stationID = getValidStation();
+				System.out.println("Station " + mGraph.getNodeName(stationID) + " has id: " + stationID + 
+						           "and is on line " + mGraph.getEdgeLabelFromID(stationID));
 			case "3":
 				System.out.println("night xxx");
 				System.exit(0);
