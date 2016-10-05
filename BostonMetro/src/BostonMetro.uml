@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_OFdMEIlrEea0XdHMBLZYYA" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_OFdMEYlrEea0XdHMBLZYYA" source="codegen">
         <details xmi:id="_OFdMEolrEea0XdHMBLZYYA" key="codegenDirectory" value="/BostonMetro/src"/>
-        <details xmi:id="_OQhzoIlrEea0XdHMBLZYYA" key="AssociatedSourceCode" value="/BostonMetro/src/BadFileException.java;805513210/1;/BostonMetro/src/Edge.java;3130608593/1;/BostonMetro/src/EdgeIn.java;1155569908/1;/BostonMetro/src/Menu.java;2575619441/1;/BostonMetro/src/MetroMapParser.java;904253087/1;/BostonMetro/src/Multigraph.java;1699529328/1;/BostonMetro/src/MultigraphADT.java;2935539330/1;/BostonMetro/src/Node.java;785275553/1;/BostonMetro/src/NodeIn.java;488530426/1;"/>
+        <details xmi:id="_OQhzoIlrEea0XdHMBLZYYA" key="AssociatedSourceCode" value="/BostonMetro/src/BadFileException.java;805513210/1;/BostonMetro/src/Edge.java;3130608593/1;/BostonMetro/src/EdgeIn.java;1155569908/1;/BostonMetro/src/Menu.java;824541824/1;/BostonMetro/src/MetroMapParser.java;1523459692/1;/BostonMetro/src/Multigraph.java;4134955464/1;/BostonMetro/src/MultigraphADT.java;2935539330/1;/BostonMetro/src/Node.java;785275553/1;/BostonMetro/src/NodeIn.java;488530426/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_ONDo4IlrEea0XdHMBLZYYA">
@@ -224,10 +224,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ONKWkolrEea0XdHMBLZYYA" name="Menu">
       <ownedAttribute xmi:id="_OOJ1EIlrEea0XdHMBLZYYA" name="scan" visibility="private" isStatic="true" type="_OOAEE4lrEea0XdHMBLZYYA" association="_OOP7sIlrEea0XdHMBLZYYA"/>
-      <ownedAttribute xmi:id="_FZj2IYlvEea0XdHMBLZYYA" name="metroMapParser" type="_ONMy0IlrEea0XdHMBLZYYA" association="_FZj2IIlvEea0XdHMBLZYYA">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FZj2IolvEea0XdHMBLZYYA"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FZj2I4lvEea0XdHMBLZYYA" value="1"/>
-      </ownedAttribute>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OOM4b4lrEea0XdHMBLZYYA" name="getInput" specification="_ONK9oIlrEea0XdHMBLZYYA">
         <ownedParameter xmi:id="_OOM4cIlrEea0XdHMBLZYYA" direction="return">
           <name xsi:nil="true"/>
@@ -236,7 +232,7 @@
         <language>java</language>
         <body>System.out.println(&quot;Please Enter An Input Below:&quot;);&#xD;
 	   scan = new Scanner(System.in);&#xD;
-	   String input = scan.nextLine();&#xD;
+	   String input = scan.nextLine().toLowerCase().replaceAll(&quot;\\s+&quot;, &quot;&quot;);&#xD;
 	   return input;&#xD;
 </body>
       </ownedBehavior>
@@ -256,23 +252,24 @@
 			String userChoice = getInput();&#xD;
 			switch(userChoice){&#xD;
 			case &quot;1&quot;:&#xD;
-				System.out.println(&quot;You have chosen: Shortest Route&quot;);&#xD;
-				System.out.println(&quot;Please enter the name of the origin station&quot;);&#xD;
+				System.out.println(&quot;You have chosen: Shortest Route\n&quot;);&#xD;
+				System.out.println(&quot;Please enter the name of the origin station\n&quot;);&#xD;
 				String origin = getInput();&#xD;
-				System.out.println(&quot;Please enter the name of the destination station&quot;);&#xD;
+				System.out.println(&quot;Please enter the name of the destination station\n&quot;);&#xD;
 				String destination = getInput();&#xD;
 				/****rekt ass search happens here****/&#xD;
+				// testing System.out.println(Multigraph.searchShortestPath(&quot;26&quot;, &quot;31&quot;));&#xD;
 				&#xD;
 			case &quot;2&quot;:&#xD;
-				System.out.println(&quot;You have chosen: Search For The Station:&quot;);&#xD;
-				System.out.println(&quot;Please enter the name of the station you would like searched&quot;);&#xD;
+				System.out.println(&quot;You have chosen: Search For The Station:\n&quot;);&#xD;
+				System.out.println(&quot;Please enter the name of the station you would like searched\n&quot;);&#xD;
 				String searchStation = getInput();&#xD;
 			case &quot;3&quot;: &#xD;
 				System.out.println(&quot;night xxx&quot;);&#xD;
 				System.exit(0);&#xD;
 				&#xD;
 			default:&#xD;
-					System.out.print(&quot;Your input was invalid\n Please try again bby!&quot;);&#xD;
+					System.out.print(&quot;Your input was invalid\n Please try again bby!\n&quot;);&#xD;
 			}&#xD;
 		}&#xD;
 </body>
@@ -294,15 +291,13 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ONMy0IlrEea0XdHMBLZYYA" name="MetroMapParser">
       <ownedAttribute xmi:id="_OOJ1EolrEea0XdHMBLZYYA" name="fileInput" visibility="private" type="_OOBSMIlrEea0XdHMBLZYYA" association="_OOQiwYlrEea0XdHMBLZYYA"/>
-      <ownedAttribute xmi:id="_FZj2JIlvEea0XdHMBLZYYA" name="menu" type="_ONKWkolrEea0XdHMBLZYYA" aggregation="shared" association="_FZj2IIlvEea0XdHMBLZYYA">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FZj2JYlvEea0XdHMBLZYYA"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FZj2JolvEea0XdHMBLZYYA" value="*"/>
-      </ownedAttribute>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OONfcIlrEea0XdHMBLZYYA" name="MetroMapParser" specification="_ONNZ4IlrEea0XdHMBLZYYA">
         <ownedParameter xmi:id="_OONfcYlrEea0XdHMBLZYYA" name="filename">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_OONfcolrEea0XdHMBLZYYA" type="_ONMy0IlrEea0XdHMBLZYYA" direction="return"/>
+        <ownedParameter xmi:id="_OONfcolrEea0XdHMBLZYYA" type="_ONMy0IlrEea0XdHMBLZYYA" direction="return">
+          <name xsi:nil="true"/>
+        </ownedParameter>
         <language>java</language>
         <body>//a buffered reader reads line by line, returning null when file is done&#xD;
 	   	filename= &quot;bostonmetro.txt&quot;;&#xD;
@@ -316,10 +311,11 @@
 </body>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OONfdIlrEea0XdHMBLZYYA" name="generateGraphFromFile" specification="_ONOA8YlrEea0XdHMBLZYYA">
+        <ownedParameter xmi:id="_cMP1kIr1Eea6I-XsHjgPTQ" type="_ONg74IlrEea0XdHMBLZYYA" direction="return"/>
         <language>java</language>
         <body>MultigraphADT mGraph= new Multigraph();&#xD;
 	   &#xD;
-			String line = fileInput.readLine();&#xD;
+			String line = fileInput.readLine().toLowerCase();&#xD;
 			StringTokenizer st;&#xD;
 			String stationID;&#xD;
 			String stationName;&#xD;
@@ -353,7 +349,7 @@
 			    {&#xD;
 				throw new BadFileException(&quot;station is on no lines&quot;);&#xD;
 			    }&#xD;
-			    NodeIn metroStation= new Node(stationID,stationName);&#xD;
+			    NodeIn metroStation = new Node(stationID,stationName);&#xD;
 			    mGraph.addNode(stationID,stationName);&#xD;
 &#xD;
 			    while(st.hasMoreTokens())&#xD;
@@ -380,7 +376,7 @@
 			    		&#xD;
 			    line = fileInput.readLine();&#xD;
 			}&#xD;
-			&#xD;
+				return mGraph;&#xD;
 		       &#xD;
 		    </body>
       </ownedBehavior>
@@ -388,6 +384,21 @@
         <ownedParameter xmi:id="_OONfdolrEea0XdHMBLZYYA" name="args">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OONfd4lrEea0XdHMBLZYYA" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>//wtf is args??&#xD;
+	   if(args.length != 1)&#xD;
+		{&#xD;
+		    usage();&#xD;
+		    System.exit(0);&#xD;
+		}&#xD;
+	   &#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Wrdf0IrwEea6I-XsHjgPTQ" name="main" specification="_WrbqoIrwEea6I-XsHjgPTQ">
+        <ownedParameter xmi:id="_Wrdf0YrwEea6I-XsHjgPTQ" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Wrdf0orwEea6I-XsHjgPTQ" value="*"/>
         </ownedParameter>
         <language>java</language>
         <body>//wtf is args??&#xD;
@@ -409,14 +420,24 @@
         <ownedParameter xmi:id="_ONNZ5IlrEea0XdHMBLZYYA" type="_ONMy0IlrEea0XdHMBLZYYA" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_ONOA8IlrEea0XdHMBLZYYA" name="usage" isStatic="true" method="_OONfc4lrEea0XdHMBLZYYA"/>
-      <ownedOperation xmi:id="_ONOA8YlrEea0XdHMBLZYYA" name="generateGraphFromFile" method="_OONfdIlrEea0XdHMBLZYYA" raisedException="_ON_dAIlrEea0XdHMBLZYYA _ONBzsIlrEea0XdHMBLZYYA"/>
+      <ownedOperation xmi:id="_ONOA8YlrEea0XdHMBLZYYA" name="generateGraphFromFile" method="_OONfdIlrEea0XdHMBLZYYA" raisedException="_ON_dAIlrEea0XdHMBLZYYA _ONBzsIlrEea0XdHMBLZYYA">
+        <ownedParameter xmi:id="_cMOncIr1Eea6I-XsHjgPTQ" type="_ONg74IlrEea0XdHMBLZYYA" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_WrbqoIrwEea6I-XsHjgPTQ" name="main" isStatic="true" method="_Wrdf0IrwEea6I-XsHjgPTQ">
+        <ownedParameter xmi:id="_WrbqoYrwEea6I-XsHjgPTQ" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WrcRsIrwEea6I-XsHjgPTQ" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ONYZAIlrEea0XdHMBLZYYA" name="Multigraph">
       <ownedAttribute xmi:id="_OOKcIYlrEea0XdHMBLZYYA" name="nodeMap" visibility="private" type="_OOCgUIlrEea0XdHMBLZYYA" association="_OOQixIlrEea0XdHMBLZYYA"/>
       <ownedAttribute xmi:id="_OOLDMolrEea0XdHMBLZYYA" name="edgeList" visibility="private" type="_OOAEEYlrEea0XdHMBLZYYA" association="_OORJ0YlrEea0XdHMBLZYYA"/>
       <interfaceRealization xmi:id="_OODHYYlrEea0XdHMBLZYYA" client="_ONYZAIlrEea0XdHMBLZYYA" supplier="_ONg74IlrEea0XdHMBLZYYA" contract="_ONg74IlrEea0XdHMBLZYYA"/>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OONfeIlrEea0XdHMBLZYYA" name="Multigraph" specification="_ONZAEIlrEea0XdHMBLZYYA">
-        <ownedParameter xmi:id="_OONfeYlrEea0XdHMBLZYYA" type="_ONYZAIlrEea0XdHMBLZYYA" direction="return"/>
+        <ownedParameter xmi:id="_OONfeYlrEea0XdHMBLZYYA" type="_ONYZAIlrEea0XdHMBLZYYA" direction="return">
+          <name xsi:nil="true"/>
+        </ownedParameter>
         <language>java</language>
         <body>nodeMap = new HashMap&lt;String, Node>();&#xD;
 		edgeList = new ArrayList&lt;Edge>();&#xD;
@@ -427,6 +448,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_OONffIlrEea0XdHMBLZYYA" direction="return">
+          <name xsi:nil="true"/>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <language>java</language>
@@ -441,6 +463,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_OONfgIlrEea0XdHMBLZYYA" direction="return">
+          <name xsi:nil="true"/>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
         <language>java</language>
@@ -459,6 +482,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_OOOGhIlrEea0XdHMBLZYYA" direction="return">
+          <name xsi:nil="true"/>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
         <language>java</language>
@@ -474,6 +498,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_OOOGiIlrEea0XdHMBLZYYA" direction="return">
+          <name xsi:nil="true"/>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
         <language>java</language>
@@ -496,7 +521,9 @@
         <ownedParameter xmi:id="_OOOGi4lrEea0XdHMBLZYYA" name="destinationID">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_OOOGjIlrEea0XdHMBLZYYA" type="_OOAEEYlrEea0XdHMBLZYYA" direction="return"/>
+        <ownedParameter xmi:id="_OOOGjIlrEea0XdHMBLZYYA" type="_OOAEEYlrEea0XdHMBLZYYA" direction="return">
+          <name xsi:nil="true"/>
+        </ownedParameter>
         <language>java</language>
         <body>ArrayList&lt;ArrayList&lt;String>> routes = new ArrayList&lt;ArrayList&lt;String>>();&#xD;
 		  ArrayList&lt;String> visited = new ArrayList&lt;String>();&#xD;
@@ -504,60 +531,53 @@
 		  int foundIndex = 0;&#xD;
 		  &#xD;
 		  for (int i = 0; i&lt;edgeList.size();i++){&#xD;
-		   if (edgeList.get(i).getNodeA().equals(originID)){&#xD;
-		    routes.add(new ArrayList&lt;String>());&#xD;
-		    routes.get(i).add(originID);&#xD;
-		    routes.get(i).add(edgeList.get(i).getNodeB());&#xD;
-		   }&#xD;
-		   if (edgeList.get(i).getNodeB().equals(originID)){&#xD;
-		    routes.add(new ArrayList&lt;String>());&#xD;
-		    routes.get(routes.size()-1).add(originID);&#xD;
-		    routes.get(routes.size()-1).add(edgeList.get(i).getNodeA());&#xD;
-		   }&#xD;
-		  } /*creates a new route for each neighbour node of our source*/&#xD;
+			   if (edgeList.get(i).getNodeA().equals(originID)){&#xD;
+			    routes.add(new ArrayList&lt;String>());&#xD;
+			    routes.get(i).add(originID);&#xD;
+			    routes.get(i).add(edgeList.get(i).getNodeB());&#xD;
+			   }&#xD;
+			   if (edgeList.get(i).getNodeB().equals(originID)){&#xD;
+			    routes.add(new ArrayList&lt;String>());&#xD;
+			    routes.get(routes.size()-1).add(originID);&#xD;
+			    routes.get(routes.size()-1).add(edgeList.get(i).getNodeA());&#xD;
+			   }&#xD;
+		  } /*creates a new path for each neighbour node of our source*/&#xD;
 		  &#xD;
 		  for (int index = 0; index&lt;routes.size();index++){&#xD;
-		   if (routes.get(index).get(routes.get(index).size()-1).equals(originID))&#xD;
-			   found = true;&#xD;
-		       foundIndex = index;&#xD;
+			   if (routes.get(index).get(routes.get(index).size()-1).equals(destinationID))&#xD;
+				   found = true;&#xD;
+			       foundIndex = index;&#xD;
 		  }&#xD;
 		  &#xD;
 		  while (!found){&#xD;
 			  /*add the next set of stations another step from origin to our routes*/&#xD;
 			  for (int k = 0; k&lt;routes.size();k++){&#xD;
 				  	String currentNodeID = (routes.get(k).get((routes.get(k).size())-1));&#xD;
-				    if (!visited.contains(currentNodeID)){&#xD;
-					      if (howManyEdges(currentNodeID)==&quot;4&quot;){&#xD;
-					      routes.add(new ArrayList&lt;String>());&#xD;
-					      routes.get(routes.size()-1).addAll(routes.get(k));&#xD;
-					      routes.get(routes.size()-1).add((currentNodeID));&#xD;
-					      visited.add(currentNodeID);&#xD;
-					     }&#xD;
-					     if (howManyEdges(currentNodeID)==&quot;3&quot;){&#xD;
-					      routes.add(new ArrayList&lt;String>());&#xD;
-					      routes.get(routes.size()-1).addAll(routes.get(k));&#xD;
-					      routes.get(routes.size()-1).add((currentNodeID));&#xD;
-					      visited.add(currentNodeID);&#xD;
-					     }&#xD;
-					     if (howManyEdges(currentNodeID)==&quot;2&quot;){&#xD;
-					      routes.add(new ArrayList&lt;String>());&#xD;
-					      routes.get(routes.size()-1).addAll(routes.get(k));&#xD;
-					      routes.get(routes.size()-1).add((currentNodeID));&#xD;
-					      visited.add(currentNodeID);&#xD;
-					     }&#xD;
-					     if (howManyEdges(currentNodeID)==&quot;1&quot;){&#xD;
-					    	 routes.get(k).add(currentNodeID);&#xD;
-					    	 visited.add(currentNodeID);&#xD;
-					     }&#xD;
-				    }  /*need to refactor and generalise this for any number of edges*/&#xD;
-				    else {&#xD;
-				     routes.remove(k);&#xD;
-				     /*our current node is in another route at an earlier stage.&#xD;
-				      * this might be a viable route, but it's not the shortest one */&#xD;
+				    int numEdges = Integer.parseInt(howManyEdges(currentNodeID));&#xD;
+				    ArrayList&lt;String> nextNodes = getNextNodeIDs(currentNodeID);&#xD;
+				    if (!visited.contains(nextNodes.get(0))){&#xD;
+				    	routes.get(k).add(nextNodes.get(0));&#xD;
+				    	visited.add(nextNodes.get(0));&#xD;
 				    }&#xD;
-			  }   &#xD;
+					for (int i = 1; i&lt;numEdges;i++){&#xD;
+						/*If the current node we're searching has more than 1 edge, make&#xD;
+				     	a new path to search each one*/&#xD;
+						String nextNodeID = nextNodes.get(i);&#xD;
+						if (!visited.contains(nextNodeID)){&#xD;
+							routes.add(new ArrayList&lt;String>());&#xD;
+							routes.get(routes.size()-1).addAll(routes.get(k));&#xD;
+							routes.get(routes.size()-1).add((nextNodeID));&#xD;
+							visited.add(nextNodeID);&#xD;
+						}&#xD;
+						else {&#xD;
+						     routes.remove(k);&#xD;
+						     /*else the next node is in another path at an earlier stage, or we've &#xD;
+						      * reached the end of the line and the only option is to go backwards.*/&#xD;
+						}&#xD;
+					} /*end of for*/&#xD;
+			}   &#xD;
 			for (int index = 0; index&lt;routes.size();index++){&#xD;
-				if (routes.get(index).get(routes.get(index).size()-1).equals(originID))&#xD;
+				if (routes.get(index).get(routes.get(index).size()-1).equals(destinationID))&#xD;
 				found = true;&#xD;
 				foundIndex = index;&#xD;
 			}&#xD;
@@ -570,20 +590,39 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_OOOGj4lrEea0XdHMBLZYYA" direction="return">
+          <name xsi:nil="true"/>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <language>java</language>
         <body>int outDegree = 0;&#xD;
 		  for (int i = 0; i&lt;edgeList.size();i++){&#xD;
-		   if (edgeList.get(i).getNodeA().equals(nodeID)){&#xD;
-		    outDegree++;&#xD;
-		   }&#xD;
-		   if (edgeList.get(i).getNodeB().equals(nodeID)){&#xD;
-		    outDegree++;&#xD;
-		   }&#xD;
+			   if (edgeList.get(i).getNodeA().equals(nodeID)){&#xD;
+				   outDegree++;&#xD;
+			   }&#xD;
+			   if (edgeList.get(i).getNodeB().equals(nodeID)){&#xD;
+				   outDegree++;&#xD;
+			   }&#xD;
 		  }&#xD;
 		  return Integer.toString(outDegree);&#xD;
 	 </body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_WDVI0IrwEea6I-XsHjgPTQ" name="getNextNodeIDs" specification="_WDSFgIrwEea6I-XsHjgPTQ">
+        <ownedParameter xmi:id="_WDVI0YrwEea6I-XsHjgPTQ" name="originID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_WDVI0orwEea6I-XsHjgPTQ" type="_OOAEEYlrEea0XdHMBLZYYA" direction="return"/>
+        <language>java</language>
+        <body>ArrayList&lt;String> nextNodeIDs = new ArrayList&lt;String>();&#xD;
+		for (int i = 0; i&lt;edgeList.size();i++){&#xD;
+			   if (edgeList.get(i).getNodeA().equals(originID)){&#xD;
+			    nextNodeIDs.add(edgeList.get(i).getNodeB());&#xD;
+			   }&#xD;
+			   if (edgeList.get(i).getNodeB().equals(originID)){&#xD;
+				   nextNodeIDs.add(edgeList.get(i).getNodeB());&#xD;
+			   }&#xD;
+		  }&#xD;
+		return nextNodeIDs;&#xD;
+	</body>
       </ownedBehavior>
       <ownedOperation xmi:id="_ONZAEIlrEea0XdHMBLZYYA" name="Multigraph" method="_OONfeIlrEea0XdHMBLZYYA">
         <eAnnotations xmi:id="_ONZnIIlrEea0XdHMBLZYYA" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -651,6 +690,12 @@
         <ownedParameter xmi:id="_ONftwolrEea0XdHMBLZYYA" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_WDSFgIrwEea6I-XsHjgPTQ" name="getNextNodeIDs" method="_WDVI0IrwEea6I-XsHjgPTQ">
+        <ownedParameter xmi:id="_WDSFgYrwEea6I-XsHjgPTQ" name="originID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_WDSFgorwEea6I-XsHjgPTQ" type="_OOAEEYlrEea0XdHMBLZYYA" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_ONg74IlrEea0XdHMBLZYYA" name="MultigraphADT">
@@ -845,7 +890,6 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_FrvSoIlsEea0XdHMBLZYYA" name="" memberEnd="_FrvSoYlsEea0XdHMBLZYYA _Frv5sYlsEea0XdHMBLZYYA"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_GIbOoIlsEea0XdHMBLZYYA" name="" memberEnd="_GIbOoYlsEea0XdHMBLZYYA _GIbOpIlsEea0XdHMBLZYYA"/>
-    <packagedElement xmi:type="uml:Association" xmi:id="_FZj2IIlvEea0XdHMBLZYYA" name="" memberEnd="_FZj2IYlvEea0XdHMBLZYYA _FZj2JIlvEea0XdHMBLZYYA"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="__AIZcIlvEea0XdHMBLZYYA" client="_ONMy0IlrEea0XdHMBLZYYA" supplier="_ONg74IlrEea0XdHMBLZYYA"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_LuC2gIlwEea0XdHMBLZYYA" client="_ONMy0IlrEea0XdHMBLZYYA" supplier="_ONBzsIlrEea0XdHMBLZYYA"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_MjvvcIlwEea0XdHMBLZYYA" client="_ONMy0IlrEea0XdHMBLZYYA" supplier="_ON_dAIlrEea0XdHMBLZYYA"/>
@@ -882,4 +926,6 @@
   <UMLLabProfile:Reference xmi:id="_OOQiw4lrEea0XdHMBLZYYA" base_Element="_OOQiwYlrEea0XdHMBLZYYA"/>
   <UMLLabProfile:Reference xmi:id="_OORJ0IlrEea0XdHMBLZYYA" base_Element="_OOQixIlrEea0XdHMBLZYYA"/>
   <UMLLabProfile:Reference xmi:id="_OORJ04lrEea0XdHMBLZYYA" base_Element="_OORJ0YlrEea0XdHMBLZYYA"/>
+  <UMLLabProfile:Generics xmi:id="_WDTToIrwEea6I-XsHjgPTQ" genericsValue="String" base_Element="_WDSFgIrwEea6I-XsHjgPTQ"/>
+  <UMLLabProfile:Array xmi:id="_WrcRsYrwEea6I-XsHjgPTQ" base_Element="_WrbqoYrwEea6I-XsHjgPTQ"/>
 </xmi:XMI>

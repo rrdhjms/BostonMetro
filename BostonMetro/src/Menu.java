@@ -9,7 +9,7 @@ public class Menu {
    public static String getInput() {
 	   System.out.println("Please Enter An Input Below:");
 	   scan = new Scanner(System.in);
-	   String input = scan.nextLine();
+	   String input = scan.nextLine().toLowerCase().replaceAll("\\s+", "");
 	   return input;
    }
    
@@ -24,24 +24,24 @@ public class Menu {
 			String userChoice = getInput();
 			switch(userChoice){
 			case "1":
-				System.out.println("You have chosen: Shortest Route");
-				System.out.println("Please enter the name of the origin station");
+				System.out.println("You have chosen: Shortest Route\n");
+				System.out.println("Please enter the name of the origin station\n");
 				String origin = getInput();
-				System.out.println("Please enter the name of the destination station");
+				System.out.println("Please enter the name of the destination station\n");
 				String destination = getInput();
 				/****rekt ass search happens here****/
 				// testing System.out.println(Multigraph.searchShortestPath("26", "31"));
 				
 			case "2":
-				System.out.println("You have chosen: Search For The Station:");
-				System.out.println("Please enter the name of the station you would like searched");
+				System.out.println("You have chosen: Search For The Station:\n");
+				System.out.println("Please enter the name of the station you would like searched\n");
 				String searchStation = getInput();
 			case "3": 
 				System.out.println("night xxx");
 				System.exit(0);
 				
 			default:
-					System.out.print("Your input was invalid\n Please try again bby!");
+					System.out.print("Your input was invalid\n Please try again bby!\n");
 			}
 		}
    }
