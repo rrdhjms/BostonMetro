@@ -17,5 +17,9 @@ public interface MultigraphADT {
    public String getEdgeLabelFromID(String nodeID);
    
    public ArrayList<String> searchShortestPath(String originID, String destinationID);
+
+   public void printEdgeList();
+   
+   public Boolean edgeExists(String label, String nodeA, String nodeB);
    
    }

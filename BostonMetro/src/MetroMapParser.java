@@ -23,7 +23,7 @@ public class MetroMapParser {
 
 		MultigraphADT mGraph = new Multigraph();
 
-		String line = fileInput.readLine().toLowerCase();
+		String line = fileInput.readLine();
 		StringTokenizer st;
 		String stationID;
 		String stationName;
@@ -55,7 +55,6 @@ public class MetroMapParser {
 			if (!st.hasMoreTokens()) {
 				throw new BadFileException("station is on no lines");
 			}
-			NodeIn metroStation = new Node(stationID, stationName);
 			mGraph.addNode(stationID, stationName);
 
 			while (st.hasMoreTokens()) {
@@ -72,8 +71,15 @@ public class MetroMapParser {
 				}
 
 				inboundID = st.nextToken();
-				EdgeIn metroLine = new Edge(lineName, outboundID, inboundID);
-				mGraph.addEdge(lineName, outboundID, inboundID);
+				
+				if(!inboundID.equals("0")){
+					if(!mGraph.edgeExists(lineName, stationID, inboundID))
+						mGraph.addEdge(lineName, stationID, inboundID);
+				}
+				if(!outboundID.equals("0")){
+					if(!mGraph.edgeExists(lineName, stationID, outboundID))
+						mGraph.addEdge(lineName, stationID, outboundID);
+				}
 			}
 
 			line = fileInput.readLine();

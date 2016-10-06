@@ -10,7 +10,7 @@ public class Menu {
 	public static String getInput() {
 		System.out.println("Please Enter An Input Below:");
 		scan = new Scanner(System.in);
-		String input = scan.nextLine().toLowerCase().replaceAll("\\s+", "");
+		String input = scan.nextLine().replaceAll("\\s+", "");
 		return input;
 	}
 
@@ -58,6 +58,9 @@ public class Menu {
 		System.out.print("Enter Numerical Values For Menu Interaction\n");
 		MetroMapParser mmp = new MetroMapParser("");
 		mGraph = mmp.generateGraphFromFile();
+		
+		mGraph.printEdgeList();
+		
 		MetroMapParser.usage();
 		boolean exit = false;
 		

@@ -70,6 +70,17 @@ public class Multigraph implements MultigraphADT {
 		}
 		return null;
 	}
+	
+	public Boolean edgeExists(String label, String nodeA, String nodeB){
+		for (int c = 0; c < edgeList.size(); c++) {
+			if (edgeList.get(c).getNodeA().equals(nodeA) && edgeList.get(c).getNodeB().equals(nodeB) && edgeList.get(c).getLabel().equals(label)) {
+				return true;
+			} else if (edgeList.get(c).getNodeA().equals(nodeB) && edgeList.get(c).getNodeB().equals(nodeA) && edgeList.get(c).getLabel().equals(label)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public int countNodeOccurences(String nodeName) {
 		int count = 0;
@@ -79,6 +90,12 @@ public class Multigraph implements MultigraphADT {
 			}
 		}
 		return count;
+	}
+	
+	public void printEdgeList(){
+		for(int i = 0; i < edgeList.size(); i++){
+			System.out.println(edgeList.get(i).getLabel() + " | " + edgeList.get(i).getNodeA() + " | " + edgeList.get(i).getNodeB());
+		}
 	}
 
 	// -------------------------------Searching Happens below-----------------------------------------------------
