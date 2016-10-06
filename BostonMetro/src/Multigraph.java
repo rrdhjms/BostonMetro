@@ -81,10 +81,9 @@ public class Multigraph implements MultigraphADT {
 		return count;
 	}
 
-	// -------------------------------Searching Happens below
-	// -----------------------------------------------------
+	// -------------------------------Searching Happens below-----------------------------------------------------
 
-	private ArrayList<String> searchShortestPath(String originID, String destinationID) {
+	public ArrayList<String> searchShortestPath(String originID, String destinationID) {
 
 		ArrayList<ArrayList<String>> routes = new ArrayList<ArrayList<String>>();
 		ArrayList<String> visited = new ArrayList<String>();

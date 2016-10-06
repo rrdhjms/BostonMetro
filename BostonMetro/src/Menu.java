@@ -22,7 +22,7 @@ public class Menu {
 		do {
 			count = mGraph.countNodeOccurences(stationName);
 			if (count == 0) {
-				System.out.print("Station entered does not Exist, enter new station: ");
+				System.out.println("Station entered does not Exist.");
 				stationName = getInput();
 			} else if (count > 1) {
 				stationID = clarifyMultipleInput(stationName);
@@ -71,6 +71,8 @@ public class Menu {
 				String originID = getValidStation();
 				System.out.println("Please enter the name of the destination station\n");
 				String destinationID = getValidStation();
+				ArrayList<String> shortest = mGraph.searchShortestPath(originID, destinationID);
+				displayOutput(shortest);
 				/**** rekt ass search happens here ****/
 				// testing
 				// System.out.println(Multigraph.searchShortestPath("26",
@@ -93,7 +95,7 @@ public class Menu {
 		}
 	}
 
-	public void displayOutput(ArrayList<String> list) {
+	public static void displayOutput(ArrayList<String> list) {
 		for (int i = 0; i < list.size(); i++) {
 			String currentLine = mGraph.isEdge(list.get(i), list.get(i + 1));
 			String nextLine = mGraph.isEdge(list.get(i + 1), list.get(i + 2));

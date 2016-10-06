@@ -16,4 +16,6 @@ public interface MultigraphADT {
    
    public String getEdgeLabelFromID(String nodeID);
    
+   public ArrayList<String> searchShortestPath(String originID, String destinationID);
+   
    }
