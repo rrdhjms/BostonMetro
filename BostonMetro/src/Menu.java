@@ -100,11 +100,11 @@ public class Menu {
 			String currentLine = mGraph.isEdge(list.get(i), list.get(i + 1));
 			String nextLine = mGraph.isEdge(list.get(i + 1), list.get(i + 2));
 			if (!currentLine.equals(nextLine)) {
-				System.out.println("Change at " + mGraph.getNodeName(list.get(i + 1)) + "to " + nextLine + "towards "
+				System.out.println("Change at " + mGraph.getNodeName(list.get(i + 1)) + "to " + nextLine + " towards "
 						+ mGraph.getNodeName(list.get(i + 2)));
-
+				/*should say which line?*/
 			} else {
-				System.out.println(mGraph.getNodeName(list.get(i)) + currentLine + " Line towards"
+				System.out.println("continue from " + mGraph.getNodeName(list.get(i)) + "on the " + currentLine + " Line towards"
 						+ mGraph.getNodeName(list.get(i + 1)));
 			}
 
