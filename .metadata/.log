@@ -4324,3 +4324,9 @@ Contains: Configuration directory does not exist: /S:/system/Windows/.eclipse/or
 !MESSAGE Problems occurred while resolving the target contents
 !SUBENTRY 2 org.eclipse.pde.core 4 0 2016-10-06 10:35:37.426
 !MESSAGE Configuration directory does not exist: /S:/system/Windows/.eclipse/org.eclipse.platform_4.6.0_1709980481_win32_win32_x86_64/configuration/
+
+!ENTRY org.eclipse.jface.text 2 0 2016-10-06 14:19:20.831
+!MESSAGE Duplicate template id: 'org.apache.directory.studio.aciitemeditor.templates.item'
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2016-10-06 14:23:26.616
+!MESSAGE Project facet jst.ejb has not been defined. It is used in plugin org.eclipse.jst.j2ee.

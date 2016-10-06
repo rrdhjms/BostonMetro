@@ -61,6 +61,8 @@ public class Menu {
 		
 		mGraph.printEdgeList();
 		
+		mGraph.getEdgeLabelsFromID("5");
+		
 		MetroMapParser.usage();
 		boolean exit = false;
 		
@@ -99,18 +101,39 @@ public class Menu {
 	}
 
 	public static void displayOutput(ArrayList<String> list) {
-		for (int i = 0; i < list.size(); i++) {
-			String currentLine = mGraph.isEdge(list.get(i), list.get(i + 1));
-			String nextLine = mGraph.isEdge(list.get(i + 1), list.get(i + 2));
+		for (int i = 0; i < (list.size() - 1); i++) {
+			if(mGraph.isEdge(list.get(i),list.get(i+1)).size() == 1){
+				 
+			}
+		
+			/**	
+					
+					&& !(mGraph.isEdge(list.get(i),list.get(i+1)).equals(mGraph.isEdge(list.get(i+1),list.get(i))))  ) {
+				
+				System.out.println("Change From " + mGraph.getNodeName(list.get(i)) +"Line "+ mGraph.isEdge(list.get(i),list.get(i+1)) 
+				+ "towards " + mGraph.getNodeName(list.get(i + 1)) + "On Line" + mGraph.isEdge(list.get(i),list.get(i+1)));
+				
+				
+			}else{
+				System.out.println("You Have Arrived At " + mGraph.getNodeName(list.get(i + 1)));
+			}
+			
+			
+			
+			
+			
+
+			//String nextLine = mGraph.isEdge(list.get(i + 1), list.get(i + 2));
+			
 			if (!currentLine.equals(nextLine)) {
 				System.out.println("Change at " + mGraph.getNodeName(list.get(i + 1)) + "to " + nextLine + " towards "
 						+ mGraph.getNodeName(list.get(i + 2)));
-				/*should say which line?*/
-			} else {
+				/*should say which line?
+			} else{
 				System.out.println("continue from " + mGraph.getNodeName(list.get(i)) + "on the " + currentLine + " Line towards"
 						+ mGraph.getNodeName(list.get(i + 1)));
 			}
-
+**/
 		}
 	}
 

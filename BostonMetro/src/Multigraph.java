@@ -48,6 +48,19 @@ public class Multigraph implements MultigraphADT {
 		}
 		return null;
 	}
+	
+	public ArrayList<String> getEdgeLabelsFromID(String nodeID){
+		ArrayList<String> labelList = new ArrayList<String>();
+		for(int i = 0; i < edgeList.size(); i++){
+			if(edgeList.get(i).getNodeA().equals(nodeID) || edgeList.get(i).getNodeB().equals(nodeID)){
+				if(!labelList.contains(edgeList.get(i).getLabel())){
+					labelList.add(edgeList.get(i).getLabel());
+					System.out.println("Added: " + edgeList.get(i).getLabel());
+				}
+			}
+		}
+		return null;
+	}
 
 	public boolean addNode(String nodeID, String nodeName) {
 		nodeList.add(new Node(nodeID, nodeName));
@@ -59,16 +72,16 @@ public class Multigraph implements MultigraphADT {
 		return true;
 	}
 
-	public String isEdge(String nodeA, String nodeB) {
-
+	public ArrayList<String> isEdge(String nodeA, String nodeB) {
+		ArrayList<String> labelList = new ArrayList<String>();
 		for (int c = 0; c < edgeList.size(); c++) {
 			if (edgeList.get(c).getNodeA().equals(nodeA) && edgeList.get(c).getNodeB().equals(nodeB)) {
-				return edgeList.get(c).getLabel();
+				labelList.add(edgeList.get(c).getLabel());
 			} else if (edgeList.get(c).getNodeA().equals(nodeB) && edgeList.get(c).getNodeB().equals(nodeA)) {
-				return edgeList.get(c).getLabel();
+				labelList.add(edgeList.get(c).getLabel());
 			}
 		}
-		return null;
+		return labelList;
 	}
 	
 	public Boolean edgeExists(String label, String nodeA, String nodeB){

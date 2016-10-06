@@ -8,13 +8,15 @@ public interface MultigraphADT {
    
    public boolean addEdge( String label, String successor, String predecessor);
    
-   public String isEdge(String nodeA, String nodeB);
+   public ArrayList<String> isEdge(String nodeA, String nodeB);
    
    public int countNodeOccurences(String nodeName);
 
    public ArrayList<String> getIDFromName(String stationName);
    
    public String getEdgeLabelFromID(String nodeID);
+   
+   public ArrayList<String> getEdgeLabelsFromID(String nodeID);
    
    public ArrayList<String> searchShortestPath(String originID, String destinationID);
 
