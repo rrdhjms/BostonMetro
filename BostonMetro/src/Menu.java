@@ -101,9 +101,20 @@ public class Menu {
 	}
 
 	public static void displayOutput(ArrayList<String> list) {
+		
+		String currentLine = "";
 		for (int i = 0; i < (list.size() - 1); i++) {
-			if(mGraph.isEdge(list.get(i),list.get(i+1)).size() == 1){
-				 
+			if(mGraph.getEdgeLabelsFromID(list.get(i+1)).size() > 1){//We Know that there is a change
+				if(mGraph.isEdge(list.get(i), list.get(i+1)).size() == 1){//
+					currentLine = mGraph.isEdge(list.get(i), list.get(i+1)).get(0);
+				}
+			}
+			if(mGraph.getEdgeLabelsFromID(list.get(i)).size() > 1){
+				if(mGraph.isEdge(list.get(i), list.get(i+1)).size() == 1){
+					if(!currentLine.equals(mGraph.isEdge(list.get(i), list.get(i+1))) && i != 0){
+						System.out.println("You need to change from ");
+					}
+				}
 			}
 		
 			/**	
