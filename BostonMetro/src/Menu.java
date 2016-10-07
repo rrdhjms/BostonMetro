@@ -115,6 +115,58 @@ public class Menu {
 					}
 				}
 			}*/
+		try{
+		for (int i = 0; i < (list.size() - 1); i++) {
+			ArrayList<String> currentNodeColourOptions= mGraph.getEdgeLabelsFromID(list.get(i));
+			ArrayList<String> nextNodeColourOptions= mGraph.getEdgeLabelsFromID(list.get(i+1));
+			ArrayList<String> upcomingNodeColourOptions= mGraph.getEdgeLabelsFromID(list.get(i+2));
+			String ColourOfRouteOne = "";
+			String ColourOfRouteTwo = "";
+			for(int outer = 0; outer < currentNodeColourOptions.size(); outer++){
+				for(int inner = 0; inner < nextNodeColourOptions.size(); inner++){
+					if( (currentNodeColourOptions.get(outer).equals(nextNodeColourOptions.get(inner)))){
+						//we have a route match, so we got to the next
+							ColourOfRouteOne = currentNodeColourOptions.get(outer);
+						
+					}
+				}
+			}
+			for(int x = 0; x < nextNodeColourOptions.size(); x++){
+				for(int y = 0; y < upcomingNodeColourOptions.size(); y++){
+					if( (nextNodeColourOptions.get(x).equals(upcomingNodeColourOptions.get(y)))){
+		
+						ColourOfRouteTwo = nextNodeColourOptions.get(x);
+					}
+				}
+			}
+			if(!(ColourOfRouteOne).equals(ColourOfRouteTwo)){
+				System.out.println("Change At Line: " + ColourOfRouteTwo + " at Station " + mGraph.getNodeName(list.get(i+1) ));
+			}
+		}}catch(Exception e ){
+			System.out.println("You Have Arrived At " + mGraph.getNodeName( list.get(list.size()-1) ));
+		}
+	}	
+			
+			
+			
+			/*
+		if(currentNodeColourOptions.size() > 1 && nextNodeColourOptions.size() < 1){
+			
+
+				for(int outer = 0; outer < nextNodeColourOptions.size()-1; outer++){
+					for(int inner = 0; inner < nextNodeColourOptions.size()-1; inner++){
+						if(currentNodeColourOptions.get(outer).equals(nextNodeColourOptions.get(inner))){
+							//We know the two nodes are connected so the other values in the 
+							// nextnodecolouroptions must be the possible colour
+							
+						
+					}
+				}
+				//we know that the next station that their is going to be a change
+				
+			}
+			}
+		}
 		
 		
 		for (int i = 0; i<list.size();i++) {
@@ -122,14 +174,14 @@ public class Menu {
 			}
 					try {
 							for(int i = 0; i < (list.size()-1);i++){
-							/*String previousLine = mGraph.returnColour(list.get(i-1), list.get(i));*/
+							/*String previousLine = mGraph.returnColour(list.get(i-1), list.get(i));
 							String currentLine = mGraph.returnColour(list.get(i), list.get(i+1));
 							String nextLine = mGraph.returnColour(list.get(i+1), list.get(i+2));
-							if(!(currentLine.equals(nextLine)) /*&& (previousLine.equals(currentLine))*/){
+							if(!(currentLine.equals(nextLine)) /*&& (previousLine.equals(currentLine))){
 								System.out.println("Change Line To Line " + nextLine 
 										+ " At Station " +  mGraph.getNodeName(list.get(i+1))+"\n");
 												             }}
 							}catch (Exception e) {
 					System.out.println("You Have Arrived At " + mGraph.getNodeName( list.get(list.size()-1) ));
-					}
-}}
+					}*/
+}

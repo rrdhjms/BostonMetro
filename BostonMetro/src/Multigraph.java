@@ -68,7 +68,7 @@ public class Multigraph implements MultigraphADT {
 			if(edgeList.get(i).getNodeA().equals(nodeID) || edgeList.get(i).getNodeB().equals(nodeID)){
 				if(!labelList.contains(edgeList.get(i).getLabel())){
 					labelList.add(edgeList.get(i).getLabel());
-					System.out.println("Added: " + edgeList.get(i).getLabel());
+					//System.out.println("Added: " + edgeList.get(i).getLabel());
 				}
 			}
 		}
