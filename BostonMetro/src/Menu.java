@@ -100,18 +100,36 @@ public class Menu {
 	}
 	
 	public static void displayOutput(ArrayList<String> list) {
+		/*
+		String currentLine = "";
+		for (int i = 0; i < (list.size() - 1); i++) {
+			if(mGraph.getEdgeLabelsFromID(list.get(i+1)).size() > 1){//We Know that there is a change
+				if(mGraph.isEdge(list.get(i), list.get(i+1)).size() == 1){
+					currentLine = mGraph.isEdge(list.get(i), list.get(i+1)).get(0);
+				}
+			}
+			if(mGraph.getEdgeLabelsFromID(list.get(i)).size() > 1){
+				if(mGraph.isEdge(list.get(i), list.get(i+1)).size() == 1){
+					if(!currentLine.equals(mGraph.isEdge(list.get(i), list.get(i+1))) && i != 0){
+						System.out.println("You need to change from ");
+					}
+				}
+			}*/
+		
+		
 		for (int i = 0; i<list.size();i++) {
 			System.out.println(mGraph.getNodeName(list.get(i)));
 			}
-						try {
-							for(int i = 0; i < (list.size() - 1);i++){
+					try {
+							for(int i = 0; i < (list.size()-1);i++){
+							/*String previousLine = mGraph.returnColour(list.get(i-1), list.get(i));*/
 							String currentLine = mGraph.returnColour(list.get(i), list.get(i+1));
 							String nextLine = mGraph.returnColour(list.get(i+1), list.get(i+2));
-							if(!currentLine.equals(nextLine)){
+							if(!(currentLine.equals(nextLine)) /*&& (previousLine.equals(currentLine))*/){
 								System.out.println("Change Line To Line " + nextLine 
 										+ " At Station " +  mGraph.getNodeName(list.get(i+1))+"\n");
 												             }}
 							}catch (Exception e) {
 					System.out.println("You Have Arrived At " + mGraph.getNodeName( list.get(list.size()-1) ));
-				}
+					}
 }}
