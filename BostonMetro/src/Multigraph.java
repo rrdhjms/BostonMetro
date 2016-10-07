@@ -153,9 +153,10 @@ public class Multigraph implements MultigraphADT {
 		} /* creates a new path for each neighbour node of our source */
 		
 		for (int index = 0; index < routes.size(); index++) {
-			if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID))
+			if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID)){
 				found = true;
 				foundIndex = index;
+			}
 		}
 
 		while (!found) {
@@ -176,7 +177,7 @@ public class Multigraph implements MultigraphADT {
 					routes.get(k).add(nextNodes.get(0));
 					visited.add(nextNodes.get(0));
 					nextNodes.remove(0);
-					//printArrays(routes, visited);
+					printArrays(routes, visited);
 					while (!nextNodes.isEmpty()){
 						 /* make a new path for the other options, copy what we had so far and search each one */
 							String nextNodeID = nextNodes.get(0);
@@ -187,9 +188,10 @@ public class Multigraph implements MultigraphADT {
 							nextNodes.remove(0);
 					} /* end of inner while */
 					for (int index = 0; index < routes.size(); index++) {
-						if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID))
+						if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID)){
 							found = true;
 							foundIndex = index;
+						}
 					}
 				}
 			}
