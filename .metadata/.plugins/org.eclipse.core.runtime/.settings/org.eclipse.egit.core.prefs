@@ -1,3 +1,4 @@
-GitRepositoriesView.GitDirectories=H\:\\workspace\\BostonMetro\\.git;
-GitRepositoriesView.GitDirectories.relative=.git;
+GitRepositoriesView.GitDirectories=/Users/Connor/Documents/Workspace/.git\:/Users/Connor/git/BostonMetro/.git\:
+GitRepositoriesView.GitDirectories.relative=.git\:/Users/Connor/git/BostonMetro/.git\:
+RepositorySearchDialogSearchPath=/Users/Connor/git
 eclipse.preferences.version=1

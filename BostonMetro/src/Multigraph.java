@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Multigraph implements MultigraphADT {
 
@@ -155,6 +157,7 @@ public class Multigraph implements MultigraphADT {
 				if (previousNodeID != null) {
 					nextNodes.remove(previousNodeID);
 				}
+				nextNodes.removeAll(visited);
 				System.out.println("nextNodes : " + nextNodes);
 				if (!nextNodes.isEmpty()) {
 					/*add the first next node to our route*/
@@ -171,12 +174,12 @@ public class Multigraph implements MultigraphADT {
 							visited.add(nextNodeID);
 							nextNodes.remove(0);
 					} /* end of inner while */
+					for (int index = 0; index < routes.size(); index++) {
+						if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID))
+							found = true;
+							foundIndex = index;
+					}
 				}
-			}
-			for (int index = 0; index < routes.size(); index++) {
-				if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID))
-					found = true;
-					foundIndex = index;
 			}
 		} /* end of while */
 		return routes.get(foundIndex);
@@ -207,6 +210,10 @@ public class Multigraph implements MultigraphADT {
 				nextNodeIDs.add(edgeList.get(i).getNodeA());
 			}
 		}
+		Set<String> uniqueIDs = new HashSet<>();
+		uniqueIDs.addAll(nextNodeIDs);
+		nextNodeIDs.clear();
+		nextNodeIDs.addAll(uniqueIDs);
 		return nextNodeIDs;
 	}
 	
