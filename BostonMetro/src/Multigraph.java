@@ -51,6 +51,17 @@ public class Multigraph implements MultigraphADT {
 		return null;
 	}
 	
+	public String returnColour(String nodeA, String nodeB) {//checks the colours in between 2 nodes
+		for (int c = 0; c < edgeList.size(); c++) {
+			if (edgeList.get(c).getNodeA().equals(nodeA) && edgeList.get(c).getNodeB().equals(nodeB)) {
+				return edgeList.get(c).getLabel();
+			} else if (edgeList.get(c).getNodeA().equals(nodeB) && edgeList.get(c).getNodeB().equals(nodeA)) {
+				return edgeList.get(c).getLabel();
+			}
+		}
+		return null;
+	}
+	
 	public ArrayList<String> getEdgeLabelsFromID(String nodeID){//checks the colours around a single node
 		ArrayList<String> labelList = new ArrayList<String>();
 		for(int i = 0; i < edgeList.size(); i++){
@@ -157,14 +168,15 @@ public class Multigraph implements MultigraphADT {
 				if (previousNodeID != null) {
 					nextNodes.remove(previousNodeID);
 				}
-				nextNodes.removeAll(visited);
+				nextNodes.removeAll(visited); /*if the next node has been visited by another path already
+				then using this node would not be the shortest path */
 				System.out.println("nextNodes : " + nextNodes);
 				if (!nextNodes.isEmpty()) {
 					/*add the first next node to our route*/
 					routes.get(k).add(nextNodes.get(0));
 					visited.add(nextNodes.get(0));
 					nextNodes.remove(0);
-					printArrays(routes, visited);
+					//printArrays(routes, visited);
 					while (!nextNodes.isEmpty()){
 						 /* make a new path for the other options, copy what we had so far and search each one */
 							String nextNodeID = nextNodes.get(0);
@@ -183,20 +195,6 @@ public class Multigraph implements MultigraphADT {
 			}
 		} /* end of while */
 		return routes.get(foundIndex);
-	}
-
-	private String howManyEdges(String nodeID) {
-		/*helper method for search to return the number of nodes reachable from the current node*/
-		int outDegree = 0;
-		for (int i = 0; i < edgeList.size(); i++) {
-			if (edgeList.get(i).getNodeA().equals(nodeID)) {
-				outDegree++;
-			}
-			if (edgeList.get(i).getNodeB().equals(nodeID)) {
-				outDegree++;
-			}
-		}
-		return Integer.toString(outDegree);
 	}
 
 	private ArrayList<String> getNextNodeIDs(String currentNodeID) {
@@ -224,7 +222,6 @@ public class Multigraph implements MultigraphADT {
 				System.out.println(" : " + getNodeName(routes.get(i).get(j)));
 			}
 			System.out.println("visited : " + visited);
-		}
-			
+		}			
 	}
 }

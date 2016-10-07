@@ -24,4 +24,6 @@ public interface MultigraphADT {
    
    public Boolean edgeExists(String label, String nodeA, String nodeB);
    
+   public String returnColour(String nodeA, String nodeB);
+
    }

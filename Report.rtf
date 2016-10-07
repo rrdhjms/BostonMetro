@@ -1,0 +1,26 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\info
+{\author Windows User}}\paperw11900\paperh16840\margl1440\margr1440\vieww12200\viewh14500\viewkind1
+\deftab720
+\pard\pardeftab720\ri-6\sl259\slmult1\sa160\partightenfactor0
+
+\f0\fs28 \cf0 \ul \ulc0 Reasons for Implementation
+\fs36 \
+\pard\pardeftab720\ri-6\sl259\slmult1\sa160\partightenfactor0
+
+\fs22 \cf0 \ulnone 	
+\fs26 We considered two implementations, an Adjacency Matrix and ArrayLists. We chose not to use the Matrix as in the planning it appeared overly complicated for this application, so made the choice to use ArrayLists of Edges and Nodes to represent and search the graph, this also allowed for a more na\'efve searching method initially which could be worked on to be made more efficient as searching a list of edges can be done relatively simply.\
+\pard\pardeftab720\ri-6\sl259\slmult1\sa160\partightenfactor0
+
+\fs28 \cf0 \ul \ulc0 Overview Representation\
+\pard\pardeftab720\ri-6\sl259\slmult1\sa160\partightenfactor0
+\cf0 \ulnone 	
+\fs26 The program contains three interfaces, one of nodes, one of edges, and one for the Multigraph itself. Multigraph has an interface to decouple it from the Metro Map. Node and Edge have interfaces because Multigraph assumes they will exist due to it being a composition of Nodes and Edges, meaning interfaces must exist for the Nodes and Edges. \
+	Nodes consist of a Unique Identifier and a name associated with it. Edges consist of two connected nodes\'92 Unique Identifiers and a label. \
+	The application works by starting from the menu, a static driver class, which creates an instance of MetroMapParser which then creates a Multigraph. This Multigraph is then searched using the EdgeList to find the shortest path using breadth first search, which always returns the shortest path, and returns a list of traversed Nodes to the Menu, which then formats the output and displays it.\
+\pard\pardeftab720\ri-6\sl259\slmult1\sa160\partightenfactor0
+
+\f1\fs28 \cf0 	\
+}
