@@ -40,16 +40,7 @@ public class Multigraph implements MultigraphADT {
 		
 		return idList;
 	}
-	
-	//Assumes that all edges connecting to the node with id nodeID will have the same label.
-	public String getEdgeLabelFromID(String nodeID){
-		for(int i = 0; i < edgeList.size(); i++){
-			if(edgeList.get(i).getNodeA().equals(nodeID) || edgeList.get(i).getNodeB().equals(nodeID)){
-				return edgeList.get(i).getLabel();
-			}
-		}
-		return null;
-	}
+
 	
 	public String returnColour(String nodeA, String nodeB) {//checks the colours in between 2 nodes
 		for (int c = 0; c < edgeList.size(); c++) {

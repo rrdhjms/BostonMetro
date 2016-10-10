@@ -14,8 +14,6 @@ public interface MultigraphADT {
 
    public ArrayList<String> getIDFromName(String stationName);
    
-   public String getEdgeLabelFromID(String nodeID);
-   
    public ArrayList<String> getEdgeLabelsFromID(String nodeID);
    
    public ArrayList<String> searchShortestPath(String originID, String destinationID);

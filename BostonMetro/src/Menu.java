@@ -40,7 +40,7 @@ public class Menu {
 
 		System.out.println("Multiple stations have that name. Which of the following stations do you mean?");
 		for (int i = 0; i < idList.size(); i++) {
-			System.out.println("Station ID: " + idList.get(i) + " On line: " + mGraph.getEdgeLabelFromID(idList.get(i)));
+			System.out.println("Station ID: " + idList.get(i) + " On line: " + mGraph.getEdgeLabelsFromID(idList.get(i)));
 		}
 		while (!idList.contains(stationID)) {
 			System.out.print("Enter the ID of the station you wish to select: ");
@@ -76,18 +76,19 @@ public class Menu {
 				String originID = getValidStation();
 				System.out.println("Please enter the name of the destination station\n");
 				String destinationID = getValidStation();
+				while(originID == destinationID){
+					System.out.println("Dsetination is the same as Origin, enter new destination.");
+					destinationID = getValidStation();
+				}
 				ArrayList<String> shortest = mGraph.searchShortestPath(originID, destinationID);
 				displayOutput(shortest);
-				// testing
-				// System.out.println(Multigraph.searchShortestPath("26",
-				// "31"));
 			}
 			else if(userChoice.equals("2")){
 				System.out.println("You have chosen: Search For The Station:\n");
 				System.out.println("Please enter the name of the station you would like searched\n");
 				String stationID = getValidStation();
 				System.out.println("Name: " + mGraph.getNodeName(stationID) + "\nID  : " + stationID + 
-						           "\nLine: " + mGraph.getEdgeLabelFromID(stationID));
+						           "\nLines: " + mGraph.getEdgeLabelsFromID(stationID));
 			}
 			else if(userChoice.equals("3")){
 				System.out.println("night xxx");
@@ -140,7 +141,8 @@ public class Menu {
 				}
 			}
 			if(!(ColourOfRouteOne).equals(ColourOfRouteTwo)){
-				System.out.println("Change At Line: " + ColourOfRouteTwo + " at Station " + mGraph.getNodeName(list.get(i+1) ));
+				System.out.println("Change At Line: " + ColourOfRouteTwo + " at Station " + mGraph.getNodeName(list.get(i+1)) 
+				+ " towards " + mGraph.getNodeName(list.get(i+2)));
 			}
 		}}catch(Exception e ){
 			System.out.println("You Have Arrived At " + mGraph.getNodeName( list.get(list.size()-1) ));
