@@ -421,7 +421,7 @@
 		edgeList = new ArrayList&lt;Edge>();&#xD;
 	</body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OONfeolrEea0XdHMBLZYYA" name="getNodeName" specification="_ONZnI4lrEea0XdHMBLZYYA">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OONfeolrEea0XdHMBLZYYA" name="getNodeName">
         <ownedParameter xmi:id="_OONfe4lrEea0XdHMBLZYYA" name="id">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
@@ -438,7 +438,7 @@
 		return null;&#xD;
 	</body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OONffYlrEea0XdHMBLZYYA" name="addNode" specification="_ONaOMIlrEea0XdHMBLZYYA">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OONffYlrEea0XdHMBLZYYA" name="addNode">
         <ownedParameter xmi:id="_OONffolrEea0XdHMBLZYYA" name="nodeID">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
@@ -454,7 +454,7 @@
 		return true;&#xD;
 	</body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OOOGgIlrEea0XdHMBLZYYA" name="addEdge" specification="_ONbcUIlrEea0XdHMBLZYYA">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OOOGgIlrEea0XdHMBLZYYA" name="addEdge">
         <ownedParameter xmi:id="_OOOGgYlrEea0XdHMBLZYYA" name="label">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
@@ -473,7 +473,7 @@
 		return true;&#xD;
 	</body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OOOGhYlrEea0XdHMBLZYYA" name="isEdge" specification="_ONbcVYlrEea0XdHMBLZYYA">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OOOGhYlrEea0XdHMBLZYYA" name="isEdge">
         <ownedParameter xmi:id="_OOOGholrEea0XdHMBLZYYA" name="nodeA">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
@@ -634,50 +634,6 @@
         </eAnnotations>
         <ownedParameter xmi:id="_ONZnIolrEea0XdHMBLZYYA" type="_ONYZAIlrEea0XdHMBLZYYA" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_ONZnI4lrEea0XdHMBLZYYA" name="getNodeName" method="_OONfeolrEea0XdHMBLZYYA">
-        <ownedParameter xmi:id="_ONZnJIlrEea0XdHMBLZYYA" name="id">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_ONZnJYlrEea0XdHMBLZYYA" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_ONaOMIlrEea0XdHMBLZYYA" name="addNode" method="_OONffYlrEea0XdHMBLZYYA">
-        <ownedParameter xmi:id="_ONa1QIlrEea0XdHMBLZYYA" name="nodeID">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_ONa1QYlrEea0XdHMBLZYYA" name="nodeName">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_ONa1QolrEea0XdHMBLZYYA" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_ONbcUIlrEea0XdHMBLZYYA" name="addEdge" method="_OOOGgIlrEea0XdHMBLZYYA">
-        <ownedParameter xmi:id="_ONbcUYlrEea0XdHMBLZYYA" name="label">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_ONbcUolrEea0XdHMBLZYYA" name="successor">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_ONbcU4lrEea0XdHMBLZYYA" name="predecessor">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_ONbcVIlrEea0XdHMBLZYYA" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_ONbcVYlrEea0XdHMBLZYYA" name="isEdge" method="_OOOGhYlrEea0XdHMBLZYYA">
-        <ownedParameter xmi:id="_ONcDYIlrEea0XdHMBLZYYA" name="nodeA">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_ONcDYYlrEea0XdHMBLZYYA" name="nodeB">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_ONcDYolrEea0XdHMBLZYYA" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedParameter>
-      </ownedOperation>
       <ownedOperation xmi:id="_ONefoIlrEea0XdHMBLZYYA" name="searchShortestPath" visibility="private" method="_OOOGiYlrEea0XdHMBLZYYA">
         <ownedParameter xmi:id="_ONefoYlrEea0XdHMBLZYYA" name="originID">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -723,10 +679,10 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GIbOpolsEea0XdHMBLZYYA" value="*"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_ONhi8IlrEea0XdHMBLZYYA" name="getNodeName">
-        <ownedParameter xmi:id="_ONhi8YlrEea0XdHMBLZYYA" name="id">
+        <ownedParameter xmi:id="_ONhi8olrEea0XdHMBLZYYA" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_ONhi8olrEea0XdHMBLZYYA" direction="return">
+        <ownedParameter xmi:id="_ONhi8YlrEea0XdHMBLZYYA" name="id">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
@@ -764,6 +720,20 @@
         </ownedParameter>
         <ownedParameter xmi:id="_ONixFolrEea0XdHMBLZYYA" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_NnVscI7sEea0xZmjzxOSvw" name="countNodeOccurences">
+        <ownedParameter xmi:id="_NnVscY7sEea0xZmjzxOSvw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_NnVsco7sEea0xZmjzxOSvw" name="nodeName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_hcqREI7sEea0xZmjzxOSvw" name="getIDFromName">
+        <ownedParameter xmi:id="_hcqREY7sEea0xZmjzxOSvw" type="_OOAEEYlrEea0XdHMBLZYYA" direction="return"/>
+        <ownedParameter xmi:id="_hcqREo7sEea0xZmjzxOSvw" name="stationName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -908,6 +878,14 @@
     <packagedElement xmi:type="uml:Association" xmi:id="_JwVB8Ir3EeaegPu7ANfE8Q" name="" memberEnd="_JwVB8Yr3EeaegPu7ANfE8Q _OOKcIYlrEea0XdHMBLZYYA">
       <ownedEnd xmi:id="_JwVB8Yr3EeaegPu7ANfE8Q" name="" type="_ONYZAIlrEea0XdHMBLZYYA" association="_JwVB8Ir3EeaegPu7ANfE8Q"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_hchHII7sEea0xZmjzxOSvw" name="Arraylist"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_kz6gwI7sEea0xZmjzxOSvw" name="BostonMetro::Arraylist&lt;String>"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_mNMn4I7sEea0xZmjzxOSvw" name="BostonMetro::Arraylist&lt;String>"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_mtuiEI7sEea0xZmjzxOSvw" name="Arraylist&lt;String>"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_slK2kI7sEea0xZmjzxOSvw" name="BostonMetro::java::util::ArrayList&lt;String>"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_tjPBUI7sEea0xZmjzxOSvw" name="BostonMetro::java::util::ArrayList&lt;String>"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_ucEt0I7sEea0xZmjzxOSvw" name="java::util::ArrayList&lt;String>"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_0q95AI7sEea0xZmjzxOSvw" name="ArrayList&lt;String>"/>
     <profileApplication xmi:id="_OFeaMIlrEea0XdHMBLZYYA">
       <eAnnotations xmi:id="_OFeaMYlrEea0XdHMBLZYYA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
@@ -942,4 +920,12 @@
   <UMLLabProfile:Reference xmi:id="_OORJ04lrEea0XdHMBLZYYA" base_Element="_OORJ0YlrEea0XdHMBLZYYA"/>
   <UMLLabProfile:Generics xmi:id="_pWXDQIrxEeaegPu7ANfE8Q" genericsValue="String" base_Element="_pWV1IIrxEeaegPu7ANfE8Q"/>
   <UMLLabProfile:Reference xmi:id="_JwWQEIr3EeaegPu7ANfE8Q" base_Element="_JwVB8Ir3EeaegPu7ANfE8Q"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_hchHIY7sEea0xZmjzxOSvw" base_Element="_hchHII7sEea0xZmjzxOSvw"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_kz6gwY7sEea0xZmjzxOSvw" base_Element="_kz6gwI7sEea0xZmjzxOSvw"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_mNMn4Y7sEea0xZmjzxOSvw" base_Element="_mNMn4I7sEea0xZmjzxOSvw"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_mtuiEY7sEea0xZmjzxOSvw" base_Element="_mtuiEI7sEea0xZmjzxOSvw"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_slK2kY7sEea0xZmjzxOSvw" base_Element="_slK2kI7sEea0xZmjzxOSvw"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_tjPBUY7sEea0xZmjzxOSvw" base_Element="_tjPBUI7sEea0xZmjzxOSvw"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_ucEt0Y7sEea0xZmjzxOSvw" base_Element="_ucEt0I7sEea0xZmjzxOSvw"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_0q95AY7sEea0xZmjzxOSvw" base_Element="_0q95AI7sEea0xZmjzxOSvw"/>
 </xmi:XMI>

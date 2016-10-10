@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -108,12 +107,6 @@ public class Multigraph implements MultigraphADT {
 		}
 		return count;
 	}
-	
-	public void printEdgeList(){
-		for(int i = 0; i < edgeList.size(); i++){
-			System.out.println(edgeList.get(i).getLabel() + " | " + edgeList.get(i).getNodeA() + " | " + edgeList.get(i).getNodeB());
-		}
-	}
 
 	// -------------------------------Searching Happens below-----------------------------------------------------
 
@@ -166,7 +159,6 @@ public class Multigraph implements MultigraphADT {
 	     routes.get(k).add(nextNodes.get(0));
 	     visited.add(nextNodes.get(0));
 	     nextNodes.remove(nextNodes.get(0));
-	     //printArrays(routes, visited);
 	     while (!nextNodes.isEmpty()){
 	       /* make a new path for the other options when at a branching station,
 	        * copy what we had so far and search each one */

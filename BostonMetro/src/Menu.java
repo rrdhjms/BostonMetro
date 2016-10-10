@@ -7,8 +7,8 @@ public class Menu {
 	private static Scanner scan;
 	private static MultigraphADT mGraph;
 
-	public static String getInput() {
-		System.out.println("Please Enter An Input Below:");
+	private static String getInput() {
+		System.out.print("Please Enter An Input: ");
 		scan = new Scanner(System.in);
 		String input = scan.nextLine().replaceAll("\\s+", "");
 		return input;
@@ -53,17 +53,15 @@ public class Menu {
 	}
 
 	public static void main(String args[]) throws BadFileException,
-			IOException {/* need to change this, just used for testing */
+			IOException {
 		System.out.println("Welcome To The CS308 Group W07 Graph System\n");
 		System.out.print("Enter Numerical Values For Menu Interaction\n");
 		MetroMapParser mmp = new MetroMapParser("");
 		mGraph = mmp.generateGraphFromFile();
 		
-		mGraph.printEdgeList();
-		
 		mGraph.getEdgeLabelsFromID("5");
 		
-		MetroMapParser.usage();
+		
 		boolean exit = false;
 		
 		while (!exit) {
@@ -91,7 +89,8 @@ public class Menu {
 						           "\nLines: " + mGraph.getEdgeLabelsFromID(stationID));
 			}
 			else if(userChoice.equals("3")){
-				System.out.println("night xxx");
+				System.out.println("Thank You For Using Our System! Exiting...");
+				MetroMapParser.usage();
 				exit = true;
 			}
 			else{
