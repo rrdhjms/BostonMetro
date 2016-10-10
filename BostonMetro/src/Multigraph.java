@@ -12,13 +12,27 @@ public class Multigraph implements MultigraphADT {
 		edgeList = new ArrayList<Edge>();
 	}
 
+	/**
+	 * 
+	 * @return an ArrayList of Edges
+	 */
 	public ArrayList<Edge> getEdgeList() {
 		ArrayList<Edge> edges = new ArrayList<Edge>();
 		for (Edge e : edgeList)
 			edges.add(new Edge(e.getLabel(), e.getNodeA(), e.getNodeB()));
 		return edges;
 	}
-
+	
+	
+	/**
+	 * Takes in the String id, loops until it finds the 
+	 * counterpart returns the name of the ID if the nodeName
+	 * exists
+	 * 
+	 * @param String id
+	 * @return the String name of the node i.e the station
+	 * else it will return null since they do not match
+	 */
 	public String getNodeName(String id) {
 		for (int i = 0; i < nodeList.size(); i++) {
 			if (nodeList.get(i).getID().equals(id)) {
@@ -28,6 +42,14 @@ public class Multigraph implements MultigraphADT {
 		return null;
 	}
 
+	/**
+	 * 	Takes in the name of the node and adds the id of the node to the list of all the node ids 
+	 *  if the name of the node matches with one of the nodes in the list of nodes. Returns the
+	 *   updated list of node ids. 
+	 * 
+	 * @param String nodeName
+	 * @return ArrayList of IDList
+	 */
 	public ArrayList<String> getIDFromName(String nodeName) {
 		ArrayList<String> idList = new ArrayList<String>();
 		
@@ -40,7 +62,10 @@ public class Multigraph implements MultigraphADT {
 		return idList;
 	}
 
-	
+	/**
+	 *  NOT USED?
+	 * 
+	 **/
 	public String returnColour(String nodeA, String nodeB) {//checks the colours in between 2 nodes
 		for (int c = 0; c < edgeList.size(); c++) {
 			if (edgeList.get(c).getNodeA().equals(nodeA) && edgeList.get(c).getNodeB().equals(nodeB)) {
@@ -52,6 +77,10 @@ public class Multigraph implements MultigraphADT {
 		return null;
 	}
 	
+	/**
+	 *  NOT USED?
+	 * 
+	 **/
 	public ArrayList<String> getEdgeLabelsFromID(String nodeID){//checks the colours around a single node
 		ArrayList<String> labelList = new ArrayList<String>();
 		for(int i = 0; i < edgeList.size(); i++){
@@ -65,6 +94,14 @@ public class Multigraph implements MultigraphADT {
 		return labelList;
 	}
 	
+	/**
+	 *  Takes in the node ids and returns all labels connecting these two nodes.
+	 *  This is in case there are more than one label between two nodes.
+	 *  
+	 * @param String nodeA, String nodeB
+	 * @return ArrayList<String> labelList
+	 * 
+	 **/
 	public ArrayList<String> getLabelsBetweenTwoNodes(String nodeA, String nodeB) {
 		  ArrayList<String> labelList = new ArrayList<String>();
 		  for (int i = 0; i < edgeList.size(); i++) {
@@ -77,6 +114,7 @@ public class Multigraph implements MultigraphADT {
 		  return labelList;
 		 }
 
+	
 	public boolean addNode(String nodeID, String nodeName) {
 		nodeList.add(new Node(nodeID, nodeName));
 		return true;
@@ -87,6 +125,10 @@ public class Multigraph implements MultigraphADT {
 		return true;
 	}
 
+	/**
+	 *  NOT USED?
+	 * 
+	 **/
 	public ArrayList<String> isEdge(String nodeA, String nodeB) {//checks the colours in between 2 nodes
 		ArrayList<String> labelList = new ArrayList<String>();
 		for (int c = 0; c < edgeList.size(); c++) {
@@ -99,6 +141,10 @@ public class Multigraph implements MultigraphADT {
 		return labelList;
 	}
 	
+	/**
+	 *  NOT USED?
+	 * 
+	 **/
 	public Boolean edgeExists(String label, String nodeA, String nodeB){
 		for (int c = 0; c < edgeList.size(); c++) {
 			if (edgeList.get(c).getNodeA().equals(nodeA) && edgeList.get(c).getNodeB().equals(nodeB) && edgeList.get(c).getLabel().equals(label)) {
@@ -109,7 +155,14 @@ public class Multigraph implements MultigraphADT {
 		}
 		return false;
 	}
-
+	/**
+	 * 	Takes in the name of the node and counts how many times this node
+	 *  exists in the list of nodes. Returns the number of occurences. Used
+	 *   to find nodes with multiple names.
+	 * 
+	 *  @param String nodeName
+	 *  @return int count
+	 **/
 	public int countNodeOccurences(String nodeName) {
 		int count = 0;
 		for (int i = 0; i < nodeList.size(); i++) {
@@ -121,7 +174,7 @@ public class Multigraph implements MultigraphADT {
 	}
 
 	// -------------------------------Searching Happens below-----------------------------------------------------
-
+	
 	 public ArrayList<String> searchShortestPath(String originID, String destinationID) {
 	  /*could be more efficient if routes that had reached the end were removed from the 2D array*/
 
@@ -199,7 +252,11 @@ public class Multigraph implements MultigraphADT {
 	  } /* end of while */
 	  return routes.get(foundIndex);
 	 }
-
+	 
+	 /**
+	  *  NOT USED?
+	  * 
+	  **/
 	 private ArrayList<String> getNextNodeIDs(String currentNodeID) {
 	  /*helper method for search to return all possible IDs reachable from the current node*/
 	  ArrayList<String> nextNodeIDs = new ArrayList<String>();
@@ -218,6 +275,10 @@ public class Multigraph implements MultigraphADT {
 	  return nextNodeIDs;
 	 }
 	 
+	 /**
+	  *  NOT USED?
+	  * 
+	  **/
 	 public void printArrays(ArrayList<ArrayList<String>> routes, ArrayList<String> visited){
 	  for (int i = 0; i<routes.size(); i++){
 	   System.out.println("Route " + i + " ");

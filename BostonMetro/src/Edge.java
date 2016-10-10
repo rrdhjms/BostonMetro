@@ -1,6 +1,7 @@
 
 public class Edge implements EdgeIn {
 
+	
 	private String nodeA;
 	private String nodeB;
 	private String label;
@@ -34,5 +35,5 @@ public class Edge implements EdgeIn {
 		nodeB = nodeBID;
 		return true;
 	}
-
+	
 }

@@ -7,6 +7,9 @@ public class Menu {
 	private static Scanner scan;
 	private static MultigraphADT mGraph;
 
+	/**
+	 * Getting the input from the user 
+	 **/
 	private static String getInput() {
 		System.out.print("Please Enter An Input: ");
 		scan = new Scanner(System.in);
@@ -14,6 +17,12 @@ public class Menu {
 		return input;
 	}
 
+	/**
+	 *  Checking if the input given is acceptable. Returns the stationID so
+	 *   that it can continue with the search
+	 *  
+	 *  @return String stationID 
+	 **/
 	private static String getValidStation() {
 		String stationName = getInput();
 		String stationID = null;
@@ -34,6 +43,14 @@ public class Menu {
 		return stationID;
 	}
 
+	/**
+	 *  Used in the case of having two or more stations with the same name. Gets as
+	 *  an input the name of the station, asks the user for which station is referring to
+	 *  and returns the correct station ID to be used for the search.                        
+	 * 
+	 * @param  String stationName
+	 * @return String stationID
+	 **/
 	private static String clarifyMultipleInput(String stationName) {
 		ArrayList<String> idList = mGraph.getIDFromName(stationName);
 		String stationID = "";
@@ -51,7 +68,11 @@ public class Menu {
 
 		return stationID;
 	}
-
+	/**
+	 *   It creates an instance of MapParser which then generates the multigraph. It prints out the menu
+	 *   and gets and checks the input by the user with the help of getInput and getValidStation methods.
+	 *  
+	 **/
 	public static void main(String args[]) throws BadFileException,
 			IOException {
 		System.out.println("Welcome To The CS308 Group W07 Graph System\n");
@@ -59,7 +80,7 @@ public class Menu {
 		MetroMapParser mmp = new MetroMapParser("");
 		mGraph = mmp.generateGraphFromFile();
 		
-		mGraph.getEdgeLabelsFromID("5");
+		//mGraph.getEdgeLabelsFromID("5"); ??
 		
 		
 		boolean exit = false;
@@ -99,7 +120,14 @@ public class Menu {
 		}
 	}
 	
-
+	/**
+	 * Gets the list of the stations of the shortest path given by the search. Checks if 
+	 * there are changes of lines in this path and outputs steps on how to go from one station to
+	 * the other in the shortest way.                           
+	 * 
+	 * @param  ArrayList<String> stationList
+	 * 
+	 **/
 	public static void displayOutput(ArrayList<String> stationList) {
 		  String prevColour = "";
 		  String nextColour = "";
