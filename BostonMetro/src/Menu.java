@@ -54,12 +54,13 @@ public class Menu {
 	private static String clarifyMultipleInput(String stationName) {
 		ArrayList<String> idList = mGraph.getIDFromName(stationName);
 		String stationID = "";
-
 		System.out.println("Multiple stations have that name. Which of the following stations do you mean?");
+		
 		for (int i = 0; i < idList.size(); i++) {
 			System.out
 					.println("Station ID: " + idList.get(i) + " On line: " + mGraph.getEdgeLabelsFromID(idList.get(i)));
 		}
+		
 		while (!idList.contains(stationID)) {
 			System.out.print("Enter the ID of the station you wish to select: ");
 			stationID = getInput();
@@ -69,7 +70,7 @@ public class Menu {
 
 		return stationID;
 	}
-<<<<<<< HEAD
+
 	/**
 	 *   It creates an instance of MapParser which then generates the multigraph. It prints out the menu
 	 *   and gets and checks the input by the user with the help of getInput and getValidStation methods.
@@ -77,35 +78,22 @@ public class Menu {
 	 **/
 	public static void main(String args[]) throws BadFileException,
 			IOException {
-=======
-
-	public static void main(String args[]) throws BadFileException, IOException {
->>>>>>> a8a0103754f023e680f9765c682280db562ba812
 		System.out.println("Welcome To The CS308 Group W07 Graph System\n");
 		System.out.print("Enter Numerical Values For Menu Interaction\n");
 		MetroMapParser mmp = new MetroMapParser("");
 		mGraph = mmp.generateGraphFromFile();
-<<<<<<< HEAD
-		
-		//mGraph.getEdgeLabelsFromID("5"); ??
-		
-		
-=======
-
 		mGraph.getEdgeLabelsFromID("5");
-
->>>>>>> a8a0103754f023e680f9765c682280db562ba812
 		boolean exit = false;
 
 		while (!exit) {
 			System.out.println("Options Are:\n 1. Shortest Route\n 2. Search For Stations \n 3. Exit");
-
 			String userChoice = getInput();
+			
 			if (userChoice.equals("1")) {
-				System.out.println("You have chosen: Shortest Route\n");
-				System.out.println("Please enter the name of the origin station\n");
+				System.out.println("You have chosen: Shortest Route.\n");
+				System.out.println("Please enter the name of the origin station");
 				String originID = getValidStation();
-				System.out.println("Please enter the name of the destination station\n");
+				System.out.println("Please enter the name of the destination station");
 				String destinationID = getValidStation();
 				while (originID == destinationID) {
 					System.out.println("Dsetination is the same as Origin, enter new destination.");
@@ -128,7 +116,7 @@ public class Menu {
 			}
 		}
 	}
-<<<<<<< HEAD
+
 	
 	/**
 	 * Gets the list of the stations of the shortest path given by the search. Checks if 
@@ -138,16 +126,12 @@ public class Menu {
 	 * @param  ArrayList<String> stationList
 	 * 
 	 **/
-=======
-
->>>>>>> a8a0103754f023e680f9765c682280db562ba812
 	public static void displayOutput(ArrayList<String> stationList) {
 		String prevColour = "";
 		String nextColour = "";
 		String lastColour = "";
 		ArrayList<String> lineList = new ArrayList<String>();
 		ArrayList<String> nextLineList = new ArrayList<String>();
-
 		lastColour = mGraph.getLabelsBetweenTwoNodes(stationList.get(stationList.size() - 2), stationList.get(stationList.size() - 1)).get(0);
 
 		if (stationList.size() > 2) {

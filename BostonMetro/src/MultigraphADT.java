@@ -24,4 +24,4 @@ public interface MultigraphADT {
    
    public String returnColour(String nodeA, String nodeB);
 
-   }
+}

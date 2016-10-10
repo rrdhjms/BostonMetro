@@ -18,8 +18,9 @@ public class Multigraph implements MultigraphADT {
 	 */
 	public ArrayList<Edge> getEdgeList() {
 		ArrayList<Edge> edges = new ArrayList<Edge>();
-		for (Edge e : edgeList)
+		for (Edge e : edgeList){
 			edges.add(new Edge(e.getLabel(), e.getNodeA(), e.getNodeB()));
+		}
 		return edges;
 	}
 	
@@ -52,7 +53,6 @@ public class Multigraph implements MultigraphADT {
 	 */
 	public ArrayList<String> getIDFromName(String nodeName) {
 		ArrayList<String> idList = new ArrayList<String>();
-		
 		for (int i = 0; i < nodeList.size(); i++) {
 			if (nodeName.equalsIgnoreCase(nodeList.get(i).getName())) {
 				idList.add(nodeList.get(i).getID());
@@ -103,16 +103,16 @@ public class Multigraph implements MultigraphADT {
 	 * 
 	 **/
 	public ArrayList<String> getLabelsBetweenTwoNodes(String nodeA, String nodeB) {
-		  ArrayList<String> labelList = new ArrayList<String>();
-		  for (int i = 0; i < edgeList.size(); i++) {
-		   if (edgeList.get(i).getNodeA().equals(nodeA) && edgeList.get(i).getNodeB().equals(nodeB)) {
-		    labelList.add(edgeList.get(i).getLabel());
-		   } else if (edgeList.get(i).getNodeA().equals(nodeB) && edgeList.get(i).getNodeB().equals(nodeA)) {
-		    labelList.add(edgeList.get(i).getLabel());
-		   }
-		  }
-		  return labelList;
-		 }
+		ArrayList<String> labelList = new ArrayList<String>();
+		for (int i = 0; i < edgeList.size(); i++) {
+			if (edgeList.get(i).getNodeA().equals(nodeA) && edgeList.get(i).getNodeB().equals(nodeB)) {
+				labelList.add(edgeList.get(i).getLabel());
+			} else if (edgeList.get(i).getNodeA().equals(nodeB) && edgeList.get(i).getNodeB().equals(nodeA)) {
+				labelList.add(edgeList.get(i).getLabel());
+			}
+		}
+		return labelList;
+	}
 
 	
 	public boolean addNode(String nodeID, String nodeName) {
@@ -175,80 +175,75 @@ public class Multigraph implements MultigraphADT {
 
 	// -------------------------------Searching Happens below-----------------------------------------------------
 	
-	 public ArrayList<String> searchShortestPath(String originID, String destinationID) {
-	  /*could be more efficient if routes that had reached the end were removed from the 2D array*/
-
-	  ArrayList<ArrayList<String>> routes = new ArrayList<ArrayList<String>>();
-	  ArrayList<String> visited = new ArrayList<String>();
-	  boolean found = false;
-	  int foundIndex = 0;
+	public ArrayList<String> searchShortestPath(String originID, String destinationID) {
+		/*could be more efficient if routes that had reached the end were removed from the 2D array*/
+		ArrayList<ArrayList<String>> routes = new ArrayList<ArrayList<String>>();
+		ArrayList<String> visited = new ArrayList<String>();
+		boolean found = false;
+		int foundIndex = 0;
+		visited.add(originID);
+		for (int i = 0; i < edgeList.size(); i++) {
+			if (edgeList.get(i).getNodeA().equals(originID)) {
+				routes.add(new ArrayList<String>());
+				routes.get(routes.size() - 1).add(originID);
+				routes.get(routes.size() - 1).add(edgeList.get(i).getNodeB());
+				visited.add(edgeList.get(i).getNodeB());
+			}
+			if (edgeList.get(i).getNodeB().equals(originID)) {
+				routes.add(new ArrayList<String>());
+				routes.get(routes.size() - 1).add(originID);
+				routes.get(routes.size() - 1).add(edgeList.get(i).getNodeA());
+				visited.add(edgeList.get(i).getNodeA());
+			}
+		} /* creates a new path for each neighbour node of our source */
 	  
-	  visited.add(originID);
-	  for (int i = 0; i < edgeList.size(); i++) {
-	   if (edgeList.get(i).getNodeA().equals(originID)) {
-	    routes.add(new ArrayList<String>());
-	    routes.get(routes.size() - 1).add(originID);
-	    routes.get(routes.size() - 1).add(edgeList.get(i).getNodeB());
-	    visited.add(edgeList.get(i).getNodeB());
-	    printArrays(routes, visited); 
-	   }
-	   if (edgeList.get(i).getNodeB().equals(originID)) {
-	    routes.add(new ArrayList<String>());
-	    routes.get(routes.size() - 1).add(originID);
-	    routes.get(routes.size() - 1).add(edgeList.get(i).getNodeA());
-	    visited.add(edgeList.get(i).getNodeA());
-	    printArrays(routes, visited);
-	   }
-	  } /* creates a new path for each neighbour node of our source */
-	  
-	  for (int index = 0; index < routes.size(); index++) {
-	   if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID)){
-	    found = true;
-	    foundIndex = index;
-	   }
-	  }
+		for (int index = 0; index < routes.size(); index++) {
+			if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID)){
+				found = true;
+				foundIndex = index;
+			}
+		}
 
 	  while (!found) {
-	   /* add the next set of stations another step from origin to our routes */
-	   int routeSize = routes.size();
-	   for (int k = 0; k < routeSize; k++) {
-	    String currentNodeID = (routes.get(k).get((routes.get(k).size()) - 1));
-	    ArrayList<String> nextNodes = getNextNodeIDs(currentNodeID);
-	    
-	    nextNodes.removeAll(visited); /*if the next node has been visited by another path already
-	    then using this node would not be the shortest path */
-	    if (!nextNodes.isEmpty()) {
-	     /*add the first next node to our route*/
-	     ArrayList<String> copy = new ArrayList<String>();
-	     copy.addAll(routes.get(k));
-	     routes.get(k).add(nextNodes.get(0));
-	     visited.add(nextNodes.get(0));
-	     nextNodes.remove(nextNodes.get(0));
-	     while (!nextNodes.isEmpty()){
-	       /* make a new path for the other options when at a branching station,
-	        * copy what we had so far and search each one */
-	       String nextNodeID = nextNodes.get(0);
-	       routes.add(new ArrayList<String>());
-	       routes.get(routes.size() - 1).addAll(copy);
-	       routes.get(routes.size() - 1).add((nextNodeID));
-	       visited.add(nextNodeID);
-	       if(nextNodeID == destinationID) {
-	        found = true;
-	        foundIndex = routes.size()-1;
-	       }
-	       nextNodes.remove(nextNodeID);
-	     } /* end of inner while */
-	     if(!found){
-	      for (int index = 0; index < routes.size(); index++) {
-	       if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID)){
-	        found = true;
-	        foundIndex = index;
-	        break;
-	       }
-	      }
-	     }
-	    }
-	   }
+		  /* add the next set of stations another step from origin to our routes */
+		  int routeSize = routes.size();
+		  for (int k = 0; k < routeSize; k++) {
+			  String currentNodeID = (routes.get(k).get((routes.get(k).size()) - 1));
+			  ArrayList<String> nextNodes = getNextNodeIDs(currentNodeID);
+			  nextNodes.removeAll(visited); /* if the next node has been visited by another path already
+			  								 * then using this node would not be the shortest path */
+			  if (!nextNodes.isEmpty()) {
+				  /*add the first next node to our route*/
+				  ArrayList<String> copy = new ArrayList<String>();
+				  copy.addAll(routes.get(k));
+				  routes.get(k).add(nextNodes.get(0));
+				  visited.add(nextNodes.get(0));
+				  nextNodes.remove(nextNodes.get(0));
+				  while (!nextNodes.isEmpty()){
+					  /* make a new path for the other options when at a branching station,
+					   * copy what we had so far and search each one */
+					  String nextNodeID = nextNodes.get(0);
+					  routes.add(new ArrayList<String>());
+					  routes.get(routes.size() - 1).addAll(copy);
+					  routes.get(routes.size() - 1).add((nextNodeID));
+					  visited.add(nextNodeID);
+					  if(nextNodeID == destinationID) {
+						  found = true;
+						  foundIndex = routes.size()-1;
+					  }
+					  nextNodes.remove(nextNodeID);
+				 } /* end of inner while */
+				  if(!found){
+					  for (int index = 0; index < routes.size(); index++) {
+						  if (routes.get(index).get(routes.get(index).size() - 1).equals(destinationID)){
+							  found = true;
+							  foundIndex = index;
+							  break;
+						  }
+					  }
+				  }
+			  }
+		  }
 	  } /* end of while */
 	  return routes.get(foundIndex);
 	 }
@@ -257,36 +252,22 @@ public class Multigraph implements MultigraphADT {
 	  *  NOT USED?
 	  * 
 	  **/
-	 private ArrayList<String> getNextNodeIDs(String currentNodeID) {
-	  /*helper method for search to return all possible IDs reachable from the current node*/
-	  ArrayList<String> nextNodeIDs = new ArrayList<String>();
-	  for (int i = 0; i < edgeList.size(); i++) {
-	   if (edgeList.get(i).getNodeA().equals(currentNodeID)) {
-	    nextNodeIDs.add(edgeList.get(i).getNodeB());
-	   }
-	   if (edgeList.get(i).getNodeB().equals(currentNodeID)) {
-	    nextNodeIDs.add(edgeList.get(i).getNodeA());
-	   }
-	  }
-	  Set<String> uniqueIDs = new HashSet<>();
-	  uniqueIDs.addAll(nextNodeIDs);
-	  nextNodeIDs.clear();
-	  nextNodeIDs.addAll(uniqueIDs);
-	  return nextNodeIDs;
-	 }
-	 
-	 /**
-	  *  NOT USED?
-	  * 
-	  **/
-	 public void printArrays(ArrayList<ArrayList<String>> routes, ArrayList<String> visited){
-	  for (int i = 0; i<routes.size(); i++){
-	   //System.out.println("Route " + i + " ");
-	   for (int j = 0; j<routes.get(i).size();j++){
-	    //System.out.println(" : " + getNodeName(routes.get(i).get(j)));
-	   }
-	   //System.out.println("visited : " + visited);
-	  }   
-	 }
+	private ArrayList<String> getNextNodeIDs(String currentNodeID) {
+		/*helper method for search to return all possible IDs reachable from the current node*/
+		ArrayList<String> nextNodeIDs = new ArrayList<String>();
+		for (int i = 0; i < edgeList.size(); i++) {
+			if (edgeList.get(i).getNodeA().equals(currentNodeID)) {
+				nextNodeIDs.add(edgeList.get(i).getNodeB());
+			}
+			if (edgeList.get(i).getNodeB().equals(currentNodeID)) {
+				nextNodeIDs.add(edgeList.get(i).getNodeA());
+			}
+		}
+		Set<String> uniqueIDs = new HashSet<>();
+		uniqueIDs.addAll(nextNodeIDs);
+		nextNodeIDs.clear();
+		nextNodeIDs.addAll(uniqueIDs);
+		return nextNodeIDs;
+	}
 	
 }

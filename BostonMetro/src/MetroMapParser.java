@@ -20,52 +20,39 @@ public class MetroMapParser {
 	}
 
 	public MultigraphADT generateGraphFromFile() throws IOException, BadFileException {
-
 		MultigraphADT mGraph = new Multigraph();
-
 		String line = fileInput.readLine();
 		StringTokenizer st;
 		String stationID;
 		String stationName;
 		String lineName;
 		String outboundID, inboundID;
-
 		while (line != null) {
-
 			st = new StringTokenizer(line);
-
 			// We want to handle empty lines effectively, we just ignore them!
 			if (!st.hasMoreTokens()) {
 				line = fileInput.readLine();
 				continue;
 			}
-
 			// from the grammar, we know that the Station ID is the first token
 			// on the line
 			stationID = st.nextToken();
-
 			if (!st.hasMoreTokens()) {
 				throw new BadFileException("no station name");
 			}
-
 			// from the grammar, we know that the Station Name is the second
 			// token on the line.
 			stationName = st.nextToken();
-
 			if (!st.hasMoreTokens()) {
 				throw new BadFileException("station is on no lines");
 			}
 			mGraph.addNode(stationID, stationName);
-
 			while (st.hasMoreTokens()) {
 				lineName = st.nextToken();
-
 				if (!st.hasMoreTokens()) {
 					throw new BadFileException("poorly formatted line info");
 				}
-
 				outboundID = st.nextToken();
-
 				if (!st.hasMoreTokens()) {
 					throw new BadFileException("poorly formatted adjacent stations");
 				}
@@ -81,11 +68,9 @@ public class MetroMapParser {
 						mGraph.addEdge(lineName, stationID, outboundID);
 				}
 			}
-
 			line = fileInput.readLine();
 		}
 		return mGraph;
-
 	}
 
 }
