@@ -281,11 +281,11 @@ public class Multigraph implements MultigraphADT {
 	  **/
 	 public void printArrays(ArrayList<ArrayList<String>> routes, ArrayList<String> visited){
 	  for (int i = 0; i<routes.size(); i++){
-	   System.out.println("Route " + i + " ");
+	   //System.out.println("Route " + i + " ");
 	   for (int j = 0; j<routes.get(i).size();j++){
-	    System.out.println(" : " + getNodeName(routes.get(i).get(j)));
+	    //System.out.println(" : " + getNodeName(routes.get(i).get(j)));
 	   }
-	   System.out.println("visited : " + visited);
+	   //System.out.println("visited : " + visited);
 	  }   
 	 }
 	
