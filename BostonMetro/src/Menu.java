@@ -82,7 +82,6 @@ public class Menu {
 		System.out.print("Enter Numerical Values For Menu Interaction\n");
 		MetroMapParser mmp = new MetroMapParser("");
 		mGraph = mmp.generateGraphFromFile();
-		mGraph.getEdgeLabelsFromID("5");
 		boolean exit = false;
 
 		while (!exit) {
@@ -105,8 +104,7 @@ public class Menu {
 				System.out.println("You have chosen: Search For The Station:\n");
 				System.out.println("Please enter the name of the station you would like searched\n");
 				String stationID = getValidStation();
-				System.out.println("Name: " + mGraph.getNodeName(stationID) + "\nID  : " + stationID + "\nLines: "
-						+ mGraph.getEdgeLabelsFromID(stationID));
+				System.out.println("Name: " + mGraph.getNodeName(stationID) + "\nID  : " + stationID + "\nLines: " + mGraph.getEdgeLabelsFromID(stationID));
 			} else if (userChoice.equals("3")) {
 				System.out.println("Thank You For Using Our System! Exiting...");
 				MetroMapParser.usage();
@@ -132,11 +130,11 @@ public class Menu {
 		String lastColour = "";
 		ArrayList<String> lineList = new ArrayList<String>();
 		ArrayList<String> nextLineList = new ArrayList<String>();
-		lastColour = mGraph.getLabelsBetweenTwoNodes(stationList.get(stationList.size() - 2), stationList.get(stationList.size() - 1)).get(0);
+		lastColour = mGraph.isEdge(stationList.get(stationList.size() - 2), stationList.get(stationList.size() - 1)).get(0);
 
 		if (stationList.size() > 2) {
-			lineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(0), stationList.get(1));
-			nextLineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(1), stationList.get(2));
+			lineList = mGraph.isEdge(stationList.get(0), stationList.get(1));
+			nextLineList = mGraph.isEdge(stationList.get(1), stationList.get(2));
 
 			for (int h = 0; h < lineList.size(); h++) {
 				if (nextLineList.contains(lineList.get(h))) {
@@ -148,15 +146,15 @@ public class Menu {
 				}
 			}
 		} else {
-			prevColour = mGraph.getLabelsBetweenTwoNodes(stationList.get(0), stationList.get(1)).get(0);
+			prevColour = mGraph.isEdge(stationList.get(0), stationList.get(1)).get(0);
 		}
 		System.out.println("\nGet on the " + prevColour + " line, towards " + mGraph.getNodeName(stationList.get(1)));
 
 		for (int i = 0; i < (stationList.size() - 1); i++) {
 
-			lineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(i), stationList.get(i + 1));
+			lineList = mGraph.isEdge(stationList.get(i), stationList.get(i + 1));
 			if (i < stationList.size() - 2) {
-				nextLineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(i + 1), stationList.get(i + 2));
+				nextLineList = mGraph.isEdge(stationList.get(i + 1), stationList.get(i + 2));
 				if (lineList.contains(lastColour)) {
 					nextColour = lastColour;
 				} else if (lineList.size() > 1) {

@@ -11,19 +11,6 @@ public class Multigraph implements MultigraphADT {
 		nodeList = new ArrayList<Node>();
 		edgeList = new ArrayList<Edge>();
 	}
-
-	/**
-	 * 
-	 * @return an ArrayList of Edges
-	 */
-	public ArrayList<Edge> getEdgeList() {
-		ArrayList<Edge> edges = new ArrayList<Edge>();
-		for (Edge e : edgeList){
-			edges.add(new Edge(e.getLabel(), e.getNodeA(), e.getNodeB()));
-		}
-		return edges;
-	}
-	
 	
 	/**
 	 * Takes in the String id, loops until it finds the 
@@ -61,25 +48,13 @@ public class Multigraph implements MultigraphADT {
 		
 		return idList;
 	}
-
-	/**
-	 *  NOT USED?
-	 * 
-	 **/
-	public String returnColour(String nodeA, String nodeB) {//checks the colours in between 2 nodes
-		for (int c = 0; c < edgeList.size(); c++) {
-			if (edgeList.get(c).getNodeA().equals(nodeA) && edgeList.get(c).getNodeB().equals(nodeB)) {
-				return edgeList.get(c).getLabel();
-			} else if (edgeList.get(c).getNodeA().equals(nodeB) && edgeList.get(c).getNodeB().equals(nodeA)) {
-				return edgeList.get(c).getLabel();
-			}
-		}
-		return null;
-	}
 	
 	/**
-	 *  NOT USED?
+	 *  Takes in a single NodeID and returns a list of the 
+	 *  labels of edges connected to that Node.
 	 * 
+	 *  @param String nodeID
+	 *  @return ArrayList<String> labelList
 	 **/
 	public ArrayList<String> getEdgeLabelsFromID(String nodeID){//checks the colours around a single node
 		ArrayList<String> labelList = new ArrayList<String>();
@@ -102,7 +77,7 @@ public class Multigraph implements MultigraphADT {
 	 * @return ArrayList<String> labelList
 	 * 
 	 **/
-	public ArrayList<String> getLabelsBetweenTwoNodes(String nodeA, String nodeB) {
+	public ArrayList<String> isEdge(String nodeA, String nodeB) {
 		ArrayList<String> labelList = new ArrayList<String>();
 		for (int i = 0; i < edgeList.size(); i++) {
 			if (edgeList.get(i).getNodeA().equals(nodeA) && edgeList.get(i).getNodeB().equals(nodeB)) {
@@ -124,26 +99,12 @@ public class Multigraph implements MultigraphADT {
 		edgeList.add(new Edge(label, successor, predecessor));
 		return true;
 	}
-
-	/**
-	 *  NOT USED?
-	 * 
-	 **/
-	public ArrayList<String> isEdge(String nodeA, String nodeB) {//checks the colours in between 2 nodes
-		ArrayList<String> labelList = new ArrayList<String>();
-		for (int c = 0; c < edgeList.size(); c++) {
-			if (edgeList.get(c).getNodeA().equals(nodeA) && edgeList.get(c).getNodeB().equals(nodeB)) {
-				labelList.add(edgeList.get(c).getLabel());
-			} else if (edgeList.get(c).getNodeA().equals(nodeB) && edgeList.get(c).getNodeB().equals(nodeA)) {
-				labelList.add(edgeList.get(c).getLabel());
-			}
-		}
-		return labelList;
-	}
 	
 	/**
-	 *  NOT USED?
+	 *  Takes in two nodeIDs and a label, and returns True if an Edge exists between those 
 	 * 
+	 * 	@param String nodeA, String nodeB
+	 *  @return Boolean
 	 **/
 	public Boolean edgeExists(String label, String nodeA, String nodeB){
 		for (int c = 0; c < edgeList.size(); c++) {
@@ -249,7 +210,7 @@ public class Multigraph implements MultigraphADT {
 	 }
 	 
 	 /**
-	  *  NOT USED?
+	  *  Not used in interface.
 	  * 
 	  **/
 	private ArrayList<String> getNextNodeIDs(String currentNodeID) {
