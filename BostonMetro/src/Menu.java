@@ -99,90 +99,63 @@ public class Menu {
 		}
 	}
 	
-	public static void displayOutput(ArrayList<String> list) {
-		/*
-		String currentLine = "";
-		for (int i = 0; i < (list.size() - 1); i++) {
-			if(mGraph.getEdgeLabelsFromID(list.get(i+1)).size() > 1){//We Know that there is a change
-				if(mGraph.isEdge(list.get(i), list.get(i+1)).size() == 1){
-					currentLine = mGraph.isEdge(list.get(i), list.get(i+1)).get(0);
-				}
-			}
-			if(mGraph.getEdgeLabelsFromID(list.get(i)).size() > 1){
-				if(mGraph.isEdge(list.get(i), list.get(i+1)).size() == 1){
-					if(!currentLine.equals(mGraph.isEdge(list.get(i), list.get(i+1))) && i != 0){
-						System.out.println("You need to change from ");
-					}
-				}
-			}*/
-		try{
-		for (int i = 0; i < (list.size() - 1); i++) {
-			ArrayList<String> currentNodeColourOptions= mGraph.getEdgeLabelsFromID(list.get(i));
-			ArrayList<String> nextNodeColourOptions= mGraph.getEdgeLabelsFromID(list.get(i+1));
-			ArrayList<String> upcomingNodeColourOptions= mGraph.getEdgeLabelsFromID(list.get(i+2));
-			String ColourOfRouteOne = "";
-			String ColourOfRouteTwo = "";
-			for(int outer = 0; outer < currentNodeColourOptions.size(); outer++){
-				for(int inner = 0; inner < nextNodeColourOptions.size(); inner++){
-					if( (currentNodeColourOptions.get(outer).equals(nextNodeColourOptions.get(inner)))){
-						//we have a route match, so we got to the next
-							ColourOfRouteOne = currentNodeColourOptions.get(outer);
-						
-					}
-				}
-			}
-			for(int x = 0; x < nextNodeColourOptions.size(); x++){
-				for(int y = 0; y < upcomingNodeColourOptions.size(); y++){
-					if( (nextNodeColourOptions.get(x).equals(upcomingNodeColourOptions.get(y)))){
-		
-						ColourOfRouteTwo = nextNodeColourOptions.get(x);
-					}
-				}
-			}
-			if(!(ColourOfRouteOne).equals(ColourOfRouteTwo)){
-				System.out.println("Change At Line: " + ColourOfRouteTwo + " at Station " + mGraph.getNodeName(list.get(i+1)) 
-				+ " towards " + mGraph.getNodeName(list.get(i+2)));
-			}
-		}}catch(Exception e ){
-			System.out.println("You Have Arrived At " + mGraph.getNodeName( list.get(list.size()-1) ));
-		}
-	}	
-			
-			
-			
-			/*
-		if(currentNodeColourOptions.size() > 1 && nextNodeColourOptions.size() < 1){
-			
 
-				for(int outer = 0; outer < nextNodeColourOptions.size()-1; outer++){
-					for(int inner = 0; inner < nextNodeColourOptions.size()-1; inner++){
-						if(currentNodeColourOptions.get(outer).equals(nextNodeColourOptions.get(inner))){
-							//We know the two nodes are connected so the other values in the 
-							// nextnodecolouroptions must be the possible colour
-							
-						
-					}
-				}
-				//we know that the next station that their is going to be a change
-				
-			}
-			}
-		}
-		
-		
-		for (int i = 0; i<list.size();i++) {
-			System.out.println(mGraph.getNodeName(list.get(i)));
-			}
-					try {
-							for(int i = 0; i < (list.size()-1);i++){
-							/*String previousLine = mGraph.returnColour(list.get(i-1), list.get(i));
-							String currentLine = mGraph.returnColour(list.get(i), list.get(i+1));
-							String nextLine = mGraph.returnColour(list.get(i+1), list.get(i+2));
-							if(!(currentLine.equals(nextLine)) /*&& (previousLine.equals(currentLine))){
-								System.out.println("Change Line To Line " + nextLine 
-										+ " At Station " +  mGraph.getNodeName(list.get(i+1))+"\n");
-												             }}
-							}catch (Exception e) {
-					System.out.println("You Have Arrived At " + mGraph.getNodeName( list.get(list.size()-1) ));
-					}*/
+	public static void displayOutput(ArrayList<String> stationList) {
+		  String prevColour = "";
+		  String nextColour = "";
+		  ArrayList<String> lineList = new ArrayList<String>();
+		  ArrayList<String> nextLineList = new ArrayList<String>();
+
+		  if (stationList.size() > 2) {
+		   lineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(0), stationList.get(1));
+		   nextLineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(1), stationList.get(2));
+
+		   for (int h = 0; h < lineList.size(); h++) {
+		    if (nextLineList.contains(lineList.get(h))) {
+		     prevColour = lineList.get(h);
+		     break;
+		    }
+		    if (h == lineList.size() - 1 && !nextLineList.contains(lineList.get(h))) {
+		     prevColour = lineList.get(0);
+		    }
+		   }
+		  } else {
+		   prevColour = mGraph.getLabelsBetweenTwoNodes(stationList.get(0), stationList.get(1)).get(0);
+		  }
+		  System.out.println("Get on the " + prevColour + " line");
+
+		  for (int i = 0; i < (stationList.size() - 1); i++) {
+
+		   lineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(i), stationList.get(i + 1));
+		   if (i < stationList.size() - 2) {
+		    nextLineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(i + 1), stationList.get(i + 2));
+		    if (lineList.size() > 1) {
+		     if (!lineList.contains(prevColour)) {
+		      for (int j = 0; j < lineList.size(); j++) {
+		       if (nextLineList.contains(lineList.get(j))) {
+		        nextColour = lineList.get(j);
+		        break;
+		       }
+		       if (j == lineList.size() - 1 && !nextLineList.contains(lineList.get(j))) {
+		        nextColour = lineList.get(0);
+		       }
+		      }
+		     } else {
+		      nextColour = prevColour;
+		     }
+		    } else {
+		     nextColour = lineList.get(0);
+		    }
+		   }
+		   else{
+		    nextColour = lineList.get(0);
+		   }
+
+		   if (!(nextColour).equals(prevColour)) {
+		    System.out.println("Change at " + mGraph.getNodeName(stationList.get(i)) + " to the " + nextColour + " line, towards " + mGraph.getNodeName(stationList.get(i + 1)));
+		   }
+		   prevColour = nextColour;
+		  }
+		  System.out.println("You Have Arrived At " + mGraph.getNodeName(stationList.get(stationList.size() - 1)));
+		 }
 }

@@ -64,6 +64,18 @@ public class Multigraph implements MultigraphADT {
 		}
 		return labelList;
 	}
+	
+	public ArrayList<String> getLabelsBetweenTwoNodes(String nodeA, String nodeB) {
+		  ArrayList<String> labelList = new ArrayList<String>();
+		  for (int i = 0; i < edgeList.size(); i++) {
+		   if (edgeList.get(i).getNodeA().equals(nodeA) && edgeList.get(i).getNodeB().equals(nodeB)) {
+		    labelList.add(edgeList.get(i).getLabel());
+		   } else if (edgeList.get(i).getNodeA().equals(nodeB) && edgeList.get(i).getNodeB().equals(nodeA)) {
+		    labelList.add(edgeList.get(i).getLabel());
+		   }
+		  }
+		  return labelList;
+		 }
 
 	public boolean addNode(String nodeID, String nodeName) {
 		nodeList.add(new Node(nodeID, nodeName));
