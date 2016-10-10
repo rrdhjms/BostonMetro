@@ -40,7 +40,8 @@ public class Menu {
 
 		System.out.println("Multiple stations have that name. Which of the following stations do you mean?");
 		for (int i = 0; i < idList.size(); i++) {
-			System.out.println("Station ID: " + idList.get(i) + " On line: " + mGraph.getEdgeLabelsFromID(idList.get(i)));
+			System.out
+					.println("Station ID: " + idList.get(i) + " On line: " + mGraph.getEdgeLabelsFromID(idList.get(i)));
 		}
 		while (!idList.contains(stationID)) {
 			System.out.print("Enter the ID of the station you wish to select: ");
@@ -52,110 +53,108 @@ public class Menu {
 		return stationID;
 	}
 
-	public static void main(String args[]) throws BadFileException,
-			IOException {
+	public static void main(String args[]) throws BadFileException, IOException {
 		System.out.println("Welcome To The CS308 Group W07 Graph System\n");
 		System.out.print("Enter Numerical Values For Menu Interaction\n");
 		MetroMapParser mmp = new MetroMapParser("");
 		mGraph = mmp.generateGraphFromFile();
-		
+
 		mGraph.getEdgeLabelsFromID("5");
-		
-		
+
 		boolean exit = false;
-		
+
 		while (!exit) {
 			System.out.println("Options Are:\n 1. Shortest Route\n 2. Search For Stations \n 3. Exit");
-			
+
 			String userChoice = getInput();
-			if(userChoice.equals("1")){
+			if (userChoice.equals("1")) {
 				System.out.println("You have chosen: Shortest Route\n");
 				System.out.println("Please enter the name of the origin station\n");
 				String originID = getValidStation();
 				System.out.println("Please enter the name of the destination station\n");
 				String destinationID = getValidStation();
-				while(originID == destinationID){
+				while (originID == destinationID) {
 					System.out.println("Dsetination is the same as Origin, enter new destination.");
 					destinationID = getValidStation();
 				}
 				ArrayList<String> shortest = mGraph.searchShortestPath(originID, destinationID);
 				displayOutput(shortest);
-			}
-			else if(userChoice.equals("2")){
+			} else if (userChoice.equals("2")) {
 				System.out.println("You have chosen: Search For The Station:\n");
 				System.out.println("Please enter the name of the station you would like searched\n");
 				String stationID = getValidStation();
-				System.out.println("Name: " + mGraph.getNodeName(stationID) + "\nID  : " + stationID + 
-						           "\nLines: " + mGraph.getEdgeLabelsFromID(stationID));
-			}
-			else if(userChoice.equals("3")){
+				System.out.println("Name: " + mGraph.getNodeName(stationID) + "\nID  : " + stationID + "\nLines: "
+						+ mGraph.getEdgeLabelsFromID(stationID));
+			} else if (userChoice.equals("3")) {
 				System.out.println("Thank You For Using Our System! Exiting...");
 				MetroMapParser.usage();
 				exit = true;
-			}
-			else{
+			} else {
 				System.out.print("Your input was invalid\n Please try again bby!\n");
 			}
 		}
 	}
-	
 
 	public static void displayOutput(ArrayList<String> stationList) {
-		  String prevColour = "";
-		  String nextColour = "";
-		  ArrayList<String> lineList = new ArrayList<String>();
-		  ArrayList<String> nextLineList = new ArrayList<String>();
+		String prevColour = "";
+		String nextColour = "";
+		String lastColour = "";
+		ArrayList<String> lineList = new ArrayList<String>();
+		ArrayList<String> nextLineList = new ArrayList<String>();
 
-		  if (stationList.size() > 2) {
-		   lineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(0), stationList.get(1));
-		   nextLineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(1), stationList.get(2));
+		lastColour = mGraph.getLabelsBetweenTwoNodes(stationList.get(stationList.size() - 2), stationList.get(stationList.size() - 1)).get(0);
 
-		   for (int h = 0; h < lineList.size(); h++) {
-		    if (nextLineList.contains(lineList.get(h))) {
-		     prevColour = lineList.get(h);
-		     break;
-		    }
-		    if (h == lineList.size() - 1 && !nextLineList.contains(lineList.get(h))) {
-		     prevColour = lineList.get(0);
-		    }
-		   }
-		  } else {
-		   prevColour = mGraph.getLabelsBetweenTwoNodes(stationList.get(0), stationList.get(1)).get(0);
-		  }
-		  System.out.println("Get on the " + prevColour + " line");
+		if (stationList.size() > 2) {
+			lineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(0), stationList.get(1));
+			nextLineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(1), stationList.get(2));
 
-		  for (int i = 0; i < (stationList.size() - 1); i++) {
+			for (int h = 0; h < lineList.size(); h++) {
+				if (nextLineList.contains(lineList.get(h))) {
+					prevColour = lineList.get(h);
+					break;
+				}
+				if (h == lineList.size() - 1 && !nextLineList.contains(lineList.get(h))) {
+					prevColour = lineList.get(0);
+				}
+			}
+		} else {
+			prevColour = mGraph.getLabelsBetweenTwoNodes(stationList.get(0), stationList.get(1)).get(0);
+		}
+		System.out.println("\nGet on the " + prevColour + " line, towards " + mGraph.getNodeName(stationList.get(1)));
 
-		   lineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(i), stationList.get(i + 1));
-		   if (i < stationList.size() - 2) {
-		    nextLineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(i + 1), stationList.get(i + 2));
-		    if (lineList.size() > 1) {
-		     if (!lineList.contains(prevColour)) {
-		      for (int j = 0; j < lineList.size(); j++) {
-		       if (nextLineList.contains(lineList.get(j))) {
-		        nextColour = lineList.get(j);
-		        break;
-		       }
-		       if (j == lineList.size() - 1 && !nextLineList.contains(lineList.get(j))) {
-		        nextColour = lineList.get(0);
-		       }
-		      }
-		     } else {
-		      nextColour = prevColour;
-		     }
-		    } else {
-		     nextColour = lineList.get(0);
-		    }
-		   }
-		   else{
-		    nextColour = lineList.get(0);
-		   }
+		for (int i = 0; i < (stationList.size() - 1); i++) {
 
-		   if (!(nextColour).equals(prevColour)) {
-		    System.out.println("Change at " + mGraph.getNodeName(stationList.get(i)) + " to the " + nextColour + " line, towards " + mGraph.getNodeName(stationList.get(i + 1)));
-		   }
-		   prevColour = nextColour;
-		  }
-		  System.out.println("You Have Arrived At " + mGraph.getNodeName(stationList.get(stationList.size() - 1)));
-		 }
+			lineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(i), stationList.get(i + 1));
+			if (i < stationList.size() - 2) {
+				nextLineList = mGraph.getLabelsBetweenTwoNodes(stationList.get(i + 1), stationList.get(i + 2));
+				if (lineList.contains(lastColour)) {
+					nextColour = lastColour;
+				} else if (lineList.size() > 1) {
+					if (!lineList.contains(prevColour)) {
+						for (int j = 0; j < lineList.size(); j++) {
+							if (nextLineList.contains(lineList.get(j))) {
+								nextColour = lineList.get(j);
+								break;
+							}
+							if (j == lineList.size() - 1 && !nextLineList.contains(lineList.get(j))) {
+								nextColour = lineList.get(0);
+							}
+						}
+					} else {
+						nextColour = prevColour;
+					}
+				} else {
+					nextColour = lineList.get(0);
+				}
+			} else {
+				nextColour = lineList.get(0);
+			}
+
+			if (!(nextColour).equals(prevColour)) {
+				System.out.println("Change at " + mGraph.getNodeName(stationList.get(i)) + " to the " + nextColour + " line, towards " + mGraph.getNodeName(stationList.get(i + 1)));
+			}
+			prevColour = nextColour;
+		}
+		System.out.println("You Have Arrived At " + mGraph.getNodeName(stationList.get(stationList.size() - 1)) + "\n");
+	}
 }
