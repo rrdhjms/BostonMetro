@@ -6,7 +6,7 @@ public interface MultigraphADT {
    
    public boolean addNode(String nodeID, String nodeName);
    
-   public boolean addEdge( String label, String successor, String predecessor);
+   public boolean addEdge(String label, String successor, String predecessor);
    
    public ArrayList<String> isEdge(String nodeA, String nodeB);
    

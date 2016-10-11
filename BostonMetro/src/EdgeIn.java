@@ -3,6 +3,10 @@ public interface EdgeIn {
 	
 	public boolean setLabel(String edgeLabel);
 	
-	public boolean setNodesOnEdge(String nodeAID, String nodeBID);
-
+	public String getNodeA();
+	
+	public String getNodeB();
+	
+	public String getLabel();
+	
 }

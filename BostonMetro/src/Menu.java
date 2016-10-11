@@ -110,7 +110,7 @@ public class Menu {
 				MetroMapParser.usage();
 				exit = true;
 			} else {
-				System.out.print("Your input was invalid\n Please try again bby!\n");
+				System.out.print("Your input was invalid\n Please try again.\n");
 			}
 		}
 	}
@@ -124,7 +124,7 @@ public class Menu {
 	 * @param  ArrayList<String> stationList
 	 * 
 	 **/
-	public static void displayOutput(ArrayList<String> stationList) {
+	private static void displayOutput(ArrayList<String> stationList) {
 		String prevColour = "";
 		String nextColour = "";
 		String lastColour = "";

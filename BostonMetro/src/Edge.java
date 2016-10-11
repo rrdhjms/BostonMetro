@@ -30,10 +30,4 @@ public class Edge implements EdgeIn {
 		return true;
 	}
 
-	public boolean setNodesOnEdge(String nodeAID, String nodeBID) {
-		nodeA = nodeAID;
-		nodeB = nodeBID;
-		return true;
-	}
-	
 }
