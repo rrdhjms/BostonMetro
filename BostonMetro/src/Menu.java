@@ -94,7 +94,7 @@ public class Menu {
 				String originID = getValidStation();
 				System.out.println("Please enter the name of the destination station");
 				String destinationID = getValidStation();
-				while (originID == destinationID) {
+				while (originID.equals(destinationID)) {
 					System.out.println("Dsetination is the same as Origin, enter new destination.");
 					destinationID = getValidStation();
 				}
